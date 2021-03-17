@@ -20,7 +20,7 @@
       </button>
       <div class="navbar-menu detached">
         <ul class="navbar-links">
-          <li class="navbar-item"><a class="navbar-link" href="/IWT-Assignment-01/about.php">About</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#">About</a></li>
           <li class="navbar-item"><a class="navbar-link" href="#">Contact</a></li>
           <li class="navbar-item register"><a class="navbar-link" href="#">Register</a></li>
           <li class="navbar-item login"><a class="navbar-link" href="#">Login</a></li>
