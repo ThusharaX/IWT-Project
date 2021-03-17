@@ -31,9 +31,8 @@
       </div>
     </nav>
 </header>
-    <?php
-	echo "Hello LuciferX";
-    ?>
+
+<h2>Hello LuciferX</h2>
 
 <script src="navbar.js"></script>
 </body>
