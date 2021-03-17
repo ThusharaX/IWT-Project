@@ -32,7 +32,6 @@
     </nav>
 </header>
 
-<h2 style="padding-top: 100px; padding-left: 100px;">Hello LuciferX</h2>
 
 <script src="navbar.js"></script>
 </body>
