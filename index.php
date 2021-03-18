@@ -25,9 +25,6 @@
           <li class="navbar-item register"><a class="navbar-link" href="#">Register</a></li>
           <li class="navbar-item login"><a class="navbar-link" href="#">Login</a></li>
         </ul>
-        <ul>
-          
-        </ul>
       </div>
     </nav>
 </header>
