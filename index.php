@@ -20,7 +20,7 @@
       </button>
       <div class="navbar-menu detached">
         <ul class="navbar-links">
-          <li class="navbar-item"><a class="navbar-link" href="#">About</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="about.php">About</a></li>
           <li class="navbar-item"><a class="navbar-link" href="#">Contact</a></li>
           <li class="navbar-item register"><a class="navbar-link" href="#">Register</a></li>
           <li class="navbar-item login"><a class="navbar-link" href="#">Login</a></li>
@@ -31,9 +31,9 @@
 
 <form method="post" action="https://sandbox.payhere.lk/pay/checkout">   
     <input type="hidden" name="merchant_id" value="1216936">    <!-- Replace your Merchant ID -->
-    <input type="hidden" name="return_url" value="http://sample.com/return">
-    <input type="hidden" name="cancel_url" value="http://sample.com/cancel">
-    <input type="hidden" name="notify_url" value="http://sample.com/notify">  
+    <input type="hidden" name="return_url" value="http://localhost/IWT-Assignment-01">
+    <input type="hidden" name="cancel_url" value="http://localhost/IWT-Assignment-01/cancel.php">
+    <input type="hidden" name="notify_url" value="http://localhost/IWT-Assignment-01/notify.php">  
     <br><br>Item Details<br>
     <input type="text" name="order_id" value="ItemNo12345">
     <input type="text" name="items" value="Door bell wireless"><br>
