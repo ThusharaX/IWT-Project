@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Ranhuya</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Ranhuya - Home</title>
+    <link rel="stylesheet" href="./assets/css/home.css">
 </head>
 <body>
-    <h1 class="main-title">Home</h1>
+    <?php include("header.html"); ?>
 
-    <h4><a href="about.html">About</a></h4>
+    <!-- Chamath -->
+    <!-- Type your code here -->
+    <h1 class="main-title">Home Page</h1>
 
-    <script src="./assets/js/script.js"></script>
+
+    <?php include("footer.html"); ?>
+
+    <script src="./assets/js/home.js"></script>
 </body>
 </html>
