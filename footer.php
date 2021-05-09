@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="./assets/css/footer.css">
 
 <footer>
-    <h5 class="footer-text">This is a footer</h5>
+  <p>Author: Hex Clan<br>
+  <a href="mailto:hexclan@sliit.lk">hexclan@sliit.lk</a></p>
 </footer>
 
 </div>

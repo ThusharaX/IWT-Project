@@ -7,7 +7,35 @@
 
 <!-- Chamath -->
 <!-- Type your code here -->
-<section>
+<section class="hero">
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
+    <h1 class="main-title">Home Page</h1>
     <h1 class="main-title">Home Page</h1>
 </section>
 

@@ -1,12 +1,11 @@
 <?php
   // DB config
-  // include_once 'src/dbh.php';
+  include_once 'src/dbh.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <base href="https://iwt-project.herokuapp.com/">
     <title><?php if (isset($title)) {echo "Ranhuya - "; echo $title;} else {echo "Ranhuya";} ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
@@ -39,8 +38,8 @@
     <div class="nav__buttons">
       <div class="nav__btnAndProfile">
         <div class="nav__btn">
-          <a href="./customerSignup.html"><button class="nav__register">Join Now</button></a>
-          <a href="./login.html"><button class="nav__login">Login</button></a>
+          <a href="./customerSignup.php"><button class="nav__register">Join Now</button></a>
+          <a href="./login.php"><button class="nav__login">Login</button></a>
         </div>
         <img class="nav__profile" src="./assets/img/profilePic.png" alt="">
       </div>
