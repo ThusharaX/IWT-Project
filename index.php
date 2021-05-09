@@ -1,6 +1,6 @@
 <?php
     // Dynamic Header
-    $title = 'Ranhuya - Home'; include("header.php");
+    $title = 'Home'; include("header.php");
 ?>
 
 <link rel="stylesheet" href="./assets/css/home.css">
