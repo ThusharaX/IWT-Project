@@ -1,0 +1,45 @@
+// Just ignore this file
+// Thushara Thiwanka
+
+.nav {
+    background-color: rgb(151, 151, 151);
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+
+    &__logo {
+        background-color: red;
+    }
+
+    &__middle {
+        background-color: blue;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+    &__list {
+        background-color: aqua;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+    }
+    &__item a {
+        display: inline-block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+
+        &:hover {
+            background-color: white;
+        }
+        &:hover a {
+            color: darkgreen;
+            text-decoration: none;
+        }
+    }
+
+    &__buttons {
+        background-color: yellow;
+    }
+}

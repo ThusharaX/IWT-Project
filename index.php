@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Ranhuya - Home</title>
-    <link rel="stylesheet" href="./assets/css/home.css">
-</head>
-<body>
-    <?php include("header.html"); ?>
+<?php
+    // Dynamic Header
+    $title = 'Ranhuya - Home'; include("header.php");
+?>
 
-    <!-- Chamath -->
-    <!-- Type your code here -->
+<link rel="stylesheet" href="./assets/css/home.css">
+
+<!-- Chamath -->
+<!-- Type your code here -->
+<section>
     <h1 class="main-title">Home Page</h1>
+</section>
 
 
-    <?php include("footer.html"); ?>
+<script src="./assets/js/home.js"></script>
 
-    <script src="./assets/js/home.js"></script>
-</body>
-</html>
+<?php include("footer.php"); ?>

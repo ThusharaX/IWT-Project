@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+.nav {
+    /* background-color: rgb(255, 255, 255); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(../img/navBackground2.jpg);
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    /* background-size: 1360px 330px; */
+    background-size: cover;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+    .nav__logo {
+        /* background-color: rgb(255, 255, 255); */
+    }
+
+    .nav__middle {
+        /* background-color: rgb(255, 255, 255); */
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+        .nav__title {
+            /* background-color: rgb(255, 255, 255); */
+            color: white;
+            font-size: 40px;
+            font-weight: bolder;
+            /* text-shadow: 2px 2px #ff0000; */
+            font-family: 'Ubuntu', sans-serif;
+        }
+        .nav__list {
+            /* background-color: rgb(255, 255, 255); */
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+        }
+            .nav__item a {
+                background-color: blanchedalmond;
+                display: inline-block;
+                padding: 10px 15px;
+                text-decoration: none;
+                color: rgb(0, 0, 0);
+            }
+
+            .nav__item:hover {
+                background-color: white;
+            }
+
+            .nav__item:hover a {
+                color: rgb(255, 255, 255);
+                background-color: crimson;
+            }
+
+
+    .nav__buttons {
+        /* background-color: rgb(255, 255, 255); */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+        .nav__btnAndProfile {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+            .nav__btn {
+                /* background-color: rgb(255, 255, 255); */
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+            }
+
+                .nav__register {
+                    box-shadow:inset 0px 1px 0px 0px #54a3f7;
+                    background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+                    background-color:#007dc1;
+                    border-radius:3px;
+                    border:1px solid #124d77;
+                    display:inline-block;
+                    cursor:pointer;
+                    color:#ffffff;
+                    font-family:Arial;
+                    font-size:15px;
+                    padding:10px 11px;
+                    text-decoration:none;
+                    text-shadow:0px 1px 0px #154682;
+                    margin-bottom: 5px;
+                }
+                .nav__register:hover {
+                    background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+                    background-color:#0061a7;
+                }
+                .nav__register:active {
+                    position:relative;
+                    top:1px;
+                }
+
+                .nav__login {
+                    box-shadow:inset 0px 1px 0px 0px #54a3f7;
+                    background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+                    background-color:#007dc1;
+                    border-radius:3px;
+                    border:1px solid #124d77;
+                    display:inline-block;
+                    cursor:pointer;
+                    color:#ffffff;
+                    font-family:Arial;
+                    font-size:15px;
+                    padding:10px 11px;
+                    text-decoration:none;
+                    text-shadow:0px 1px 0px #154682;
+                }
+                .nav__login:hover {
+                    background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+                    background-color:#0061a7;
+                }
+                .nav__login:active {
+                    position:relative;
+                    top:1px;
+                }
+
+        .nav__profile {
+            height: 80px;
+            width: 80px;
+        }
+
+        .nav__search {
+            padding: 5px;
+        }
+            .nav__search input {
+                border-radius: 4px;
+                box-sizing: border-box;
+                height: 30px;
+                width: 300px;
+            }
+            .nav__search button {
+                border-radius: 4px;
+                height: 30px;
+                width: 30px;
+            }
+    
