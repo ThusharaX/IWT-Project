@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base href="https://iwt-project.herokuapp.com/">
     <title><?php if (isset($title)) {echo $title;} else {echo "Ranhuya";} ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
