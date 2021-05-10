@@ -1,0 +1,161 @@
+a{
+	margin-top:90px;
+}
+#mtitle{
+	
+	text-align:center;
+	color:#f0f0f0;
+  font-family: "Courier New", "monospace";
+
+	
+}
+#stitle{
+	text-align:center;
+	color:#f0f0f0;
+	font-style:italic;
+	
+}   
+legend{
+  font-weight: bold;
+}
+
+.h1{
+	text-align:center;
+	font-family: sans-serif;
+}
+
+
+.slider{
+  
+  margin-top:200px;
+  background-image: url("../images/test9.png");
+  box-shadow: 0px 10px 5px #b2bec3;
+  height:250px;
+  width:1500px;
+  animation: slide 6s infinite;
+}
+
+@keyframes slide{
+  25%{background-image: url("../images/test10.png")}
+
+   50%{background-image: url("../images/test5.jpg")}
+
+    75%{background-image: url("../images/test8.png")}
+
+     100%{background-image: url("../images/contact.png")}
+
+}
+
+.main{
+  border:3px #e5ccc9;
+}
+
+	
+div.groupbox1 {
+  position:absolute;
+  left:200px;
+  top:500px;
+  height: 215px;
+  width: 300px;
+  text-align:center; 
+  border:3px solid #7D0552;
+  font-family: "Candara";
+}
+
+
+
+.btn {
+  border: none;
+  color: #000000
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 3px 1px;
+  cursor: pointer;
+  background-color:#e5ccc9;
+}
+
+.groupbox2 {
+ 
+  position:absolute;
+  left:200px;
+  top:750px;
+  height: 190px;
+  width: 280px;
+  border:3px solid #7D0552;
+  font-family:"Candara";
+ 
+}
+
+#gbox3{
+ 
+  position:absolute;
+  left:200px;
+  top:1000px;
+  height: 170px;
+  width: 280px;
+  border:3px solid #7D0552;
+  font-family: "Times New Roman";
+}
+
+
+
+input[type=text], select, textarea {
+  width: 75%;
+  padding: 12px;
+  border: 1px solid  #7D0552;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background:none;
+}
+
+.btn{
+  background-color:#e5ccc9;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+.btn:hover {
+  
+  background-color: #ffc0cb;
+
+}
+
+
+.form {
+  width:40%;
+  height:90%;
+  position:absolute;
+  left:900px;
+  top:500px;
+  border-radius: 5px;
+  
+  padding: 20px;
+}
+
+
+.icon{
+	width:16px;
+  margin-right: 10px; 
+	
+}
+.icon2{
+	width:20px;
+
+	
+}
+
+label{
+	color:#000000;
+	font-weight:bold;
+}
+

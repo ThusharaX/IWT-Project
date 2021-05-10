@@ -63,7 +63,7 @@
         <img class="nav__profile" src="./assets/img/profilePic.png" alt="">
       </div>
     
-      <form class="nav__search" action="searchResultsPage.html" method="get">
+      <form class="nav__search" action="search.src.php" method="get">
         <input type="text" placeholder="Search.." name="search" id="">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>

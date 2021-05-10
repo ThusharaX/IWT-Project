@@ -1,0 +1,167 @@
+h1
+{
+	font-family: "Courier New";
+	text-align: center;
+
+
+}
+
+h2
+{
+	text-align: center;
+	font-style: italic;
+	font-family: "optima";
+	color: rgb(240,240,240);
+}
+img{
+	left:100px;
+}
+
+
+	
+
+
+
+#button{
+	background-color: rgb(240,240,240);
+	border:none;
+	padding: 1em;
+	border-radius: 5px;
+	width: 20%;
+	margin-left: 70px;
+
+}
+
+.card{
+	
+	background-color: rgb(240,240,240);
+	border-radius:10px;
+	padding: :1em;
+	box-shadow: 0px 10px 5px #b2bec3;
+	text-align: :center;
+	font-family:poppins;
+	width:280px;
+	height: 550px;
+}
+
+.title{
+	font-size: 18px;
+	font-weight: bold;
+	font-family: "Candara";
+	text-align: center;
+
+}
+
+
+.text{
+	text-align: left;
+	margin-left :2em;
+	margin-bottom:0.5em;
+	font-size: 14px;
+
+
+}
+
+#btn
+{
+	background-color: #f9ca24;
+	border:none;
+	padding: 1em;
+	border-radius: 5px;
+	font-weight: bold;
+	width: 100%;
+}
+
+#btn:hover{
+	box-shadow: 0px 5px 5px #b2bec3;
+	color: #eb4d4b;
+}
+
+.container{
+	margin-top:250px;
+	margin-left: 100px;
+	margin-top:50px;
+	display:grid;
+	grid-template-columns:1fr 1fr 1fr 1fr;
+}
+
+.slider{
+	margin-top:100px;
+	position: relative;
+	overflow: hidden;
+	font-family: "Times New Roman";
+	
+
+}
+.images {
+
+	border-radius:5px;
+  display: flex;
+  
+}
+
+ .images img{
+ 	
+ 	transition: all 0.15 s ease;
+
+ }
+
+input{
+	margin-top: 170px;
+}
+
+
+
+.dots {
+	display: :flex;
+	margin: 15px;
+
+}
+
+.dots label{
+	height:20px;
+	width:20px;
+	border-radius: 50%
+	border:solid black 5px;
+	cursor:pointer;
+	transition: all 0.15s ease;
+
+}
+
+.dots label :hover {
+	background:pink;}
+	#img1:checked ~ .m1{
+		margin-left:0;
+	}
+	#img2:checked ~ .m2{
+		margin-left:-100%;
+	}
+	#img3:checked ~ .m3{
+		margin-left:-200%;
+	}
+
+#button:hover{
+	background-color: red;
+}	
+
+
+.main{
+  
+  
+  background-image: url("../images/cover.png");
+  box-shadow: 0px 10px 5px #b2bec3;
+  height:200px;
+  width:1500px;
+  animation: slide 6s infinite;
+}
+
+@keyframes slide{
+  25%{background-image: url("../images/cover1.png")}
+
+   50%{background-image: url("../images/cover5.png")}
+
+    75%{background-image: url("../images/cover2.png")}
+
+     100%{background-image: url("../images/cover6.png")}
+
+}
