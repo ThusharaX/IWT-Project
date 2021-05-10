@@ -30,22 +30,22 @@
         <a href = "https://www.facebook.com/" > <img src = "assets/img/fb.png"  class = "fblogo" > </a>
         <a href = "https://myaccount.google.com/"> <img src = "assets/img/google.png" class = "googlelogo"> </a>
         <a href="https://www.icloud.com/"><img src="assets/img/apple.png" class = "apple"></a>
-        <h1 class = "or">Or log with your emails</h1>
+        <h4 class = "or">Or log with your emails</h4>
     
     
         <form class = "box" action = "./src/login.src.php" method="POST">
-            <label for="cars">Who are you?</label><br>
-            <select class = "login" name="users" id="users">
+            <h3 class="who_are_you">Who are you?</h3><br>
+            <select class = "login" name="user_type" id="users">
                 <option value="customer">Customer</option>
                 <option value="vendor">Vendor</option>
                 <option value="admin">Admin</option>
             </select><br>
-            <input type = "email" name = "email" placeholder="YOUR EMAIL" class = "login">
+            <input class = "login" required placeholder="Username/Email..." type="text" name="uid"><br>
+            <input class = "login" required placeholder="Password..." type="password" name="pwd"><br>
             <br>
             <br>
-            <input type = "password" name = "" placeholder = "YOUR PASSWORD" class = "login">
-            
-            <button class = "log">LOGIN</button>
+            <button class = "log" type="submit" name="submit">Login</button>
+
             <b class = "forgetpassword">Forgot password?</b>
         </form>
     </div>

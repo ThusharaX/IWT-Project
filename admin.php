@@ -1,6 +1,7 @@
 <?php
     // Dynamic Header
     $title = 'Admin Panel'; include("header.php");
+    include("./src/adminConfig.php");
 ?>
 
 <link rel="stylesheet" href="./assets/css/admin.css">

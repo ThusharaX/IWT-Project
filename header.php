@@ -41,8 +41,16 @@
       <div class="nav__btnAndProfile">
         <div class="nav__btn">
           <?php
-            if (isset($_SESSION["useruid"])) {
-              echo '<a href="./profile.php"><button class="nav__register">Profile</button></a>';
+            if (isset($_SESSION["id"])) {
+              if ($_SESSION["user_type"] === 'admin') {
+                echo '<a href="./admin.php"><button class="nav__register">Admin Dashboard</button></a>';
+              }
+              else if (($_SESSION["user_type"] === 'customer')) {
+                echo '<a href="./customerDashboard.php"><button class="nav__register">Customer Dashboard</button></a>';
+              }
+              else if (($_SESSION["user_type"] === 'vendor')) {
+                echo '<a href="./vendorDashboard.php"><button class="nav__register">Vendor Dashboard</button></a>';
+              }
               echo '<a href="./src/logout.inc.php"><button class="nav__login">Logout</button></a>';
             }
             else {

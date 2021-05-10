@@ -1,30 +1,23 @@
 <?php
 
+// This function checks if username already in the database
 function uidExists($conn, $username, $email) {
-    $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";
-    $stmt = mysqli_stmt_init($conn);
-    if (mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../customerSignup.php?error=stmtfaild");
-        exit();
-    }
+    $sql = mysqli_query($conn, "SELECT * FROM users 
+                        WHERE usersUid ='" . $username . "' 
+                        OR usersEmail ='" . $email . "';
+                        ");
 
-    mysqli_stmt_bind_param($stmt, "ss", $username, $email);
-    mysqli_stmt_execute($stmt);
+    $row  = mysqli_fetch_array($sql);
 
-    $resultData = mysqli_stmt_get_result($stmt);
-
-    if ($row = mysqli_fetch_assoc($resultData)) {
-        return $row;
+    if (is_array($row)) {
+        return true;
     }
     else {
-        $result = false;
-        return $result;
+        return false;
     }
-
-    mysqli_stmt_close($stmt);
 }
 
-
+// This function creates new user in Database
 function createUser($conn, $name, $email, $username, $pwd, $user_type) {
     
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
@@ -41,80 +34,55 @@ function createUser($conn, $name, $email, $username, $pwd, $user_type) {
     mysql_close($conn);
 }
 
+// This function log in user in to website
 function loginUser($conn, $username, $pwd, $user_type) {
     $uidExists = uidExists($conn, $username, $username);
 
     if ($uidExists === false) {
-        header("location: ../customerSignup.php?error=wronglogin");
+        header("location: ../customerSignup.php?error=wrongusername");
         exit();
     }
 
-    $pwdHashed = $uidExists["usersPwd"];
+    $sql = mysqli_query($conn, "SELECT *
+                                    FROM users
+                                    WHERE usersUid='" . $username . "' 
+                                    OR usersEmail ='" . $username . "'
+                                     ");
+       
+    $row  = mysqli_fetch_array($sql);
+
+    if ($user_type !== $row['usersType']) {
+        header("location: ../login.php?error=invalidusertype");
+        exit();
+    }
+
+    $pwdHashed = $row['usersPwd'];
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if ($checkPwd === false) {
         header("location: ../login.php?error=wrongpassword");
         exit();
     }
+
     else if ($checkPwd === true) {
         session_start();
-        $_SESSION["userid"] = $uidExists["usersId"];
-        $_SESSION["useruid"] = $uidExists["usersUid"];
+        $_SESSION["id"] = $row['usersID'];
+        $_SESSION["name"] = $row['usersName'];
+        $_SESSION["email"] = $row['usersEmail'];
+        $_SESSION["user_type"] = $row['usersType'];
 
         if ($user_type === "admin") {
             header("location: ../admin.php");
             exit();
         }
-        header("location: ../index.php");
+        else if ($user_type === "vendor") {
+            header("location: ../vendorDashboard.php");
+            exit();
+        }
+
+        header("Location: ../index.php");
         exit();
     }
 }
 
 ?>
-
-
-
-
-<!-- Extra -->
-
-<!-- 
-// function uidExists($conn, $username, $email) {
-//     $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";
-//     $stmt = mysqli_stmt_init($conn);
-//     if (mysqli_stmt_prepare($stmt, $sql)) {
-//         header("location: ../customerSignup.php?error=stmtfaild");
-//         exit();
-//     }
-
-//     mysqli_stmt_bind_param($stmt, "ss", $username, $email);
-//     mysqli_stmt_execute($stmt);
-
-//     $resultData = mysqli_stmt_get_resultd($stmt);
-
-//     if (mysqli_fetch_assoc($resultData)) {
-//         # code...
-//     }
-//     else {
-//         $result = false;
-//         return $result;
-//     }
-
-//     mysqli_stmt_close($stmt);
-// }
-
-// function createUser($conn, $name, $email, $username, $pwd, $user_type) {
-//     $sql = "INSERT INTO users (usersName, usersEmail, usersUid, usersPwd, usersType) VALUES (?, ?, ?, ?, ?);";
-//     $stmt = mysqli_stmt_init($conn);
-//     if (mysqli_stmt_prepare($stmt, $sql)) {
-//         header("location: ../customerSignup.php?error=stmtfaild");
-//         exit();
-//     }
-
-//     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-
-//     mysqli_stmt_bind_param($stmt, "sssss", $name, $email, $username, $hashedPwd, $user_type);
-//     mysqli_stmt_execute($stmt);
-//     mysqli_stmt_close($stmt);
-//     header("location: ../login.php?error=none");
-//     exit();
-// } -->

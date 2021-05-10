@@ -10,14 +10,16 @@
 <section>
     <h1 class="main-title">Hello Vendor</h1>
     <br>
-    <form action="" method="post">
-        <input placeholder="First Name" type="text" name="firstName" id=""><br>
-        <input placeholder="Last Name" type="text" name="lastName" id=""><br>
-        <input placeholder="Email" type="email" name="email" id=""><br>
-        <input placeholder="Password" type="password" name="password" id=""><br>
-        <input placeholder="Retype-Password" type="password" name="rpassword" id=""><br>
-        <button type="submit">Sign Up</button>
+    <form action="./src/signup.src.php" method="post">
+        <input required placeholder="Full Name..." type="text" name="name"><br>
+        <input required placeholder="Email..." type="text" name="email"><br>
+        <input required placeholder="Username..." type="text" name="uid"><br>
+        <input required placeholder="Password..." type="password" name="pwd"><br>
+        <input required placeholder="Re-Password..." type="password" name="repwd"><br>
+        <input hidden value="vendor" type="text" name="user_type"><br>
+        <button type="submit" name="submit">Sign Up</button>
     </form>
+
     <br>
     <h3>Are you a Customer?</h3>
     <a href="./customerSignup.php">Customer Signup</a>
