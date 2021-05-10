@@ -85,4 +85,49 @@ function loginUser($conn, $username, $pwd, $user_type) {
     }
 }
 
+
+// by Thushara
+// Get User Deatails
+function getUserDetails($conn, $username) {
+    $uidExists = uidExists($conn, $username, $username);
+
+    if ($uidExists === false) {
+        header("location: ../admin.php?error=wrongusername");
+        exit();
+    }
+
+    $sql = mysqli_query($conn, "SELECT *
+                                    FROM users
+                                    WHERE usersUid='" . $username . "' 
+                                    OR usersEmail ='" . $username . "'
+                                     ");
+       
+    $row  = mysqli_fetch_array($sql);
+
+    return $row;
+}
+
+
+// Update User Deatails
+function updateUserDetails($conn, $name, $email, $username, $user_type) {
+    $uidExists = uidExists($conn, $username, $username);
+
+    if ($uidExists === false) {
+        header("location: ../admin.php?error=wrongusername");
+        exit();
+    }
+
+    $sql = "INSERT INTO users (usersID, usersName, usersEmail, usersUid, usersPwd, usersType) VALUES ('', '$name', '$email', '$username', '', '$user_type');";
+       
+    if (mysqli_query($conn, $sql)) {
+        header("location: ../admin.php");
+    }
+    else {
+        echo "<script>alert ('Something went wrong :-(')</script>";
+    }
+    mysql_close($conn);
+
+    return $row;
+}
+
 ?>

@@ -1,6 +1,10 @@
 <?php
     // Dynamic Header
     $title = 'Customer Signup'; include("header.php");
+    if ($_SESSION["id"]) {
+        header("location: ./index.php");
+        exit();
+    }
 ?>
 
 <link rel="stylesheet" href="./assets/css/customerSignup.css">

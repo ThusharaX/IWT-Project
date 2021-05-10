@@ -1,7 +1,7 @@
 <?php
     // Dynamic Header
     $title = 'Admin Panel'; include("header.php");
-    include("./src/adminConfig.php");
+    include("./src/admin/adminConfig.php");
 ?>
 
 <link rel="stylesheet" href="./assets/css/admin.css">
@@ -37,14 +37,16 @@
                         <td>".$row['usersEmail']."</td>
                         <td>".$row['usersUid']."</td>
                         <td>".$row['usersType']."</td>
-                        <td><a href='updateUser.src.php?
-                            id=$row[usersID]&
-                            name=$row[usersName]
-                            email=$row[usersEmail]
-                            username=$row[usersUid]
-                            user_type=$row[usersType]'><input type='submit' value='Update'></a></td>
-                        <td><a href='deleteUser.src.php?
-                            id=$row[usersID]'><input type='submit' value='Delete'></a></td>
+                        <td>
+                            <a href='./updateUserDetails.php?
+                                username=$row[usersUid]'>
+                            <input type='submit' value='Update'></a>
+                        </td>
+                        <td>
+                            <a href='./src/admin/deleteUser.src.php?
+                                id=$row[usersID]'>
+                            <input type='submit' value='Delete'></a>
+                        </td>
                         
                     </tr>
                     ";

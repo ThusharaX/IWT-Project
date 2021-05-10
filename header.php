@@ -1,6 +1,6 @@
 <?php
   // DB config
-  include_once 'src/dbh.php';
+  include_once './src/dbh.php';
   session_start();
 ?>
 
@@ -51,7 +51,7 @@
               else if (($_SESSION["user_type"] === 'vendor')) {
                 echo '<a href="./vendorDashboard.php"><button class="nav__register">Vendor Dashboard</button></a>';
               }
-              echo '<a href="./src/logout.inc.php"><button class="nav__login">Logout</button></a>';
+              echo '<a href="./src/logout.src.php"><button class="nav__login">Logout</button></a>';
             }
             else {
               echo '<a href="./customerSignup.php"><button class="nav__register">Join Now</button></a>';

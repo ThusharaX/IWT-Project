@@ -1,6 +1,10 @@
 <?php
     // Dynamic Header
     $title = 'Login'; include("header.php");
+    if (isset($_SESSION["id"])) {
+        header("location: ./index.php");
+        exit();
+    }
 ?>
 
 <link rel="stylesheet" href="./assets/css/login.css">
@@ -8,18 +12,6 @@
 <!-- Niki -->
 <!-- Type your code here -->
 <section class="login_section">
-    <!-- <h1 class="main-title">Login Page</h1>
-    <form class="login_form" action="./src/login.src.php" method="post">
-        <label for="cars">Who are you?</label><br>
-        <select name="users" id="users">
-            <option value="customer">Customer</option>
-            <option value="vendor">Vendor</option>
-            <option value="admin">Admin</option>
-        </select><br>
-        <input required placeholder="Username/Email..." type="text" name="uid"><br>
-        <input required placeholder="Password..." type="password" name="password"><br>
-        <button type="submit" name="submit">Login</button>
-    </form> -->
 
     <body background= "assets/img/loginBackground.jpg" class = "background"> 
 
@@ -58,3 +50,21 @@
 <script src="./assets/js/login.js"></script>
 
 <?php include("footer.php"); ?>
+
+
+
+
+
+
+<!-- <h1 class="main-title">Login Page</h1>
+    <form class="login_form" action="./src/login.src.php" method="post">
+        <label for="cars">Who are you?</label><br>
+        <select name="users" id="users">
+            <option value="customer">Customer</option>
+            <option value="vendor">Vendor</option>
+            <option value="admin">Admin</option>
+        </select><br>
+        <input required placeholder="Username/Email..." type="text" name="uid"><br>
+        <input required placeholder="Password..." type="password" name="password"><br>
+        <button type="submit" name="submit">Login</button>
+    </form> -->
