@@ -1,0 +1,158 @@
+.login_form {
+    margin: 10px;
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* body {
+    background-image: url(./assets/img/loginBackground.jpg);
+} */
+
+/* .login_section {
+    background-image: url(./assets/img/loginBackground.jpg);
+} */
+
+.background{
+
+    background-size: cover;
+    height: 100vh;
+    background-position:center;
+}
+
+.background ::after{
+
+    position: absolute;
+    content: '';
+    background: rgba(0,0,0,0.2);
+    opacity: 0.8%;
+}
+
+
+
+
+/*.main-title {
+    color: rgb(255, 0, 0);
+}*/
+
+
+.loginbox{
+
+    width : 600px;
+    height : 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color : #fff; 
+    top : 50%;
+    left : 50%;
+    /* position :fixed; */
+    /* transform : translate(-50%, -50%); */
+    box-sizing: border-box;
+    z-index: 999;
+    margin: auto;
+    margin-bottom: 20px;
+ }
+
+h1{
+
+    text-align: center;
+    font-size: x-large;
+    margin-top: 20px;
+    letter-spacing: 1px;
+
+
+ }
+
+ .reg{
+    text-align: center;
+    font-size:medium;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-top: 20px;
+}
+
+.reg1{
+
+    padding-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size:medium;
+}
+
+.fblogo{
+
+    width : 50%;
+    height : 50px;
+    margin-left : 150px;
+    margin-top: 8px;
+}
+
+.googlelogo{
+    width : 50%;
+    height : 50px;
+    margin-left : 150px;
+    margin-top: 8px;
+}
+
+.apple{
+    width : 50%;
+    height : 50px ;
+    margin-left : 150px;
+    margin-top: 8px;
+
+}
+
+.login{
+
+    display :block;
+    height : 40px;
+    width : 70%;
+    margin-left: 100px;
+    font-size: medium;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    color: black;
+ 
+
+
+}
+
+.or{
+
+    text-align: center; 
+    color:white; 
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size:x-large;
+
+
+}
+
+.log{
+
+
+    height : 40px;
+    width : 70%;
+    margin-top: 2%;
+    margin-left: 100px;
+    background : rgb(0, 234, 255);
+    font-size: 18px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-bottom: 12px;
+   
+  
+
+}
+
+.forgetpassword{
+    
+    
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 380px;
+
+}

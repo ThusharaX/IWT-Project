@@ -1,0 +1,41 @@
+.custDash {
+    background-color: thistle;
+}
+
+    .cust__tabs {
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 500px;
+        margin: 5px;
+        padding: 5px;
+    }
+    .cust__tabs button {
+        width: auto;
+    }
+
+    .cust__profileinfo {
+        background-color: rgb(255, 115, 72);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 5px;
+    }
+
+        .cust__profilePic {
+            height: 100px;
+            width: 100px;
+        }
+        .cust__info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    
+    .cust__vendorteam {
+        background-color: rgb(255, 115, 72);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }

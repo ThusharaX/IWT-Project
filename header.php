@@ -1,6 +1,7 @@
 <?php
   // DB config
   include_once 'src/dbh.php';
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="shortcut icon" type="ico" href="./assets/img/favicon.ico"/>
   </head>
 
   <body>
@@ -38,8 +40,17 @@
     <div class="nav__buttons">
       <div class="nav__btnAndProfile">
         <div class="nav__btn">
-          <a href="./customerSignup.php"><button class="nav__register">Join Now</button></a>
-          <a href="./login.php"><button class="nav__login">Login</button></a>
+          <?php
+            if (isset($_SESSION["useruid"])) {
+              echo '<a href="./profile.php"><button class="nav__register">Profile</button></a>';
+              echo '<a href="./src/logout.inc.php"><button class="nav__login">Logout</button></a>';
+            }
+            else {
+              echo '<a href="./customerSignup.php"><button class="nav__register">Join Now</button></a>';
+              echo '<a href="./login.php"><button class="nav__login">Login</button></a>';
+            }
+          ?>
+          
         </div>
         <img class="nav__profile" src="./assets/img/profilePic.png" alt="">
       </div>
