@@ -1,6 +1,8 @@
 <?php
     // Dynamic Header
     $title = 'Customer Dashboard'; include("header.php");
+    // Check if user is a customer
+    include("./src/customer/customerConfig.php");
 ?>
 
 <link rel="stylesheet" href="./assets/css/customerDashboard.css">
@@ -22,8 +24,9 @@
         <div class="cust__profileinfo">
                 <img class="cust__profilePic" src="./assets/img/profilePic.png" alt="">
                 <div class="cust__info">
-                    <h1>Louie & Luna</h1>
-                    <h1>August 4 2021</h1>
+                    <h1>Wedding info</h1>
+                    <h3>Louie & Luna</h3>
+                    <h3>August 4 2021</h3>
                     <button>Edit</button>
                 </div>
         </div>

@@ -16,12 +16,13 @@
         require_once './src/dbh.php';
         require_once './src/functions.src.php';
 
-        $row = getUserDetails($conn, $_GET["username"]);
+        $row = getUserDetails($conn, $_GET["id"]);
 
         // Display Old details of user
-        echo '<form action="./src/updateUser.src.php" method="get">
-                <input value="' . $_GET["username"] .'" required placeholder="Full Name..." type="text" name="name"><br>
-                <input value="' . $row["usersName"] .'" required placeholder="Username..." type="text" name="username"><br>
+        echo '<form class"update_form" action="./src/admin/updateUser.src.php" method="post">
+                <input hidden value="' . $row["usersID"] .'" required type="text" name="uid"><br>
+                <input value="' . $row["usersName"] .'" required placeholder="Full Name..." type="text" name="name"><br>
+                <input value="' . $row["usersUid"] .'" required placeholder="Username..." type="text" name="username"><br>
                 <input value="' . $row["usersEmail"] .'" required placeholder="Email..." type="email" name="email"><br>
                 <select name="user_type" id="users">
                     <option value="customer" '.(($row["usersType"]=='customer')?'selected="selected"':"").'>Customer</option>

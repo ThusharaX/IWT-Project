@@ -14,6 +14,7 @@
 <section class="users">
     <div class="user__table">
         <h3>Users</h3>
+        <button><a href="./addUser.php">Add new user</a></button>
         <table id="customers">
             <tr>
                 <th>ID</th>
@@ -39,11 +40,11 @@
                         <td>".$row['usersUid']."</td>
                         <td>".$row['usersType']."</td>
                         <td>
-                            <a href='./updateUserDetails.php?username=$row[usersUid]'>
+                            <a href='./updateUserDetails.php?id=$row[usersID]'>
                             <input type='submit' value='Update'></a>
                         </td>
                         <td>
-                            <a href='./src/admin/deleteUser.src.php?id=$row[usersID]'>
+                            <a href='./deleteUser.php?id=$row[usersID]'>
                             <input type='submit' value='Delete'></a>
                         </td>
                         
@@ -71,7 +72,8 @@
                 <th>Title</th>
                 <th>Vendor Name</th>
                 <th>Vendor Username</th>
-                <th>Type</th>
+                <th>Category</th>
+                <th>Status</th>
                 <th>Update</th>
                 <th>Delete</th>
             </tr>
@@ -80,7 +82,8 @@
                 <td>Title</td>
                 <td>Vendor Name</td>
                 <td>Vendor Username</td>
-                <td>Type</td>
+                <td>Category</td>
+                <td>Approved</td>
                 <td><a href='updateUser.src.php?
                             id=$row[usersID]&
                             name=$row[usersName]
@@ -95,7 +98,8 @@
                 <td>Title</td>
                 <td>Vendor Name</td>
                 <td>Vendor Username</td>
-                <td>Type</td>
+                <td>Category</td>
+                <td>Approved</td>
                 <td><a href='updateUser.src.php?
                             id=$row[usersID]&
                             name=$row[usersName]
@@ -110,7 +114,8 @@
                 <td>Title</td>
                 <td>Vendor Name</td>
                 <td>Vendor Username</td>
-                <td>Type</td>
+                <td>Category</td>
+                <td>Approved</td>
                 <td><a href='updateUser.src.php?
                             id=$row[usersID]&
                             name=$row[usersName]

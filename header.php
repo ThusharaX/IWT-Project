@@ -1,6 +1,7 @@
 <?php
   // DB config
   include_once './src/dbh.php';
+  // Start Session
   session_start();
 ?>
 

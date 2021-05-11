@@ -1,6 +1,11 @@
 footer {
-    text-align: center;
-    padding: 3px;
-    background-color: DarkSalmon;
-    color: white;
-  }
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+footer a{
+  text-decoration: none;
+  color: rgb(30, 255, 0);
+}

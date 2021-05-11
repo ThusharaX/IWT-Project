@@ -1,5 +1,6 @@
 <?php
 
+// Thushara
 // This function checks if username already in the database
 function uidExists($conn, $username, $email) {
     $sql = mysqli_query($conn, "SELECT * FROM users 
@@ -15,10 +16,20 @@ function uidExists($conn, $username, $email) {
     else {
         return false;
     }
+
+    mysqli_close($conn);
 }
 
+// Niki
 // This function creates new user in Database
 function createUser($conn, $name, $email, $username, $pwd, $user_type) {
+
+    $uidExists = uidExists($conn, $username, $username);
+
+    if ($uidExists === true) {
+        header("location: ../customerSignup.php?error=usernameAlreadyExists");
+        exit();
+    }
     
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
@@ -34,6 +45,7 @@ function createUser($conn, $name, $email, $username, $pwd, $user_type) {
     mysql_close($conn);
 }
 
+// Niki
 // This function log in user in to website
 function loginUser($conn, $username, $pwd, $user_type) {
     $uidExists = uidExists($conn, $username, $username);
@@ -75,6 +87,10 @@ function loginUser($conn, $username, $pwd, $user_type) {
             header("location: ../admin.php");
             exit();
         }
+        else if ($user_type === "customer") {
+            header("location: ../customerDashboard.php");
+            exit();
+        }
         else if ($user_type === "vendor") {
             header("location: ../vendorDashboard.php");
             exit();
@@ -83,51 +99,86 @@ function loginUser($conn, $username, $pwd, $user_type) {
         header("Location: ../index.php");
         exit();
     }
+
+    mysqli_close($conn);
 }
 
 
-// by Thushara
+// Thushara
 // Get User Deatails
-function getUserDetails($conn, $username) {
-    $uidExists = uidExists($conn, $username, $username);
-
-    if ($uidExists === false) {
-        header("location: ../admin.php?error=wrongusername");
-        exit();
-    }
+function getUserDetails($conn, $id) {
 
     $sql = mysqli_query($conn, "SELECT *
                                     FROM users
-                                    WHERE usersUid='" . $username . "' 
-                                    OR usersEmail ='" . $username . "'
+                                    WHERE usersID='" . $id . "' 
                                      ");
        
     $row  = mysqli_fetch_array($sql);
 
+    mysqli_close($conn);
+
     return $row;
 }
 
 
+// Thushara
 // Update User Deatails
-function updateUserDetails($conn, $name, $email, $username, $user_type) {
+function updateUserDetails($conn, $name, $email, $username, $user_type, $uid) {
+
     $uidExists = uidExists($conn, $username, $username);
 
-    if ($uidExists === false) {
-        header("location: ../admin.php?error=wrongusername");
+    if ($uidExists === true) {
+        header("location: ../../updateUserDetails.php?id=$uid&error=usernameAlreadyExists");
         exit();
     }
 
-    $sql = "INSERT INTO users (usersID, usersName, usersEmail, usersUid, usersPwd, usersType) VALUES ('', '$name', '$email', '$username', '', '$user_type');";
-       
+    $sql = mysqli_query($conn, "UPDATE users SET
+        `usersName` = '$name',
+        `usersEmail` = '$email',
+        `usersUid` = '$username',
+        `usersType` = '$user_type'
+        WHERE usersID=$uid");
+
+    mysqli_close($conn);
+}
+
+// Thushara
+// Get User Deatails
+function deleteUser($conn, $uid) {
+
+    $sql = mysqli_query($conn, "DELETE
+                                FROM users
+                                WHERE usersID='" . $uid . "' 
+                                 ");
+
+    mysqli_close($conn);
+}
+
+
+// Thushara
+// This function add new user in to Database
+function addUser($conn, $name, $email, $username, $pwd, $user_type) {
+
+    $uidExists = uidExists($conn, $username, $username);
+
+    if ($uidExists === true) {
+        header("location: ../../addUser.php?error=usernameAlreadyExists");
+        exit();
+    }
+    
+    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO users (usersID, usersName, usersEmail, usersUid, usersPwd, usersType) VALUES ('', '$name', '$email', '$username', '$hashedPwd', '$user_type');";
+    
     if (mysqli_query($conn, $sql)) {
-        header("location: ../admin.php");
+        // echo "<script>alert ('Successfully Sign Up')</script>";
+        header("location: ../../admin.php");
     }
     else {
         echo "<script>alert ('Something went wrong :-(')</script>";
     }
-    mysql_close($conn);
 
-    return $row;
+    mysql_close($conn);
 }
 
 ?>
