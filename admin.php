@@ -1,6 +1,7 @@
 <?php
     // Dynamic Header
     $title = 'Admin Panel'; include("header.php");
+    // Check if user is an admin
     include("./src/admin/adminConfig.php");
 ?>
 
@@ -38,13 +39,11 @@
                         <td>".$row['usersUid']."</td>
                         <td>".$row['usersType']."</td>
                         <td>
-                            <a href='./updateUserDetails.php?
-                                username=$row[usersUid]'>
+                            <a href='./updateUserDetails.php?username=$row[usersUid]'>
                             <input type='submit' value='Update'></a>
                         </td>
                         <td>
-                            <a href='./src/admin/deleteUser.src.php?
-                                id=$row[usersID]'>
+                            <a href='./src/admin/deleteUser.src.php?id=$row[usersID]'>
                             <input type='submit' value='Delete'></a>
                         </td>
                         

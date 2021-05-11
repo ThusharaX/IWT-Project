@@ -1,10 +1,8 @@
 <?php
     // Dynamic Header
     $title = 'Vendor Signup'; include("header.php");
-    if ($_SESSION["id"]) {
-        header("location: ./index.php");
-        exit();
-    }
+    // is Logged in?
+    include("./src/isloginConfig.src.php")
 ?>
 
 <link rel="stylesheet" href="./assets/css/vendorSignup.css">
