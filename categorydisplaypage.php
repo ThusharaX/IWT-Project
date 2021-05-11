@@ -18,18 +18,18 @@
 	
   <tbody>
     <tr>
-      <td><img src="Cyber Monday Animated Social Media Square Post Template _1_.gif" width="200" height="200" ></td>
-      <td><img src="Cyber Monday Animated Social Media Square Post Template _2_.gif" width="200" height="200" ></td>
-      <td><img src="Cyber Monday Animated Social Media Square Post Template _3_.gif" width="200" height="200" ></td>
-      <td><img src="Cyber Monday Animated Social Media Square Post Template _4_.gif" width="200" height="200" ></td>
-      <td><img src="Cyber Monday Animated Social Media Square Post Template _5_.gif" width="200" height="200" ></td>
+      <td><img src="1.gif" width="200" height="200" ></td>
+      <td><img src="2.gif" width="200" height="200" ></td>
+      <td><img src="3.gif" width="200" height="200" ></td>
+      <td><img src="4.gif" width="200" height="200" ></td>
+      <td><img src="5.gif" width="200" height="200" ></td>
     </tr>
     <tr>
-      <td><img src="Cyber Monday Animated Social Media Square Post Template _6_.gif" width="200" height="200" ></td>
-      <td><img src="Cyber Monday Animated Social Media Square Post Template _7_.gif" width="200" height="200" ></td>
-      <td><img src="Cyber Monday Animated Social Media Square Post Template _8_.gif" width="200" height="200" ></td>
-      <td><img src="Cyber Monday Animated Social Media Square Post Template _9_.gif" width="200" height="200" ></td>
-      <td><img src="Cyber Monday Animated Social Media Square Post Template.gif" width="200" height="200" ></td>
+      <td><img src="6.gif" width="200" height="200" ></td>
+      <td><img src="7.gif" width="200" height="200" ></td>
+      <td><img src="8.gif" width="200" height="200" ></td>
+      <td><img src="9.gif" width="200" height="200" ></td>
+      <td><img src="10.gif" width="200" height="200" ></td>
     </tr>
   </tbody>
 </table>
