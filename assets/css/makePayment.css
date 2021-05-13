@@ -1,0 +1,28 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;	
+}
+body{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	
+	
+}
+.only{
+	background:blue;
+	height:50vh;
+	width:50%;
+    display:flex;
+	justify-content:center;
+	align-items:center;
+	
+	
+}
+div{
+	margin-top:10px;
+}
+input{
+	margin-top:10px;
+}

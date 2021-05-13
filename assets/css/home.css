@@ -1,9 +1,14 @@
+*{
+	margin:0;
+	
+};
 
 
-/* .main-title {
+
+.main-title {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-} */
-
-.hero {
-    background-color: tomato;
-}
+};
+.image-slider{
+	width:1%;
+	display:flex;
+};
