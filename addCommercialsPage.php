@@ -1,23 +1,19 @@
 <?php
+    // Dynamic Header
+    $title = 'Add Commercial'; include("header.php");
+    // Check if user is an vendor (commented for now)
+    // include("./src/vendor/vendorConfig.php");
 
- // $password=GET["password"];
-  
-  //this works
-  ini_set('mysql.connection_timeout',300);
-  ini_set('default_socket_timeout',300);  
+
+    // $password=GET["password"];
+    //this works
+    ini_set('mysql.connection_timeout',300);
+    ini_set('default_socket_timeout',300);  
 ?>
 
 
-<html lang="en">
+<link rel="stylesheet" href="./assets/css/addCommercials.css">
 
-<head>
-    <title>Ranhuya - addCommercials</title>
-    <link rel="stylesheet" href="./assets/css/addCommercials.css">
- 
-</head>
-
-<body>
-    <!-- <?php include("header.html"); ?> -->
 
     <!-- Chamath -->
     <!-- Type your code here -->
@@ -93,9 +89,13 @@
 
         </form>
     </div>
-<?php  
+<?php 
+// if you want remove this line and rename variable to $conn
+$con = $conn;
+
  if(isset($_POST['save'])){
-  require 'configure.php';
+    //  
+    // require 'configure.php';
   
   $mobile_number = $_POST['mobile_number'];
   $email = $_POST['email']; 
@@ -126,9 +126,5 @@
     
    
 <script type="text/javascript" src="./assets/js/addCommercial.js"></script>
- 
 
-   
-</body>
-
-</html>
+<?php include("footer.php"); ?>

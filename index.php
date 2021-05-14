@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    // Dynamic Header
+    $title = 'Home'; include("header.php");
+?>
 
-<head>
-    <title>Ranhuya - Home</title>
-    <link rel="stylesheet" href="./assets/css/index.css">
-</head>
-
-<body>
-
-<div class="outter">
-    <div class="banner">
-
-       
+<link rel="stylesheet" href="./assets/css/index.css">
 
 
+    <div class="outter">
+        <div class="banner">
 
-    </div>
-</div>	
+
+        </div>
+    </div>	
+    
     <br>
     <hr>
     <br>
@@ -50,8 +46,6 @@
 
 
 
+<script src="./assets/js/index.js"></script>
 
-    <!-- <script src="./assets/js/home.js "></script> -->
-</body>
-
-</html>
+<?php include("footer.php"); ?>

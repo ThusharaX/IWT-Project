@@ -1,18 +1,16 @@
  
 <?php
-  //ses
+	// Dynamic Header
+	$title = 'Make Payment'; include("header.php");
+	// Check if user is an vendor (commented for now)
+	// include("./src/vendor/vendorConfig.php");
+
+	//ses
 
 
 ?>
 
-<html>
-   <head>
-      <title>
-	   
-	  </title>
-	  <link  rel="stylesheet" href="./assets/css/makePayment.css">
-   </head>
-    <body>
+<link  rel="stylesheet" href="./assets/css/makePayment.css">
 	
 	
 	<div class="only">
@@ -36,6 +34,6 @@
 	   
 
     </div> 
-     </body>	
 
-</html>
+	
+<?php include("footer.php"); ?>

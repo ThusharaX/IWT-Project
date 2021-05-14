@@ -1,14 +1,10 @@
 <?php
-  
-
-  
-
-
-  require 'configure.php';
+  // Dynamic Header
+  $title = 'Add Inventory'; include("header.php");
+  // Check if user is an vendor (commented for now)
+  // include("./src/vendor/vendorConfig.php");
 ?>
-<!DOCTYPE html>
-<html>
-<head>
+
 <style>
 *{
 	padding:0px;
@@ -40,10 +36,9 @@
 	 	background:blue;
 	}
 	
-
 </style>
-</head>
-<body>
+
+
 <h1>Advertisement Inventory</h1>
  <ul>
    <li><a href="accountDetails.php">Account Details</a></li>
@@ -84,6 +79,4 @@
 
 ?>
 
-
-</body>
-</html>
+<?php include("footer.php"); ?>

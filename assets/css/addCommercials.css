@@ -6,8 +6,9 @@
         font-family: 'Poppins', sans-serif;
     }
     
+    /* I fixed this CSS */
     body {
-        display: flex;
+        /* display: flex; */
         height: 100vh;
         justify-content: center;
         align-items: center;
@@ -32,10 +33,15 @@
 	
     }
     
+    /* I fixed this CSS */
     .container {
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
         max-width: 700px;
         width: 100vw;
-	
+        
 		height:85vh;
         background: linear-gradient(to top right, f, f,f,0.4);
         padding: 25px 30px;
