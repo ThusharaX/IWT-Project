@@ -7,87 +7,11 @@
   ini_set('default_socket_timeout',300);  
   
 ?>
-<?php
-  // DB config
-  //include_once './src/dbh.php';
-  // Start Session
- // session_start();
-?>
 
 
-<html lang="en">
-
-<head>
-    <!--header links-->
-    <title><?php if (isset($title)) {echo "Ranhuya - "; echo $title;} else {echo "Ranhuya";} ?></title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/header.css">
-    <link rel="shortcut icon" type="ico" href="./assets/img/favicon.ico"/>
-	
+  <?php include 'header.php'; ?>
     <link rel="stylesheet" href="./assets/css/addCommercials.css">
-    
-		  
-</head>
-
-<body>
-   <!--Main nav bar was  done by thushara-->  
-	
-	 <div class="nav">
-
-      <!-- Logo -->
-      <img class="nav__logo" src="./assets/img/logo.png" alt="">
-
-    <!-- Middle area of Navbar -->
-      <div class="nav__middle">
-        <div class="nav__title">
-          RANHUYA WEDDING PLANNERS
-        </div>
-        <ul class="nav__list">
-            <li class="nav__item"><a href="./index.php">Home</a></li>
-            <li class="nav__item"><a href="./about.php">About Us</a></li>
-            <li class="nav__item"><a href="./categorydisplaypage.php">Categories</a></li>
-            <li class="nav__item"><a href="./contactUs.php">Contact Us</a></li>
-            <li class="nav__item"><a href="./gallery.php">Gallery</a></li>
-            
-            
-        </ul>
-      </div>
-
-    <!-- Login Signup Profile -->
-    <div class="nav__buttons">
-      <div class="nav__btnAndProfile">
-        <div class="nav__btn">
-          <?php
-            if (isset($_SESSION["id"])) {
-              if ($_SESSION["role"] === 'admin') {
-                echo '<a href="./admin.php"><button class="nav__register">Admin Dashboard</button></a>';
-              }
-              else if (($_SESSION["role"] === 'customer')) {
-                echo '<a href="./customerDashboard.php"><button class="nav__register">Customer Dashboard</button></a>';
-              }
-              else if (($_SESSION["role"] === 'vendor')) {
-                echo '<a href="./vendorDashboard.php"><button class="nav__register">Vendor Dashboard</button></a>';
-              }
-              echo '<a href="./src/logout.src.php"><button class="nav__login">Logout</button></a>';
-            }
-            else {
-              echo '<a href="./signup.php"><button class="nav__register">Join Now</button></a>';
-              echo '<a href="./login.php"><button class="nav__login">Login</button></a>';
-            }
-          ?>
-          
-        </div>
-        <img class="nav__profile" src="./assets/img/profilePic.png" alt="">
-      </div>
-    
-      <form class="nav__search" action="search.src.php" method="get">
-        <input type="text" placeholder="Search.." name="search" id="">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
-      
-    </div>
-  </div>
+  <!--This part is done by IT20654962-->
   <nav id="vnavBar">
  <ul class="vendorNavbar">
    <li><a href="accountDetails.php">Account details</a></li>
@@ -99,6 +23,7 @@
   
  </nav>
  <hr>
+ <div class="whole">
     <div class="container">
 
         <div class="title">Add new advertisement</div>
@@ -115,7 +40,8 @@
                     <small id="insertSuccess" class="bk"></small>
                     <span class="bk">Advertisement Title</span>
                     <input type="text" class="bk" placeholder="" id="title" name="title" required="" />
-					<small id="title_chk" class="bk"></small>
+					<small id="title_chk_error" class="bk">Error message</small>
+					<small id="title_chk_success" class="bk">Success message</small>
                 </div>
                 <div class="iinputs">
 
@@ -144,7 +70,8 @@
 
                     <span class="bk">Ads description</span>
                     <textarea name="description" id="description" cols="42.5" rows="8" required=""></textarea>
-                    <small id="description_chk" class="bk"></small>               
+                    <small id="description_chk_error" class="bk">Error message</small>
+                    <small id="description_chk_success" class="bk">Success message</small>					
 			   </div>
 			   
 			  </div> 
@@ -162,23 +89,10 @@
 
                         <span class="bk">Email</span>
                         <input type="email" class="bk" id="email" name="email" placeholder="abc@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9._]+\.[a-z]{2,3}" required="" />
-                     <small id="email_chk" class="bk"></small>    
+                     <small id="email_chk_error" class="bk">Error message</small> 
+                     <small id="email_chk_success" class="bk">Success message</small>  					 
 					</div>
-					            
-	                  <h3>Make your payment</h3>
-      
-	       <div  class="amount">
-		   <input type="text" placeholder="Enter amount"/>
-	       </div>      
-		   <div class="method">
-		   <select name="payment" id="payment">	 
-	       <option value="Pay_here">Payhere</option>
-	       <option value="Visa">Visa</option>
-		   <option value="PayPal">PayPal</option>
-		   </select>
-		   </div>
-
-	  
+	
                 
 			     </div>
 			
@@ -188,7 +102,7 @@
                         <input type="submit" name="save" id="saved" value="Save">
                     </div>
                     <div class="button">
-                        <input type="button" id="cancel" value="Cancel" onclick="window.location.href='adsInventory.php'">
+                        <input type="reset" id="cancel" value="Reset form">
                     </div>
                 </div>
    	
@@ -196,6 +110,31 @@
 
         </form>
     </div>
+	<div class="category_display">
+	        		<div class="pay">		            
+	                  <h3>Make your payment</h3>
+      
+	       <div  class="amount">
+		   <input type="text" placeholder="Enter amount"/>
+	       </div>    
+           <div id="paydes">
+             <textarea name="paydescription" id="paydescription" cols="42.5" rows="8" required=""></textarea>
+		   </div>	
+	    <small id="description_chk_error" class="bk">Error message</small>
+             <small id="description_chk_success" class="bk">Success message</small>			   
+		   <div class="method">
+		   <select name="payment" id="payment">	 
+	       <option value="Pay_here">Payhere</option>
+	       <option value="Visa">Visa</option>
+		   <option value="PayPal">PayPal</option>
+		   </select>
+		   </div>
+	
+          </div>
+	  
+	 
+	</div>
+	</div>
 <?php  
  if(isset($_POST['save'])){
   require 'configure.php';
@@ -229,7 +168,8 @@
 
 ?>
     
-   
+  
+</div>  
 <script type="text/javascript" src="./assets/js/addCommercial.js"></script>
  
 

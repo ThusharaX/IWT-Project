@@ -1,4 +1,4 @@
-    
+   
     * {
         box-sizing: border-box;
         padding: 0;
@@ -11,6 +11,22 @@
         background-color:#FBFBFF;	
     
     }
+	.whole{
+		display:flex;
+		background-color:#F1F2F6;
+		margin:10px;
+		border-radius:10px;
+	}
+	.category_display{
+		width:70vw;
+		height:70vh;
+		
+	}
+	
+.ads{
+	display:flex;
+	flex-wrap:wrap;
+}
     
      #vnavBar{
 		 display:flex;
@@ -26,10 +42,7 @@
 	width:100%;
    
 }
-.ads{
-	display:flex;
-	flex-wrap:wrap;
-}
+
 .display{
 	margin:10px;
 }
@@ -50,13 +63,13 @@ li a {
 	
 }
 
-li a:hover {
+ li a:hover {
     background-color: #948392;
 	color:white;
 }
-hr{
+ hr{
 	margin:0px 10px;
-} 
+   } 
     textarea {
         outline: none;
         border-radius: 5px;
@@ -68,7 +81,7 @@ hr{
     
     .ads-details {
     display:flex;
-	background-color:#ade8f4;
+	background-color:#F6F4F3;
   
 	
     }
@@ -78,10 +91,10 @@ hr{
         width: 80vw;
 	
 		height:70vh;
-        background: linear-gradient(to top right, f, f,f,0.4);
+        background: #F6F4F3;
         padding: 25px 30px;
         border-radius: 10px;
-		background:blue;
+		
     }
     
     .container .title {
@@ -90,7 +103,7 @@ hr{
         text-align: center;
 		margin-top:-10px;
       
-        background: #C4C4C4;
+        background:#DCD4D0;
     }
     
    
@@ -124,14 +137,14 @@ hr{
 /*buttons*/
     .sdbutton #saved {
         margin-right: 10px;
-        background-color: #4CAF50;
+        background-color: #DCD4D0;
         padding: 5px 15px;
         border-radius: 5px;
         cursor: pointer;
     }
     
      .sdbutton #cancel {
-        background-color: rgb(219, 17, 17);
+        background-color:#DCD4D0;
         padding: 5px 15px;
         border-radius: 5px;
         cursor: pointer;
@@ -154,13 +167,13 @@ hr{
 	.left{
 		width:50%;
 		
-		background:yellow;
+		background:#F6F4F3;
 
 		
 	}
 	.right{
 		width:50%;
-		background:purple;
+		background:#F6F4F3;
 		margin-left:5px;
 	}
 	.bk{
@@ -182,7 +195,7 @@ hr{
     display:flex;
 	justify-content:center;
 	align-items:center;	
-}
+    }
 
 	#severSucess{
 		color:green;
@@ -197,3 +210,4 @@ hr{
 	h3{
 		text-align:center;
 	}
+	
