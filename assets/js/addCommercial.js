@@ -1,8 +1,8 @@
-const deleted = document.getElementById('cancel');
+/*const deleted = document.getElementById('cancel');
 //when we click cancel button we will be redirected to vendorDashboard                 
 deleted.addEventListener('click',()=>{
         window.location.href = "vendorDashboard.php";
-}); 
+});*/ 
 
 
 
@@ -47,7 +47,7 @@ function check(content,id,inputID) {
   } 
  var message=""; 
  if(invalid.length){     
-  message="These words : " +invalid+ " are not appropriate,Please Change";
+  message="These words : " +invalid+ " are inappropriate,Please Change";
   document.getElementById(inputID).style.borderColor="red";
   document.getElementById(id).style.color="red";
   document.getElementById(id).innerHTML=message;

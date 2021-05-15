@@ -11,16 +11,15 @@
 
 <html>
 <head> 
-      <!--header links-->
-    <title><?php if (isset($title)) {echo "Ranhuya - "; echo $title;} else {echo "Ranhuya";} ?></title>
+   <!--header links-->
+   <title><?php if (isset($title)) {echo "Ranhuya - "; echo $title;} else {echo "Ranhuya";} ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="shortcut icon" type="ico" href="./assets/img/favicon.ico"/>
 	
-   
-   <!--paymentHistory css-->
-   <link rel="stylesheet" href="./assets/css/accountDetails.css">
+   <!--paymentHistory css part-->
+   <link rel="stylesheet" href="./assets/css/paymentHistory.css">
 <head>
 <body>
    <!--Main nav bar was  done by thushara-->  
@@ -80,18 +79,12 @@
       
     </div>
   </div>
-   
-   
-   
-   
-   
-   
-<nav id="vnavBar">
+<nav  id="vnavBar">
  <ul class="vendorNavbar">
    <li><a href="accountDetails.php">Account details</a></li>
    
    <li><a href="adsInventory.php">Ads Inventory</a></li>
-   <li><a href="addCommercialsPage.php">Add advertisement</a></li>
+  <li><a href="addCommercialsPage.php">Add advertisement</a></li>
    <li><a href="paymentHistory.php">Payments</a></li>
  </ul>
  </nav>

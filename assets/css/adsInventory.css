@@ -1,0 +1,75 @@
+   *{
+	padding:0px;
+	margin:0px;
+	box-sizing:border-box;
+    }
+	body{
+		 display:block;
+  /*Good color*/
+    
+         
+		 background-color:#FBFBFF;
+	
+	}table{
+	   border-color:blue;
+	   width:288px;
+	   margin-bottom:5px;
+	}tr{
+		overflow-wrap: break-word;
+	
+	}tbody{
+		width:100%;
+		 word-break: break-word;
+	}
+	/*Vendor navbar styles*/
+    #vnavBar{
+		 display:flex;
+		 justify-content:space-around;
+		 align-items:center;
+		 min-height:8vh;
+		 font-family: 'Poppins', sans-serif;
+		 
+	}
+	.vendorNavbar{
+    display:flex;
+	justify-content:space-around;
+	width:100%;
+   
+}
+.ads{
+	display:flex;
+	flex-wrap:wrap;
+}
+.display{
+	margin:10px;
+}
+li{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+}
+li a {
+    color: #948392;
+    
+	letter-spacing:3px;
+	font-size:10px;
+	font-weight:bold;
+    text-align: center;
+    padding: 14px 16px;
+	
+}
+
+li a:hover {
+    background-color: #948392;
+	color:white;
+}
+hr{
+	margin:0px 10px;
+}
+#View_advertisement{
+	
+	 margin-left:10px;
+
+}
+

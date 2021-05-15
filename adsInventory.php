@@ -1,5 +1,6 @@
 <?php
   //Chamath Jayasekara IT20654962
+
  require 'configure.php';
 ?>
 <?php
@@ -9,23 +10,19 @@
  // session_start();
 ?>
 
+<!DOCTYPE html>
 <html>
-<head> 
-      <!--header links-->
-    <title><?php if (isset($title)) {echo "Ranhuya - "; echo $title;} else {echo "Ranhuya";} ?></title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+   <title><?php if (isset($title)) {echo "Ranhuya - "; echo $title;} else {echo "Ranhuya";} ?></title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="shortcut icon" type="ico" href="./assets/img/favicon.ico"/>
-	
-   
-   <!--paymentHistory css-->
-   <link rel="stylesheet" href="./assets/css/accountDetails.css">
-<head>
-<body>
-   <!--Main nav bar was  done by thushara-->  
-	
-	 <div class="nav">
+    <link  rel="stylesheet" href="./assets/css/adsInventory.css">
+</head>
+<body>	
+ <!--main nav bar made by Thushara-->	
+	<div class="nav">
 
       <!-- Logo -->
       <img class="nav__logo" src="./assets/img/logo.png" alt="">
@@ -80,21 +77,58 @@
       
     </div>
   </div>
-   
-   
-   
-   
-   
-   
+    
+  <!--on this part made by chamath-->
 <nav id="vnavBar">
  <ul class="vendorNavbar">
    <li><a href="accountDetails.php">Account details</a></li>
-   
+
    <li><a href="adsInventory.php">Ads Inventory</a></li>
    <li><a href="addCommercialsPage.php">Add advertisement</a></li>
    <li><a href="paymentHistory.php">Payments</a></li>
  </ul>
+  
  </nav>
  <hr>
- </body>
- </html>
+
+ <br>
+ <h1>Advertisement Inventory</h1>
+ 
+<form method="POST" action="">
+   <input  type="submit" name="result" id="View_advertisement" value="View advertisements">
+
+</form>
+<div class="ads">
+<?php
+ if(isset($_POST['result'])){
+   global $con;
+   $sqlstmt="SELECT *FROM  COMMERCIAL";
+
+   $result=mysqli_query($con,$sqlstmt);
+   if($result->num_rows>0){
+
+       while($row=$result->fetch_array()){
+		  echo "<div class='display'>";
+          echo "<table border='1px solid'>";
+		  echo "<tr><td>".'<img src="data:image;base64,'.base64_encode($row['img']).'"height="200" width="100%"/>'."</td></tr>";
+		 
+          echo "<tr><td>".$row['addTitle']."</td></tr>";			
+          echo "<tr><td>".$row['category']."</td></tr>";
+         
+          echo "<tr><td>".$row['adddes']."</td></tr>";
+          echo "<tr><td>".$row['number']."</td></tr>";
+          echo "<tr><td>".$row['email']."</td></tr>";          
+          echo "<tr><td><a href='www.youtube.com'>Edit</a></td></tr>";
+         echo "<tr><td><a href='www.google.com' class='button'>Delete</a></td></tr>";
+		  echo "</table>";
+		  echo "</div>";
+       }
+   }
+ }
+  $con->close();
+
+?>
+</div>
+
+</body>
+</html>

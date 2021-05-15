@@ -1,4 +1,4 @@
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    
     * {
         box-sizing: border-box;
         padding: 0;
@@ -6,17 +6,57 @@
         font-family: 'Poppins', sans-serif;
     }
     
-    /* I fixed this CSS */
     body {
-        /* display: flex; */
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        background-color: #8EC5FC;
-        background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+     
+        background-color:#FBFBFF;	
+    
     }
     
-  
+     #vnavBar{
+		 display:flex;
+		 justify-content:space-around;
+		 align-items:center;
+		 min-height:8vh;
+		 font-family: 'Poppins', sans-serif;
+		 
+	}
+	.vendorNavbar{
+    display:flex;
+	justify-content:space-around;
+	width:100%;
+   
+}
+.ads{
+	display:flex;
+	flex-wrap:wrap;
+}
+.display{
+	margin:10px;
+}
+li{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+}
+li a {
+    color: #948392;
+    
+	letter-spacing:3px;
+	font-size:10px;
+	font-weight:bold;
+    text-align: center;
+    padding: 14px 16px;
+	
+}
+
+li a:hover {
+    background-color: #948392;
+	color:white;
+}
+hr{
+	margin:0px 10px;
+} 
     textarea {
         outline: none;
         border-radius: 5px;
@@ -33,16 +73,11 @@
 	
     }
     
-    /* I fixed this CSS */
     .container {
-        margin: auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
-
         max-width: 700px;
-        width: 100vw;
-        
-		height:85vh;
+        width: 80vw;
+	
+		height:70vh;
         background: linear-gradient(to top right, f, f,f,0.4);
         padding: 25px 30px;
         border-radius: 10px;
@@ -139,6 +174,16 @@
 	.sdbutton{
 		float:right;
 	}
+	
+	.only{
+	background:blue;
+	height:50vh;
+	width:50%;
+    display:flex;
+	justify-content:center;
+	align-items:center;	
+}
+
 	#severSucess{
 		color:green;
 	}
