@@ -1,3 +1,5 @@
+<!-- NEED TO FIX -->
+
 <?php
     // Dynamic Header
     $title = 'Delete'; include("header.php");
@@ -18,9 +20,17 @@
 
         $row = getUserDetails($conn, $_GET["id"], $_GET["role"]);
 
+        if ($row["role"] === 'admin') {
+            $id = $row["adminID"];
+        } else if ($row["role"] === 'vendor') {
+            $id = $row["vendorID"];
+        } else if ($row["role"] === 'customer') {
+            $id = $row["customerID"];
+        }
+
         // Display Old details of user
         echo '<form class"update_form" action="./src/admin/deleteUser.src.php" method="post">
-                <input hidden value="' . $row["id"] .'" required type="text" name="id"><br>
+                <input hidden value="' . $id .'" required type="text" name="id"><br>
                 <input hidden value="' . $row["role"] .'" required type="text" name="role"><br>
                 <button"><a href="./admin.php">Go Back</a></button>
                 <button type="submit" name="delete">Delete</button>

@@ -18,8 +18,8 @@
 
         $sql = mysqli_query($conn, "SELECT *
                                         FROM Admin
-                                        WHERE username='" . $username . "' 
-                                        OR email ='" . $username . "'
+                                        WHERE a_username='" . $username . "' 
+                                        OR a_email ='" . $username . "'
                                         ");
         
         $row  = mysqli_fetch_array($sql);
@@ -29,7 +29,7 @@
         //     exit();
         // }
 
-        $pwdHashed = $row['password'];
+        $pwdHashed = $row['a_password'];
         // $checkPwd = password_verify($pwd, $pwdHashed);
         if (hash('sha256', $pwd) === $pwdHashed) {
             $checkPwd = true;
@@ -44,10 +44,10 @@
 
         else if ($checkPwd === true) {
             session_start();
-            $_SESSION["id"] = $row['id'];
-            $_SESSION["fname"] = $row['fname'];
-            $_SESSION["lname"] = $row['lname'];
-            $_SESSION["email"] = $row['email'];
+            $_SESSION["id"] = $row['a_username'];
+            $_SESSION["fname"] = $row['a_fname'];
+            $_SESSION["lname"] = $row['a_lname'];
+            $_SESSION["email"] = $row['a_email'];
             $_SESSION["role"] = $row['role'];
 
             header("location: ../../admin.php");

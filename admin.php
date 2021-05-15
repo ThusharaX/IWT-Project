@@ -39,18 +39,18 @@
                     while ($row = $result->fetch_assoc()) {
                     echo "
                     <tr>
-                        <td>".$row['id']."</td>
-                        <td>".$row['fname']."</td>
-                        <td>".$row['lname']."</td>
-                        <td>".$row['email']."</td>
-                        <td>".$row['username']."</td>
+                        <td>".$row['customerID']."</td>
+                        <td>".$row['c_fname']."</td>
+                        <td>".$row['c_lname']."</td>
+                        <td>".$row['c_email']."</td>
+                        <td>".$row['c_username']."</td>
                         <td>".$row['role']."</td>
                         <td>
-                            <a href='./updateUserDetails.php?id=$row[id]&role=$row[role]'>
+                            <a href='./updateUserDetails.php?id=$row[customerID]&role=$row[role]'>
                             <input type='submit' value='Update'></a>
                         </td>
                         <td>
-                            <a href='./deleteUser.php?id=$row[id]&role=$row[role]'>
+                            <a href='./deleteUser.php?id=$row[customerID]&role=$row[role]'>
                             <input type='submit' value='Delete'></a>
                         </td>
                         
@@ -93,18 +93,18 @@
                     while ($row = $result->fetch_assoc()) {
                     echo "
                     <tr>
-                        <td>".$row['id']."</td>
-                        <td>".$row['fname']."</td>
-                        <td>".$row['lname']."</td>
-                        <td>".$row['email']."</td>
-                        <td>".$row['username']."</td>
+                        <td>".$row['vendorID']."</td>
+                        <td>".$row['v_fname']."</td>
+                        <td>".$row['v_lname']."</td>
+                        <td>".$row['v_email']."</td>
+                        <td>".$row['v_username']."</td>
                         <td>".$row['role']."</td>
                         <td>
-                            <a href='./updateUserDetails.php?id=$row[id]&role=$row[role]'>
+                            <a href='./updateUserDetails.php?id=$row[vendorID]&role=$row[role]'>
                             <input type='submit' value='Update'></a>
                         </td>
                         <td>
-                            <a href='./deleteUser.php?id=$row[id]&role=$row[role]'>
+                            <a href='./deleteUser.php?id=$row[vendorID]&role=$row[role]'>
                             <input type='submit' value='Delete'></a>
                         </td>
                         
@@ -147,18 +147,18 @@
                     while ($row = $result->fetch_assoc()) {
                     echo "
                     <tr>
-                        <td>".$row['id']."</td>
-                        <td>".$row['fname']."</td>
-                        <td>".$row['lname']."</td>
-                        <td>".$row['email']."</td>
-                        <td>".$row['username']."</td>
+                        <td>".$row['adminID']."</td>
+                        <td>".$row['a_fname']."</td>
+                        <td>".$row['a_lname']."</td>
+                        <td>".$row['a_email']."</td>
+                        <td>".$row['a_username']."</td>
                         <td>".$row['role']."</td>
                         <td>
-                            <a href='./updateUserDetails.php?id=$row[id]&role=$row[role]'>
+                            <a href='./updateUserDetails.php?id=$row[adminID]&role=$row[role]'>
                             <input type='submit' value='Update'></a>
                         </td>
                         <td>
-                            <a href='./deleteUser.php?id=$row[id]&role=$row[role]'>
+                            <a href='./deleteUser.php?id=$row[adminID]&role=$row[role]'>
                             <input type='submit' value='Delete'></a>
                         </td>
                         
@@ -207,38 +207,7 @@
                         <td><a href='deleteUser.src.php?
                             id=$row[usersID]'><input type='submit' value='Delete'></a></td>
             </tr>
-            <tr>
-                <td>Ad ID</td>
-                <td>Title</td>
-                <td>Vendor Name</td>
-                <td>Vendor Username</td>
-                <td>Category</td>
-                <td>Approved</td>
-                <td><a href='updateUser.src.php?
-                            id=$row[usersID]&
-                            name=$row[usersName]
-                            email=$row[usersEmail]
-                            username=$row[usersUid]
-                            user_type=$row[usersType]'><input type='submit' value='Update'></a></td>
-                        <td><a href='deleteUser.src.php?
-                            id=$row[usersID]'><input type='submit' value='Delete'></a></td>
-            </tr>
-            <tr>
-                <td>Ad ID</td>
-                <td>Title</td>
-                <td>Vendor Name</td>
-                <td>Vendor Username</td>
-                <td>Category</td>
-                <td>Approved</td>
-                <td><a href='updateUser.src.php?
-                            id=$row[usersID]&
-                            name=$row[usersName]
-                            email=$row[usersEmail]
-                            username=$row[usersUid]
-                            user_type=$row[usersType]'><input type='submit' value='Update'></a></td>
-                        <td><a href='deleteUser.src.php?
-                            id=$row[usersID]'><input type='submit' value='Delete'></a></td>
-            </tr>
+            
             </table>
     </div>
 </section>

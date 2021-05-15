@@ -30,8 +30,8 @@ if (isset($_POST["submit"])) {
     $hashedPwd = hash('sha256', $pwd);
 
 
-    $sql = "INSERT INTO Vendor (id, pro_pic, fname, lname, username, password, email, company, mobile, address, role) 
-            VALUES ('', '', '$fname', '$lname', '$username', '$hashedPwd', '$email', '', '', '', 'vendor');";
+    $sql = "INSERT INTO Vendor (vendorID, v_company, v_username, v_imgLoc, v_fname, v_lname, role, v_password, v_mobile, v_address, v_email) 
+            VALUES ('', '', '$username', '', '$fname', '$lname', 'vendor', '$hashedPwd', '', '', '$email');";
     
     if (mysqli_query($conn, $sql)) {
         // echo "<script>alert ('Successfully Sign Up')</script>";

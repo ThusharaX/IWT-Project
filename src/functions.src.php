@@ -6,18 +6,18 @@ function uidExists($conn, $username, $email, $role) {
 
     if ($role === 'customer') {
         $sql = mysqli_query($conn, "SELECT * FROM Customer 
-                        WHERE username ='" . $username . "' 
-                        OR email ='" . $email . "';
+                        WHERE c_username ='" . $username . "' 
+                        OR c_email ='" . $email . "';
                         ");    
     } else if ($role === 'vendor') {
         $sql = mysqli_query($conn, "SELECT * FROM Vendor 
-                        WHERE username ='" . $username . "' 
-                        OR email ='" . $email . "';
+                        WHERE v_username ='" . $username . "' 
+                        OR v_email ='" . $email . "';
                         ");    
     } else if ($role === 'admin') {
         $sql = mysqli_query($conn, "SELECT * FROM Admin
-                        WHERE username ='" . $username . "' 
-                        OR email ='" . $email . "';
+                        WHERE a_username ='" . $username . "' 
+                        OR a_email ='" . $email . "';
                         ");    
     }
     
@@ -41,17 +41,17 @@ function getUserDetails($conn, $id, $role) {
     if ($role === 'customer') {
         $sql = mysqli_query($conn, "SELECT *
                                     FROM Customer
-                                    WHERE id='" . $id . "' 
+                                    WHERE customerID='" . $id . "' 
                                      ");
     } else if ($role === 'vendor') {
         $sql = mysqli_query($conn, "SELECT *
                                     FROM Vendor
-                                    WHERE id='" . $id . "' 
+                                    WHERE vendorID='" . $id . "' 
                                      ");
     } else if ($role === 'admin') {
         $sql = mysqli_query($conn, "SELECT *
                                     FROM Admin
-                                    WHERE id='" . $id . "' 
+                                    WHERE adminID='" . $id . "' 
                                      ");
     }
     
@@ -77,30 +77,29 @@ function updateUserDetails($conn, $fname, $lname, $email, $username, $role, $id)
 
     if ($role === 'cutomer') {
         $sql = mysqli_query($conn, "UPDATE Customer SET
-        `fname` = '$fname',
-        `lname` = '$lname',
-        `email` = '$email',
-        `username` = '$username',
+        `c_fname` = '$fname',
+        `c_lname` = '$lname',
+        `c_email` = '$email',
+        `c_username` = '$username',
         `role` = '$role'
-        WHERE id=$id");
+        WHERE customerID='" . $id . "'");
     } else if($role === 'vendor') {
         $sql = mysqli_query($conn, "UPDATE Vendor SET
-        `fname` = '$fname',
-        `lname` = '$lname',
-        `email` = '$email',
-        `username` = '$username',
+        `v_fname` = '$fname',
+        `v_lname` = '$lname',
+        `v_email` = '$email',
+        `v_username` = '$username',
         `role` = '$role'
-        WHERE id=$id");
+        WHERE vendorID='" . $id . "'");
     } else if($role === 'admin') {
         $sql = mysqli_query($conn, "UPDATE Admin SET
-        `fname` = '$fname',
-        `lname` = '$lname',
-        `email` = '$email',
-        `username` = '$username',
+        `a_fname` = '$fname',
+        `a_lname` = '$lname',
+        `a_email` = '$email',
+        `a_username` = '$username',
         `role` = '$role'
-        WHERE id=$id");
+        WHERE adminID='" . $id . "'");
     }
-
 
     mysqli_close($conn);
 }
@@ -112,17 +111,17 @@ function deleteUser($conn, $id, $role) {
     if ($role === 'customer') {
         $sql = mysqli_query($conn, "DELETE
                                 FROM Customer
-                                WHERE id='" . $id . "' 
+                                WHERE customerID='" . $id . "' 
                                  ");
     } else if($role === 'vendor') {
         $sql = mysqli_query($conn, "DELETE
                                 FROM Vendor
-                                WHERE id='" . $id . "' 
+                                WHERE vendorID='" . $id . "' 
                                  ");
     } else if($role === 'admin') {
         $sql = mysqli_query($conn, "DELETE
                                 FROM Admin
-                                WHERE id='" . $id . "' 
+                                WHERE adminID='" . $id . "' 
                                  ");
     }
 
@@ -145,14 +144,14 @@ function addUser($conn, $fname, $lname, $email, $username, $pwd, $role) {
     $hashedPwd = hash('sha256', $pwd);
 
     if ($role === 'customer') {
-        $sql = "INSERT INTO Customer (id, pro_pic, fname, lname, dob, username, password, email, partner, role) 
-            VALUES ('', '', '$fname', '$lname', '', '$username', '$hashedPwd', '$email', '', 'customer');";
+        $sql = "INSERT INTO Customer (customerID, c_fname, c_lname, c_dob, c_username, c_imgLoc, role, c_password, c_email, c_partner) 
+            VALUES ('', '$fname', '$lname', '', '$username', '', '$role', '$hashedPwd', '$email', '');";
     } else if ($role === 'vendor') {
-        $sql = "INSERT INTO Vendor (id, pro_pic, fname, lname, username, password, email, company, mobile, address, role) 
-            VALUES ('', '', '$fname', '$lname', '$username', '$hashedPwd', '$email', '', '', '', 'vendor');";
+        $sql = "INSERT INTO Vendor (vendorID, v_company, v_username, v_imgLoc, v_fname, v_lname, role, v_password, v_mobile, v_address, v_email) 
+            VALUES ('', '', '$username', '', '$fname', '$lname', '$role', '$hashedPwd', '', '', '$email');";
     } else if ($role === 'admin') {
-        $sql = "INSERT INTO Admin (id, pro_pic, fname, lname, username, password, email, role) 
-            VALUES ('', '', '$fname', '$lname', '$username', '$hashedPwd', '$email', 'admin');";
+        $sql = "INSERT INTO Admin (adminID, a_fname, a_lname, a_username, a_imgLoc, role, a_password, a_email) 
+            VALUES ('', '$fname', '$lname', '$username', '', 'admin', '$hashedPwd', '$email');";
     }
 
     // $sql = "INSERT INTO users (usersID, usersName, usersEmail, usersUid, usersPwd, usersType) VALUES ('', '$name', '$email', '$username', '$hashedPwd', '$user_type');";
@@ -180,8 +179,8 @@ function customerLogin($conn, $username, $pwd) {
 
         $sql = mysqli_query($conn, "SELECT *
                                         FROM Customer
-                                        WHERE username='" . $username . "' 
-                                        OR email ='" . $username . "'
+                                        WHERE c_username='" . $username . "' 
+                                        OR c_email ='" . $username . "'
                                         ");
         
         $row  = mysqli_fetch_array($sql);
@@ -191,7 +190,7 @@ function customerLogin($conn, $username, $pwd) {
         //     exit();
         // }
 
-        $pwdHashed = $row['password'];
+        $pwdHashed = $row['c_password'];
         // $checkPwd = password_verify($pwd, $pwdHashed);
 
         if (hash('sha256', $pwd) === $pwdHashed) {
@@ -207,10 +206,11 @@ function customerLogin($conn, $username, $pwd) {
 
         else if ($checkPwd === true) {
             session_start();
-            $_SESSION["id"] = $row['id'];
-            $_SESSION["fname"] = $row['fname'];
-            $_SESSION["lname"] = $row['lname'];
-            $_SESSION["email"] = $row['email'];
+            $_SESSION["id"] = $row['customerID'];
+            $_SESSION["fname"] = $row['c_fname'];
+            $_SESSION["lname"] = $row['c_lname'];
+            $_SESSION["email"] = $row['c_email'];
+            $_SESSION["username"] = $row['c_username'];
             $_SESSION["role"] = $row['role'];
 
             header("location: ../customerDashboard.php");
@@ -234,8 +234,8 @@ function vendorLogin($conn, $username, $pwd) {
 
         $sql = mysqli_query($conn, "SELECT *
                                         FROM Vendor
-                                        WHERE username='" . $username . "' 
-                                        OR email ='" . $username . "'
+                                        WHERE v_username='" . $username . "' 
+                                        OR v_email ='" . $username . "'
                                         ");
         
         $row  = mysqli_fetch_array($sql);
@@ -245,7 +245,7 @@ function vendorLogin($conn, $username, $pwd) {
         //     exit();
         // }
 
-        $pwdHashed = $row['password'];
+        $pwdHashed = $row['v_password'];
         // $checkPwd = password_verify($pwd, $pwdHashed);
 
         if (hash('sha256', $pwd) === $pwdHashed) {
@@ -261,10 +261,10 @@ function vendorLogin($conn, $username, $pwd) {
 
         else if ($checkPwd === true) {
             session_start();
-            $_SESSION["id"] = $row['id'];
-            $_SESSION["fname"] = $row['fname'];
-            $_SESSION["lname"] = $row['lname'];
-            $_SESSION["email"] = $row['email'];
+            $_SESSION["id"] = $row['vendorID'];
+            $_SESSION["fname"] = $row['v_fname'];
+            $_SESSION["lname"] = $row['v_lname'];
+            $_SESSION["email"] = $row['v_email'];
             $_SESSION["role"] = $row['role'];
 
             header("location: ../vendorDashboard.php");
