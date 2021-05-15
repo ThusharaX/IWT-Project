@@ -1,10 +1,7 @@
 <?php
     // Dynamic Header
-    $title = 'Login'; include("header.php");
-    if (isset($_SESSION["id"])) {
-        header("location: ./index.php");
-        exit();
-    }
+    $title = 'Login'; include_once("header.php");
+    include_once('./src/isloginConfig.src.php');
 ?>
 
 <link rel="stylesheet" href="./assets/css/login.css">
@@ -30,9 +27,8 @@
             <select class = "login" name="user_type" id="users">
                 <option value="customer">Customer</option>
                 <option value="vendor">Vendor</option>
-                <option value="admin">Admin</option>
             </select><br>
-            <input class = "login" required placeholder="Username/Email..." type="text" name="uid"><br>
+            <input class = "login" required placeholder="Username/Email..." type="text" name="user"><br>
             <input class = "login" required placeholder="Password..." type="password" name="pwd"><br>
             <br>
             <br>

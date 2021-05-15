@@ -2,17 +2,18 @@
 
 if (isset($_POST["addUser"])) {
 
-    $name = $_POST["name"];
+    $fname = $_POST["fname"];
+    $lname = $_POST["lname"];
     $email = $_POST["email"];
-    $username = $_POST["uid"];
+    $username = $_POST["username"];
     $pwd = $_POST["pwd"];
     $repwd = $_POST["repwd"];
-    $user_type = $_POST["user_type"];
+    $role = $_POST["role"];
 
-    require_once '../dbh.php';
-    require_once '../functions.src.php';
+    include_once("../dbh.php");
+    include_once("../functions.src.php");
 
-    addUser($conn, $name, $email, $username, $pwd, $user_type);
+    addUser($conn, $fname, $lname, $email, $username, $pwd, $role);
 }
 else {
     header("location: ../../index.php");

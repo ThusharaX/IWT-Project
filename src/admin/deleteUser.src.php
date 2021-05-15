@@ -2,12 +2,13 @@
 
 if (isset($_POST["delete"])) {
 
-    $uid = $_POST["uid"];
+    $id = $_POST["id"];
+    $role = $_POST["role"];
 
-    require_once '../dbh.php';
-    require_once '../functions.src.php';
+    include_once("../dbh.php");
+    include_once("../functions.src.php");
 
-    deleteUser($conn, $uid);
+    deleteUser($conn, $id, $role);
 
     header("location: ../../admin.php");
 }

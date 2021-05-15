@@ -9,16 +9,18 @@
 
 <!-- Niki -->
 <!-- Type your code here -->
+
 <section>
     <h1 class="main-title">Hello Customer</h1>
     <br>
-    <form action="./src/signup.src.php" method="post">
-        <input required placeholder="Full Name..." type="text" name="name"><br>
+    <form action="./src/customer/customerSignup.src.php" method="post">
+        <input required placeholder="First Name..." type="text" name="fname"><br>
+        <input required placeholder="Last Name..." type="text" name="lname"><br>
         <input required placeholder="Email..." type="text" name="email"><br>
-        <input required placeholder="Username..." type="text" name="uid"><br>
+        <input required placeholder="Username..." type="text" name="user"><br>
         <input required placeholder="Password..." type="password" name="pwd"><br>
         <input required placeholder="Re-Password..." type="password" name="repwd"><br>
-        <input hidden value="customer" type="text" name="user_type"><br>
+        <!-- <input hidden value="customer" type="text" name="user_type"><br> -->
         <button type="submit" name="submit">Sign Up</button>
     </form>
 

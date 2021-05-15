@@ -13,14 +13,15 @@
     <h1 class="main-title">Do you really want to Delete this User?</h1>
 
     <?php
-        require_once './src/dbh.php';
-        require_once './src/functions.src.php';
+        include_once("./src/dbh.php");
+        include_once("./src/functions.src.php");
 
-        $row = getUserDetails($conn, $_GET["id"]);
+        $row = getUserDetails($conn, $_GET["id"], $_GET["role"]);
 
         // Display Old details of user
         echo '<form class"update_form" action="./src/admin/deleteUser.src.php" method="post">
-                <input hidden value="' . $row["usersID"] .'" required type="text" name="uid"><br>
+                <input hidden value="' . $row["id"] .'" required type="text" name="id"><br>
+                <input hidden value="' . $row["role"] .'" required type="text" name="role"><br>
                 <button"><a href="./admin.php">Go Back</a></button>
                 <button type="submit" name="delete">Delete</button>
             </form>';

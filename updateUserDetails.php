@@ -13,24 +13,28 @@
     <h1 class="main-title">Update User Details</h1>
 
     <?php
-        require_once './src/dbh.php';
-        require_once './src/functions.src.php';
+        include_once("./src/dbh.php");
+        include_once("./src/functions.src.php");
 
-        $row = getUserDetails($conn, $_GET["id"]);
+        $row = getUserDetails($conn, $_GET["id"], $_GET["role"]);
 
         // Display Old details of user
         echo '<form class"update_form" action="./src/admin/updateUser.src.php" method="post">
-                <input hidden value="' . $row["usersID"] .'" required type="text" name="uid"><br>
-                <input value="' . $row["usersName"] .'" required placeholder="Full Name..." type="text" name="name"><br>
-                <input value="' . $row["usersUid"] .'" required placeholder="Username..." type="text" name="username"><br>
-                <input value="' . $row["usersEmail"] .'" required placeholder="Email..." type="email" name="email"><br>
-                <select name="user_type" id="users">
-                    <option value="customer" '.(($row["usersType"]=='customer')?'selected="selected"':"").'>Customer</option>
-                    <option value="vendor" '.(($row["usersType"]=='vendor')?'selected="selected"':"").'>Vendor</option>
-                    <option value="admin" '.(($row["usersType"]=='admin')?'selected="selected"':"").'>Admin</option>
-                </select><br>
+                <input hidden value="' . $row["id"] .'" required type="text" name="id"><br>
+                <input value="' . $row["fname"] .'" required placeholder="First Name..." type="text" name="fname"><br>
+                <input value="' . $row["lname"] .'" required placeholder="Last Name..." type="text" name="lname"><br>
+                <input value="' . $row["username"] .'" required placeholder="Username..." type="text" name="username"><br>
+                <input value="' . $row["email"] .'" required placeholder="Email..." type="email" name="email"><br>
+                <input hidden value="' . $row["role"] .'" type="text" name="role"><br>
+                
                 <button type="submit" name="update">Update</button>
             </form>';
+
+            // <select name="user_type" id="users">
+            //     <option value="customer" '.(($row["usersType"]=='customer')?'selected="selected"':"").'>Customer</option>
+            //     <option value="vendor" '.(($row["usersType"]=='vendor')?'selected="selected"':"").'>Vendor</option>
+            //     <option value="admin" '.(($row["usersType"]=='admin')?'selected="selected"':"").'>Admin</option>
+            // </select><br>
     ?>
 
 </section>

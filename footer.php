@@ -2,7 +2,9 @@
 
 <footer>
   <p>Author: Ranhuya<br>
-  <a href="mailto:wedding-planing@sliit.lk">wedding-planing@sliit.lk</a></p>
+  <a class="mail" href="mailto:wedding-planing@sliit.lk">wedding-planing@sliit
+  
+  <a class="admin" href="./adminLogin.php">Admin</a>
 </footer>
 
 </div>

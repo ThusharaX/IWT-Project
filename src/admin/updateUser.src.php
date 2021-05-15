@@ -1,16 +1,17 @@
 <?php
     
     if (isset($_POST["update"])) {
-        $name = $_POST["name"];
+        $lname = $_POST["lname"];
+        $fname = $_POST["fname"];
         $email = $_POST["email"];
         $username = $_POST["username"];
-        $user_type = $_POST["user_type"];
-        $uid = $_POST["uid"];
+        $role = $_POST["role"];
+        $id = $_POST["id"];
 
-        require_once '../dbh.php';
-        require_once '../functions.src.php';
+        include_once("../dbh.php");
+        include_once("../functions.src.php");
         
-        updateUserDetails($conn, $name, $email, $username, $user_type, $uid);
+        updateUserDetails($conn, $fname, $lname, $email, $username, $role, $id);
 
         header("location: ../../admin.php");
         

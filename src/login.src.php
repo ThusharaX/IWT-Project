@@ -1,14 +1,21 @@
 <?php
     
     if (isset($_POST["submit"])) {
-        $username = $_POST["uid"];
+        $username = $_POST["user"];
         $pwd = $_POST["pwd"];
-        $user_type = $_POST["user_type"];
+        $role = $_POST["user_type"];
 
-        require_once 'dbh.php';
-        require_once 'functions.src.php';
+        include_once("dbh.php");
+        include_once("functions.src.php");
         
-        loginUser($conn, $username, $pwd, $user_type);
+        if ($role === 'customer') {
+            customerLogin($conn, $username, $pwd);
+        } else if ($role === 'vendor') {
+            vendorLogin($conn, $username, $pwd);
+        }
+        else {
+            header("location: ../login.php?error=invalidRole");
+        }
         
         
     }

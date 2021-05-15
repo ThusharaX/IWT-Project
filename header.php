@@ -43,19 +43,19 @@
         <div class="nav__btn">
           <?php
             if (isset($_SESSION["id"])) {
-              if ($_SESSION["user_type"] === 'admin') {
+              if ($_SESSION["role"] === 'admin') {
                 echo '<a href="./admin.php"><button class="nav__register">Admin Dashboard</button></a>';
               }
-              else if (($_SESSION["user_type"] === 'customer')) {
+              else if (($_SESSION["role"] === 'customer')) {
                 echo '<a href="./customerDashboard.php"><button class="nav__register">Customer Dashboard</button></a>';
               }
-              else if (($_SESSION["user_type"] === 'vendor')) {
+              else if (($_SESSION["role"] === 'vendor')) {
                 echo '<a href="./vendorDashboard.php"><button class="nav__register">Vendor Dashboard</button></a>';
               }
               echo '<a href="./src/logout.src.php"><button class="nav__login">Logout</button></a>';
             }
             else {
-              echo '<a href="./customerSignup.php"><button class="nav__register">Join Now</button></a>';
+              echo '<a href="./signup.php"><button class="nav__register">Join Now</button></a>';
               echo '<a href="./login.php"><button class="nav__login">Login</button></a>';
             }
           ?>
