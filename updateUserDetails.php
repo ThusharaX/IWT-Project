@@ -1,5 +1,3 @@
-<!-- NEED TO FIX -->
-
 <?php
     // Dynamic Header
     $title = 'Update'; include("header.php");
