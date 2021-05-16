@@ -1,5 +1,3 @@
-<!-- NEED TO FIX -->
-
 <?php
     // Dynamic Header
     $title = 'Delete'; include("header.php");

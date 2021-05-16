@@ -27,6 +27,7 @@ function uidExists($conn, $username, $email, $role) {
         return true;
     }
     else {
+
         return false;
     }
 
@@ -68,21 +69,24 @@ function getUserDetails($conn, $id, $role) {
 // Update User Deatails
 function updateUserDetails($conn, $fname, $lname, $email, $username, $role, $id) {
 
-    $uidExists = uidExists($conn, $username, $username, $role);
+    // I have to skip this step
+    
+    // $uidExists = uidExists($conn, $username, $username, $role);
 
-    if ($uidExists === true) {
-        header("location: ../../updateUserDetails.php?id=$uid&error=usernameAlreadyExists");
-        exit();
-    }
+    // if ($uidExists === true) {
+    //     header("location: ../../updateUserDetails.php?id=$id&role=$role&error=usernameAlreadyExists");
+    //     exit();
+    // }
 
-    if ($role === 'cutomer') {
+    if ($role === 'customer') {
         $sql = mysqli_query($conn, "UPDATE Customer SET
         `c_fname` = '$fname',
         `c_lname` = '$lname',
         `c_email` = '$email',
         `c_username` = '$username',
         `role` = '$role'
-        WHERE customerID='" . $id . "'");
+        WHERE customerID='" . $id . "'
+        ");
     } else if($role === 'vendor') {
         $sql = mysqli_query($conn, "UPDATE Vendor SET
         `v_fname` = '$fname',
@@ -90,7 +94,8 @@ function updateUserDetails($conn, $fname, $lname, $email, $username, $role, $id)
         `v_email` = '$email',
         `v_username` = '$username',
         `role` = '$role'
-        WHERE vendorID='" . $id . "'");
+        WHERE vendorID='" . $id . "'
+        ");
     } else if($role === 'admin') {
         $sql = mysqli_query($conn, "UPDATE Admin SET
         `a_fname` = '$fname',
@@ -98,7 +103,8 @@ function updateUserDetails($conn, $fname, $lname, $email, $username, $role, $id)
         `a_email` = '$email',
         `a_username` = '$username',
         `role` = '$role'
-        WHERE adminID='" . $id . "'");
+        WHERE adminID='" . $id . "'
+        ");
     }
 
     mysqli_close($conn);
