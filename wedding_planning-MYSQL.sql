@@ -111,7 +111,8 @@ CREATE TABLE Advertisement(
 	addImageLoc varchar(30),
 	publishDateTime DateTime,
 	status BIT,
-	CONSTRAINT adIDcat_fk FOREIGN KEY (catID) REFERENCES Category(catID) ON DELETE SET DEFAULT,
+	-- Have to use NULL
+	CONSTRAINT adIDcat_fk FOREIGN KEY (catID) REFERENCES Category(catID) ON DELETE SET NULL,
 	CONSTRAINT adIDadmin_fk FOREIGN KEY (adminID) REFERENCES Admin(adminID) ON DELETE SET NULL
 );
 
