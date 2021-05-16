@@ -11,10 +11,11 @@
 <section class="login_section">
 
     <body background= "assets/img/loginBackground.jpg" class = "background"> 
+    <!-- <body background= "assets/img/loginBackground.jpg" class = "background">  -->
 
     <div class = "loginbox">
-        <h1><b>LOG IN TO YOUR ACCOUNT</b></h1>
-        <p class = "reg">Not a Member yet? <a href="customerSignup.php" class = "reg1" >Register Now!</a></p>
+        <h1 class="log_in_to_your_acc"><b>LOG IN TO YOUR ACCOUNT</b></h1>
+        <p class = "reg">Not a Member yet? <a href="signup.php" class = "reg1" >Register Now!</a></p>
         <br>
         <a href = "https://www.facebook.com/" > <img src = "assets/img/fb.png"  class = "fblogo" > </a>
         <a href = "https://myaccount.google.com/"> <img src = "assets/img/google.png" class = "googlelogo"> </a>
@@ -34,7 +35,7 @@
             <br>
             <button class = "log" type="submit" name="submit">Login</button>
 
-            <b class = "forgetpassword">Forgot password?</b>
+            <!-- <b class = "forgetpassword">Forgot password?</b> -->
         </form>
     </div>
 </section>

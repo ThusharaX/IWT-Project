@@ -17,6 +17,45 @@
     <a class="nav__login" href="./addAnnouncement.php">Add Announcement</a>
 </div>
 
+<!-- Statistics -->
+<section class='statics'>
+    <?php
+        $result = mysqli_query($conn, "SELECT COUNT(*) FROM Vendor");
+        $vendorCount = mysqli_fetch_array($result);
+
+        $result = mysqli_query($conn, "SELECT COUNT(*) FROM Advertisement");
+        $advertisementCount = mysqli_fetch_array($result);
+
+        $result = mysqli_query($conn, "SELECT COUNT(*) FROM Customer");
+        $customerCount = mysqli_fetch_array($result);
+
+        $result = mysqli_query($conn, "SELECT SUM(amount) FROM Payment");
+        $totalIncome = mysqli_fetch_array($result);
+        
+        
+        echo "<div class='stat__container'>
+                <div class='stat__box'>
+                    <h1>". $vendorCount[0] ."</h1>
+                    <h3>Vendors</h3>
+                </div>
+                <div class='stat__box'>
+                    <h1>". $advertisementCount[0] ."</h1>
+                    <h3>Advertisements</h3>
+                </div>
+                <div class='stat__box'>
+                    <h1>". $customerCount[0] ."</h1>
+                    <h3>Customers</h3>
+                </div>
+                <div class='stat__box'>
+                    <h1>". $totalIncome[0] ."</h1>
+                    <h3>Total Income</h3>
+                </div>
+            </div>
+            ";
+    ?>
+</section>
+
+<!-- Customers -->
 <section class="users">
     <div class="user__table">
         <h3>Customers</h3>
@@ -71,6 +110,7 @@
 </section>
 
 
+<!-- Vendors -->
 <section class="users">
     <div class="user__table">
         <h3>Vendors</h3>
@@ -125,6 +165,7 @@
 </section>
 
 
+<!-- Admins -->
 <section class="users">
     <div class="user__table">
         <h3>Admins</h3>
@@ -179,6 +220,7 @@
 </section>
 
 
+<!-- Advertisements -->
 <section class="advertisement">
     <div class="ad__table">
     <h3>Advertisements</h3>
@@ -190,7 +232,6 @@
                 <th>Vendor Username</th>
                 <th>Category</th>
                 <th>Status</th>
-                <th>Update</th>
                 <th>Delete</th>
             </tr>
             <tr>
@@ -200,14 +241,11 @@
                 <td>Vendor Username</td>
                 <td>Category</td>
                 <td>Approved</td>
-                <td><a href='updateUser.src.php?
-                            id=$row[usersID]&
-                            name=$row[usersName]
-                            email=$row[usersEmail]
-                            username=$row[usersUid]
-                            user_type=$row[usersType]'><input type='submit' value='Update'></a></td>
-                        <td><a href='deleteUser.src.php?
-                            id=$row[usersID]'><input type='submit' value='Delete'></a></td>
+                <td>
+                    <a href='deleteUser.src.php?id=$row[usersID]'>
+                        <input type='submit' value='Delete'>
+                    </a>
+                </td>
             </tr>
             
             </table>

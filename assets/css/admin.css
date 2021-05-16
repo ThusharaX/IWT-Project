@@ -2,6 +2,36 @@
     text-align: center;
 }
 
+.statics {
+    margin-top: 5px;
+    /* background-color: yellowgreen; */
+}
+    .stat__container {
+        /* background-color: tomato; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+        .stat__box {
+            width: 200px;
+            padding: 5px 5px;
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 5px;
+            background-color: teal;
+        }
+
+        .stat__box h3 {
+            text-align: center;
+            color: white;
+        }
+        .stat__box h1 {
+            margin: 0px;
+            font-size: xx-large;
+            text-align: center;
+            color: white;
+        }
+
+
 .ann__btn {
     text-decoration: none;
     display: flex;

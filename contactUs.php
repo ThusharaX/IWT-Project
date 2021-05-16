@@ -60,13 +60,13 @@
   <form class ="form"  method="post" action="" onsubmit ="return validate()" >
       
       <label for="name">*Name</label><br>
-      <input type="text" id="name" name="name" placeholder="Your name"><br><br>
+      <input class="input" type="text" id="name" name="name" placeholder="Your name"><br><br>
 
       <label for="Email">*Email</label><br>
-      <input type="text" id="email" name="email" placeholder="Your Email" pattern="[a-zA-z0-9._%+-]+@[a-z0-9._]+\.2,3}"><br><br>
+      <input class="input" type="text" id="email" name="email" placeholder="Your Email" pattern="[a-zA-z0-9._%+-]+@[a-z0-9._]+\.2,3}"><br><br>
 
       <label for="phone">*Mobile Number</label> <br>
-      <input type="text"  id="mobile" name="mobile" placeholder="Your phone number"  pattern="[0-9]{10}"><br><br>
+      <input class="input" type="text"  id="mobile" name="mobile" placeholder="Your phone number"  pattern="[0-9]{10}"><br><br>
       
       <label for="subject">*Comments</label><br>
       <textarea id="subject" name="subject" placeholder="Type your comments here..." style="height:300px"></textarea><br>
