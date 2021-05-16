@@ -9,3 +9,16 @@ html, body {
 a {
     text-decoration: none;
 }
+
+
+.announcements {
+    background-color: #ff0000;
+    color: white;
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.announcements h3, h5 {
+    margin-left: auto;
+    margin-right: 10px;
+}

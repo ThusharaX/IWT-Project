@@ -1,6 +1,8 @@
 <?php
+    // Site Name
+    $siteName = "--- RANHUYA Admin Panel";
     // Dynamic Header
-    $title = 'Admin Panel'; include("header.php");
+    $title = 'Admin Panel'; include_once("header.php");
     // Check if user is an admin
     include("./src/admin/adminConfig.php");
 ?>
@@ -9,7 +11,7 @@
 
 <!-- Thushara -->
 <!-- Type your code here -->
-<h1 class="main_title">Admin Panel</h1>
+<!-- <h1 class="main_title">Admin Panel</h1> --><br>
 
 <div class="ann__btn">
     <a class="nav__login" href="./addAnnouncement.php">Add Announcement</a>

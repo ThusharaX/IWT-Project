@@ -24,7 +24,14 @@
     <!-- Middle area of Navbar -->
       <div class="nav__middle">
         <div class="nav__title">
-          RANHUYA WEDDING PLANNERS
+          <?php
+            if (isset($siteName)) {
+              echo $siteName;
+            } else {
+              echo "RANHUYA WEDDING PLANNERS";
+            }
+          ?>
+          
         </div>
         <ul class="nav__list">
             <li class="nav__item"><a href="./index.php">Home</a></li>

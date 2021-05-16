@@ -213,6 +213,7 @@ function customerLogin($conn, $username, $pwd) {
         else if ($checkPwd === true) {
             session_start();
             $_SESSION["id"] = $row['customerID'];
+            $_SESSION["username"] = $row['c_username'];
             $_SESSION["fname"] = $row['c_fname'];
             $_SESSION["lname"] = $row['c_lname'];
             $_SESSION["email"] = $row['c_email'];
@@ -268,6 +269,7 @@ function vendorLogin($conn, $username, $pwd) {
         else if ($checkPwd === true) {
             session_start();
             $_SESSION["id"] = $row['vendorID'];
+            $_SESSION["username"] = $row['v_username'];
             $_SESSION["fname"] = $row['v_fname'];
             $_SESSION["lname"] = $row['v_lname'];
             $_SESSION["email"] = $row['v_email'];
@@ -282,7 +284,24 @@ function vendorLogin($conn, $username, $pwd) {
     }
 
 
+function addAnnouncement($conn, $title, $annDescription, $publish_date, $adminID, $role) {
 
+    $sql = "INSERT INTO Announcement
+                (annID, adminID, title, user_type, publish_date, annDescription) 
+            VALUES
+                ('', '$adminID', '$title', '$role', '$publish_date', '$annDescription');
+            ";
+    
+    if (mysqli_query($conn, $sql)) {
+        // echo "<script>alert ('Successfully Sign Up')</script>";
+        header("location: ../../admin.php");
+    }
+    else {
+        echo "<script>alert ('Something went wrong :-(')</script>";
+    }
+
+    mysql_close($conn);
+}
 
 
 

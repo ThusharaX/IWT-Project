@@ -44,7 +44,8 @@
 
         else if ($checkPwd === true) {
             session_start();
-            $_SESSION["id"] = $row['a_username'];
+            $_SESSION["id"] = $row['adminID'];
+            $_SESSION["username"] = $row['a_username'];
             $_SESSION["fname"] = $row['a_fname'];
             $_SESSION["lname"] = $row['a_lname'];
             $_SESSION["email"] = $row['a_email'];
