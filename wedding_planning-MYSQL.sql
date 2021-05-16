@@ -103,7 +103,7 @@ VALUES
 
 CREATE TABLE Advertisement(
     adID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-	catID INT DEFAULT 1,
+	catID INT DEFAULT NULL,
 	adminID INT,
 	title varchar(20)  NOT NULL,
 	addDescription varchar(300)  NOT NULL,
@@ -111,9 +111,9 @@ CREATE TABLE Advertisement(
 	addImageLoc varchar(30),
 	publishDateTime DateTime,
 	status BIT,
-	CONSTRAINT adIDcat_fk FOREIGN KEY (catID) REFERENCES Category(catID) ON DELETE SET DEFAULT,
+	CONSTRAINT adIDcat_fk FOREIGN KEY (catID) REFERENCES Category(catID) ON DELETE SET NULL,
 	CONSTRAINT adIDadmin_fk FOREIGN KEY (adminID) REFERENCES Admin(adminID) ON DELETE SET NULL
-);
+)Engine=MyISAM;
 
 INSERT INTO Advertisement
 	(catID, adminID, title, addDescription, mobile, addImageLoc, publishDateTime, status)
@@ -128,14 +128,15 @@ VALUES
 CREATE TABLE Feedback(
     customerID INT NOT NULL,
 	adID INT NOT NULL,
-	feedbackID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	feedbackID INT AUTO_INCREMENT  NOT NULL,
 	feedbackDate date,
 	feedbackTime time,
 	rating INT,
 	fbdescription varchar(300),
+	CONSTRAINT feedback_pk PRIMARY KEY (customerID,adID,feedbackID),
 	CONSTRAINT feedbackCus_fk FOREIGN KEY (customerID) REFERENCES Customer(customerID) ON DELETE CASCADE,
-	CONSTRAINT feedbackAd_fk FOREIGN KEY (adID) REFERENCES advertisement(adID) ON DELETE CASCADE
-);
+	CONSTRAINT feedbackAd_fk FOREIGN KEY (adID) REFERENCES Advertisement(adID) ON DELETE CASCADE
+)Engine=MyISAM;
 
 INSERT INTO Feedback
 	(customerID, adID, feedbackDate, feedbackTime, rating, fbdescription)
@@ -155,7 +156,7 @@ CREATE TABLE VendorPaymentAdvertisement(
 	CONSTRAINT VPAvendor_fk FOREIGN KEY (vendorID) REFERENCES Vendor(vendorID) ON DELETE CASCADE,
 	CONSTRAINT VPAad_fk FOREIGN KEY (adID) REFERENCES Advertisement(adID) ON DELETE CASCADE,
 	CONSTRAINT VPApayment_fk FOREIGN KEY (PaymentID) REFERENCES Payment(paymentID) ON DELETE CASCADE
-);
+)Engine=MyISAM;
 
 INSERT INTO VendorPaymentAdvertisement
 	(vendorID, adID, paymentID)
@@ -191,7 +192,7 @@ CREATE TABLE Choice(
 	CONSTRAINT choice_pk PRIMARY KEY (adID,CID),
 	CONSTRAINT choicecid_fk FOREIGN KEY (adID) REFERENCES Advertisement(adID) ON DELETE CASCADE,
 	CONSTRAINT choiceadid_fk FOREIGN KEY (CID) REFERENCES Customer(customerID) ON DELETE CASCADE
-);
+)Engine=MyISAM;
 
 INSERT INTO Choice
 	(adID, CID)
