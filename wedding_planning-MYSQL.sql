@@ -105,7 +105,8 @@ VALUES
 CREATE TABLE Advertisement(
     adID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
 	catID INT DEFAULT NULL,
-	adminID INT,
+	-- Changed from adminID
+	vendorID INT,
 	title varchar(20)  NOT NULL,
 	addDescription varchar(300)  NOT NULL,
     mobile INT NOT NULL,
@@ -113,17 +114,17 @@ CREATE TABLE Advertisement(
 	publishDateTime DateTime,
 	status BIT,
 	CONSTRAINT adIDcat_fk FOREIGN KEY (catID) REFERENCES Category(catID) ON DELETE SET NULL,
-	CONSTRAINT adIDadmin_fk FOREIGN KEY (adminID) REFERENCES Admin(adminID) ON DELETE SET NULL
+	CONSTRAINT adIDvendor_fk FOREIGN KEY (vendorID) REFERENCES Vendor(vendorID) ON DELETE SET NULL
 )Engine=MyISAM;
 
 INSERT INTO Advertisement
-	(catID, adminID, title, addDescription, mobile, addImageLoc, publishDateTime, status)
+	(catID, vendorID, title, addDescription, mobile, addImageLoc, publishDateTime, status)
 VALUES
-	(1, 1, 'Kalana Catering', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1),
+	(1, 1, 'Kalana Catering', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 0),
 	(2, 2, 'Laka Music', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1),
-	(3, 3, 'Lahiru Dress', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1),
+	(3, 3, 'Lahiru Dress', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 0),
 	(4, 4, 'Anjalee Photography', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1),
-	(5, 5, 'Kasun Car Rent', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0);
+	(5, 5, 'Kasun Car Rent', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 1);
 
 
 CREATE TABLE Feedback(
@@ -245,3 +246,7 @@ VALUES
 
 	-- Vendor List
 	-- Guest List
+-- CREATE TABLE SelectedVendors(
+-- 	conusID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+-- 	customerID INT NOT NULL,
+-- );
