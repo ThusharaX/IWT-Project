@@ -26,7 +26,6 @@
             $id = $row["customerID"];
         }
 
-        // Display Old details of user
         echo '<form class"update_form" action="./src/admin/deleteUser.src.php" method="post">
                 <input hidden value="' . $id .'" required type="text" name="id"><br>
                 <input hidden value="' . $row["role"] .'" required type="text" name="role"><br>

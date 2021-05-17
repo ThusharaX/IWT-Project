@@ -27,7 +27,6 @@ function uidExists($conn, $username, $email, $role) {
         return true;
     }
     else {
-
         return false;
     }
 
@@ -289,8 +288,7 @@ function addAnnouncement($conn, $title, $annDescription, $publish_date, $adminID
     $sql = "INSERT INTO Announcement
                 (annID, adminID, title, user_type, publish_date, annDescription) 
             VALUES
-                ('', '$adminID', '$title', '$role', '$publish_date', '$annDescription');
-            ";
+                ('', '$adminID', '$title', '$role', '$publish_date', '$annDescription');";
     
     if (mysqli_query($conn, $sql)) {
         // echo "<script>alert ('Successfully Sign Up')</script>";
@@ -302,6 +300,10 @@ function addAnnouncement($conn, $title, $annDescription, $publish_date, $adminID
 
     mysql_close($conn);
 }
+
+
+
+
 
 
 

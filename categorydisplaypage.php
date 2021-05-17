@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="./assets/css/categorydisplay.css">
 
 <!-- Gaween -->
-<!-- Type your code here -->	<center>
+<!-- Type your code here -->
 		
 			
 <video width="1200" height="600" autoplay loop="loop" >

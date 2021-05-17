@@ -91,6 +91,7 @@ VALUES
 
 CREATE TABLE Category(
     catID INT IDENTITY(1,1) NOT NULL,
+	cat_imgLoc varchar(100),
 	catName varchar(30) NOT NULL,
 	catDescription varchar(300),
 	price real,
@@ -100,11 +101,11 @@ CREATE TABLE Category(
 INSERT INTO Category
 	(catName, catDescription, price)
 VALUES
-	('Uncategorized', 'This is a category for uncategorized ads', 0.00),
-	('Catering ', 'The best Catering services in the country', 500.00),
-	('Music', 'After the ceremony, there is often a celebratory dance', 1500.00),
-	('Dress', 'Our tailors can create amazing modern-day gowns from vintage wedding gowns', 800.00),
-	('Car Rent', 'Which provides some of the most competitive rates in the industry.', 1100.00);
+	('catImage1.gif', 'Uncategorized', 'This is a category for uncategorized ads', 0.00),
+	('catImage2.gif', 'Catering ', 'The best Catering services in the country', 500.00),
+	('catImage3.gif', 'Music', 'After the ceremony, there is often a celebratory dance', 1500.00),
+	('catImage4.gif', 'Dress', 'Our tailors can create amazing modern-day gowns from vintage wedding gowns', 800.00),
+	('catImage5.gif', 'Car Rent', 'Which provides some of the most competitive rates in the industry.', 1100.00);
 
 
 CREATE TABLE Advertisement(

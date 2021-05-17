@@ -1,6 +1,7 @@
 <?php
     // Dynamic Header
     $title = 'About'; include("header.php");
+    include_once('./src/isloginConfig.src.php');
 ?>
 
 <!-- <link rel="stylesheet" href="./assets/css/about.css"> -->
@@ -17,7 +18,6 @@
             <br>
             <button class = "log" type="submit" name="submit">Login</button>
 
-            <b class = "forgetpassword">Forgot password?</b>
         </form>
 </section>
 

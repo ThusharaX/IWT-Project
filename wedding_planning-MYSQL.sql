@@ -86,19 +86,20 @@ VALUES
 
 CREATE TABLE Category(
     catID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    cat_imgLoc varchar(100),
 	catName varchar(30) NOT NULL,
 	catDescription varchar(300),
 	price real
 );
 
 INSERT INTO Category
-	(catName, catDescription, price)
+	(cat_imgLoc, catName, catDescription, price)
 VALUES
-	('Uncategorized', 'This is a category for uncategorized ads', 0.00),
-	('Catering ', 'The best Catering services in the country', 500.00),
-	('Music', 'After the ceremony, there is often a celebratory dance', 1500.00),
-	('Dress', 'Our tailors can create amazing modern-day gowns from vintage wedding gowns', 800.00),
-	('Car Rent', 'Which provides some of the most competitive rates in the industry.', 1100.00);
+	('uncategorized.gif', 'Uncategorized', 'This is a category for uncategorized ads', 0.00),
+	('catImage2.gif', 'Catering ', 'The best Catering services in the country', 500.00),
+	('catImage3.gif', 'Music', 'After the ceremony, there is often a celebratory dance', 1500.00),
+	('catImage4.gif', 'Dress', 'Our tailors can create amazing modern-day gowns from vintage wedding gowns', 800.00),
+	('catImage5.gif', 'Car Rent', 'Which provides some of the most competitive rates in the industry.', 1100.00);
 
 
 CREATE TABLE Advertisement(
@@ -240,3 +241,7 @@ VALUES
 	('Chamath Jayasekara', 'chamath@sliit.lk', '774589632', 'Website too slow please fix'),
 	('Nikethani Gangoda', 'nikethani@sliit.lk', '775896458', 'Just want to say thanks'),
 	('Pamodya Daundasekara', 'pamodya@sliit.lk', '736526985', 'Nice website');
+
+
+	-- Vendor List
+	-- Guest List
