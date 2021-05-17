@@ -70,23 +70,15 @@ VALUES
 	('Pamodya', 'Daundasekara', '1999-12-01', 'pamodya', 'customerImage5.jpg', 'customer', HASHBYTES('SHA2_256', 'pass'), 'pamodya@sliit.lk', 'Pamoda');
 
 
-CREATE TABLE Payment(
-    paymentID INT IDENTITY(1,1) NOT NULL,
-	amount real,
-	payTimeDate DateTime,
-	pay_type varchar(20),
-	pymntDescription varchar(300),
-	CONSTRAINT Payment_pk PRIMARY KEY (paymentID)
-);
 
-INSERT INTO Payment
-	(amount, payTimeDate, pay_type, pymntDescription)
-VALUES
-	(1000.00, CURRENT_TIMESTAMP, 'visa card', 'This payment for Bride'),
-	(500.00, CURRENT_TIMESTAMP, 'master card', 'This payment for Catering'),
-	(1500.00, CURRENT_TIMESTAMP, 'american express', 'This payment for Music'),
-	(800.00, CURRENT_TIMESTAMP, 'visa card', 'This payment for Dress'),
-	(1100.00, CURRENT_TIMESTAMP, 'master card', 'This payment for Car Rent');
+
+
+
+
+
+
+
+
 
 
 CREATE TABLE Category(
@@ -98,6 +90,10 @@ CREATE TABLE Category(
 	CONSTRAINT Category_pk PRIMARY KEY(catID)
 );
 
+
+
+
+
 INSERT INTO Category
 	(catName, catDescription, price)
 VALUES
@@ -107,30 +103,49 @@ VALUES
 	('catImage4.gif', 'Dress', 'Our tailors can create amazing modern-day gowns from vintage wedding gowns', 800.00),
 	('catImage5.gif', 'Car Rent', 'Which provides some of the most competitive rates in the industry.', 1100.00);
 
-
-CREATE TABLE Advertisement(
+CREATE TABLE Advertisement_payment(
     adID INT IDENTITY(1,1) NOT NULL,
+	paymentID INT IDENTITY(1,1) NOT NULL,
 	catID INT DEFAULT 1,
-	adminID INT,
 	title varchar(20)  NOT NULL,
-	addDescription varchar(300)  NOT NULL,
+    addDescription varchar(300)  NOT NULL,
     mobile INT NOT NULL,
 	addImageLoc varchar(30),
 	publishDateTime DateTime,
 	status BIT,
+    amount real,
+	pay_type varchar(20),
+	pymntDescription varchar(300),						
+    vendorID INT,	
 	CONSTRAINT adID_pk PRIMARY KEY (adID),
 	CONSTRAINT adIDcat_fk FOREIGN KEY (catID) REFERENCES Category(catID) ON DELETE SET DEFAULT,
-	CONSTRAINT adIDadmin_fk FOREIGN KEY (adminID) REFERENCES Admin(adminID) ON DELETE SET NULL,
+	CONSTRAINT adIDvendor_fk FOREIGN KEY (vendorID) REFERENCES Vendor(vendorID) ON DELETE SET NULL,
 );
 
-INSERT INTO Advertisement
-	(catID, adminID, title, addDescription, mobile, addImageLoc, publishDateTime, status)
+--adID and paymentIDs are auto increment--
+INSERT INTO Advertisement_payment
+	(catID,title, addDescription, mobile, addImageLoc, publishDateTime, status,amount,pay_type,pymntDescription,vendorID)
 VALUES
-	(1, 1, 'Kalana Catering', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1),
-	(2, 2, 'Laka Music', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1),
-	(3, 3, 'Lahiru Dress', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1),
-	(4, 4, 'Anjalee Photography', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1),
-	(5, 5, 'Kasun Car Rent', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0);
+	(1,'Kalana Catering', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1,1000.00, 'visa card', 'This payment for Bride',1),
+	(2,'Laka Music', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1,500.00, 'master card', 'This payment for Catering',2),
+	(3,'Lahiru Dress', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', 1,1500.00, CURRENT_TIMESTAMP, 'american express', 'This payment for Music',2),
+	(4,'Anjalee Photography', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1,800.00,'visa card', 'This payment for Dress',4),
+	(5,'Kasun Car Rent', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,1100.00, 'master card', 'This payment for Car Rent',1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 CREATE TABLE Feedback(
@@ -146,6 +161,9 @@ CREATE TABLE Feedback(
 	CONSTRAINT feedbackAd_fk FOREIGN KEY (adID) REFERENCES advertisement(adID) ON DELETE CASCADE
 );
 
+
+
+
 INSERT INTO Feedback
 	(customerID, adID, feedbackDate, feedbackTime, rating, fbdescription)
 VALUES
@@ -156,28 +174,7 @@ VALUES
 	(5, 5, '2019-01-25', '10:30:00', 1, 'Bad service');
 
 
-CREATE TABLE VendorPaymentAdvertisement(
-    vendorID INT NOT NULL,
-	adID INT NOT NULL,
-	paymentID INT NOT NULL,
-	CONSTRAINT VpaymentAdvertisement_pk PRIMARY KEY (vendorID,adID,paymentID),
-	--add 3 foreign keys--
-	--payment only can  perform pk--
-	--In our system there is no functionality  delete payments--
-	--if vendor get deleted paymentID and advertisementID can  perform a foreign key --
-	CONSTRAINT VPAvendor_fk FOREIGN KEY (vendorID) REFERENCES Vendor(vendorID) ON DELETE CASCADE,
-	CONSTRAINT VPAad_fk FOREIGN KEY (adID) REFERENCES Advertisement(adID) ON DELETE CASCADE,
-	CONSTRAINT VPApayment_fk FOREIGN KEY (PaymentID) REFERENCES Payment(paymentID) ON DELETE CASCADE
-);
 
-INSERT INTO VendorPaymentAdvertisement
-	(vendorID, adID, paymentID)
-VALUES
-	(1, 1, 1),
-	(2, 2, 2),
-	(3, 3, 3),
-	(4, 4, 4),
-	(5, 5, 5);
 
 
 CREATE TABLE Wedding(
@@ -190,6 +187,8 @@ CREATE TABLE Wedding(
 	CONSTRAINT weddingCus_fk FOREIGN KEY (customerID) REFERENCES Customer(customerID) ON DELETE SET NULL
 );
 
+
+
 INSERT INTO Wedding
 	(customerID, weddingDate, weddingDescription)
 VALUES
@@ -198,6 +197,8 @@ VALUES
 	(3, '2023-07-02', 'Just say YES'),
 	(4, '2021-08-05', 'Love of my life'),
 	(5, '2021-09-01', 'Excited');
+
+
 
 
 CREATE TABLE Choice(
@@ -217,6 +218,8 @@ VALUES
 	(3, 3),
 	(4, 4),
 	(5, 5);
+
+
 
 
 CREATE TABLE Announcement(

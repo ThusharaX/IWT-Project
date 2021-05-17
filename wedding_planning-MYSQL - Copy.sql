@@ -66,64 +66,75 @@ VALUES
 	('Pamodya', 'Daundasekara', '1999-12-01', 'pamodya', 'customerImage5.jpg', 'customer', SHA2('pass', 256), 'pamodya@sliit.lk', 'Pamoda');
 
 
-CREATE TABLE Payment(
-    paymentID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-	amount real,
-	payTimeDate DateTime,
-	pay_type varchar(20),
-	pymntDescription varchar(300)
-);
-
-INSERT INTO Payment
-	(amount, payTimeDate, pay_type, pymntDescription)
-VALUES
-	(1000.00, CURRENT_TIMESTAMP, 'visa card', 'This payment for Bride'),
-	(500.00, CURRENT_TIMESTAMP, 'master card', 'This payment for Catering'),
-	(1500.00, CURRENT_TIMESTAMP, 'american express', 'This payment for Music'),
-	(800.00, CURRENT_TIMESTAMP, 'visa card', 'This payment for Dress'),
-	(1100.00, CURRENT_TIMESTAMP, 'master card', 'This payment for Car Rent');
-
-
 CREATE TABLE Category(
     catID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    cat_imgLoc varchar(100),
 	catName varchar(30) NOT NULL,
 	catDescription varchar(300),
 	price real
 );
 
+
 INSERT INTO Category
-	(cat_imgLoc, catName, catDescription, price)
+	(catName, catDescription, price)
 VALUES
-	('uncategorized.gif', 'Uncategorized', 'This is a category for uncategorized ads', 0.00),
-	('catImage2.gif', 'Catering ', 'The best Catering services in the country', 500.00),
-	('catImage3.gif', 'Music', 'After the ceremony, there is often a celebratory dance', 1500.00),
-	('catImage4.gif', 'Dress', 'Our tailors can create amazing modern-day gowns from vintage wedding gowns', 800.00),
-	('catImage5.gif', 'Car Rent', 'Which provides some of the most competitive rates in the industry.', 1100.00);
+	('Uncategorized', 'This is a category for uncategorized ads', 0.00),
+	('Catering ', 'The best Catering services in the country', 500.00),
+	('Music', 'After the ceremony, there is often a celebratory dance', 1500.00),
+	('Dress', 'Our tailors can create amazing modern-day gowns from vintage wedding gowns', 800.00),
+	('Car Rent', 'Which provides some of the most competitive rates in the industry.', 1100.00);
 
 
-CREATE TABLE Advertisement(
-    adID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+
+CREATE TABLE Advertisement_payment(
+    adID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,   
+    paymentID INT AUTO_INCREMENT NOT NULL,   
 	catID INT DEFAULT NULL,
-	adminID INT,
 	title varchar(20)  NOT NULL,
 	addDescription varchar(300)  NOT NULL,
     mobile INT NOT NULL,
 	addImageLoc varchar(30),
-	publishDateTime DateTime,
-	status BIT,
-	CONSTRAINT adIDcat_fk FOREIGN KEY (catID) REFERENCES Category(catID) ON DELETE SET NULL,
-	CONSTRAINT adIDadmin_fk FOREIGN KEY (adminID) REFERENCES Admin(adminID) ON DELETE SET NULL
-)Engine=MyISAM;
+	publishDateTime DateTime,	
+	status bit,
+	amount real,
+	pay_type varchar(20),
+	pymntDescription varchar(300),
+	vendorID INT,
+	
+    CONSTRAINT adIDcat_fk FOREIGN KEY (catID) REFERENCES Category(catID) ON DELETE SET NULL,	
+	CONSTRAINT VPAvendor_fk FOREIGN KEY (vendorID) REFERENCES Vendor(vendorID) ON DELETE SET NULL,
+	
+)
 
-INSERT INTO Advertisement
-	(catID, adminID, title, addDescription, mobile, addImageLoc, publishDateTime, status)
+
+INSERT INTO Advertisement_payment
+	(catID,title, addDescription, mobile, addImageLoc, publishDateTime, status,amount,pay_type,pymntDescription,vendorID)
 VALUES
-	(1, 1, 'Kalana Catering', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1),
-	(2, 2, 'Laka Music', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1),
-	(3, 3, 'Lahiru Dress', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1),
-	(4, 4, 'Anjalee Photography', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1),
-	(5, 5, 'Kasun Car Rent', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0);
+	(1, 1, 'Kalana Catering', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1,1000.00, 'visa card', 'This payment for Bride',1),
+	(2, 2, 'Laka Music', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1,500.00, 'master card', 'This payment for Catering',2),
+	(3, 3, 'Lahiru Dress', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1,1500.00, CURRENT_TIMESTAMP, 'american express', 'This payment for Music',2),
+	(4, 4, 'Anjalee Photography', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1,800.00,'visa card', 'This payment for Dress',4),
+	(5, 5, 'Kasun Car Rent', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,1100.00, 'master card', 'This payment for Car Rent',1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 CREATE TABLE Feedback(
@@ -149,24 +160,6 @@ VALUES
 	(5, 5, '2019-01-25', '10:30:00', 1, 'Bad service');
 
 
-CREATE TABLE VendorPaymentAdvertisement(
-    vendorID INT NOT NULL,
-	adID INT NOT NULL,
-	paymentID INT NOT NULL,
-	CONSTRAINT VpaymentAdvertisement_pk PRIMARY KEY (vendorID,adID,paymentID),
-	CONSTRAINT VPAvendor_fk FOREIGN KEY (vendorID) REFERENCES Vendor(vendorID) ON DELETE CASCADE,
-	CONSTRAINT VPAad_fk FOREIGN KEY (adID) REFERENCES Advertisement(adID) ON DELETE CASCADE,
-	CONSTRAINT VPApayment_fk FOREIGN KEY (PaymentID) REFERENCES Payment(paymentID) ON DELETE CASCADE
-)Engine=MyISAM;
-
-INSERT INTO VendorPaymentAdvertisement
-	(vendorID, adID, paymentID)
-VALUES
-	(1, 1, 1),
-	(2, 2, 2),
-	(3, 3, 3),
-	(4, 4, 4),
-	(5, 5, 5);
 
 
 CREATE TABLE Wedding(
@@ -241,7 +234,3 @@ VALUES
 	('Chamath Jayasekara', 'chamath@sliit.lk', '774589632', 'Website too slow please fix'),
 	('Nikethani Gangoda', 'nikethani@sliit.lk', '775896458', 'Just want to say thanks'),
 	('Pamodya Daundasekara', 'pamodya@sliit.lk', '736526985', 'Nice website');
-
-
-	-- Vendor List
-	-- Guest List
