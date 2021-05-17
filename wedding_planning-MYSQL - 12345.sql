@@ -87,7 +87,7 @@ VALUES
 
 CREATE TABLE Advertisement_payment(
     adID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,   
-    paymentID INT AUTO_INCREMENT NOT NULL,   
+    paymentID INT  NOT NULL,   
 	catID INT DEFAULT NULL,
 	title varchar(20)  NOT NULL,
 	addDescription varchar(300)  NOT NULL,
@@ -99,43 +99,24 @@ CREATE TABLE Advertisement_payment(
 	pay_type varchar(20),
 	pymntDescription varchar(300),
 	vendorID INT,
+	/*it is good to genrate a payment ID without doing this(make paymentID also a pk to auto increment it)
+	  since ot will be done by my side i will figure out a way.
+	*/
 	
     CONSTRAINT adIDcat_fk FOREIGN KEY (catID) REFERENCES Category(catID) ON DELETE SET NULL,	
-	CONSTRAINT VPAvendor_fk FOREIGN KEY (vendorID) REFERENCES Vendor(vendorID) ON DELETE SET NULL,
+	CONSTRAINT VPAvendor_fk FOREIGN KEY (vendorID) REFERENCES Vendor(vendorID) ON DELETE SET NULL
 	
-)
+);
 
 
 INSERT INTO Advertisement_payment
-	(catID,title, addDescription, mobile, addImageLoc, publishDateTime, status,amount,pay_type,pymntDescription,vendorID)
+	( paymentID,catID,title, addDescription, mobile, addImageLoc, publishDateTime, status,amount,pay_type,pymntDescription,vendorID)
 VALUES
-	(1, 1, 'Kalana Catering', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1,1000.00, 'visa card', 'This payment for Bride',1),
-	(2, 2, 'Laka Music', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1,500.00, 'master card', 'This payment for Catering',2),
-	(3, 3, 'Lahiru Dress', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1,1500.00, CURRENT_TIMESTAMP, 'american express', 'This payment for Music',2),
-	(4, 4, 'Anjalee Photography', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1,800.00,'visa card', 'This payment for Dress',4),
-	(5, 5, 'Kasun Car Rent', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,1100.00, 'master card', 'This payment for Car Rent',1);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	(1,1,  'Kalana Catering', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1,1000.00, 'visa card', 'This payment for Bride',1),
+	(2,2,  'Laka Music', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1,500.00, 'master card', 'This payment for Catering',2),
+	(3,3,  'Lahiru Dress', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1,1500.00,'american express', 'This payment for Music',2),
+	(5,4,  'Anjalee Photography', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1,800.00,'visa card', 'This payment for Dress',4),
+	(6,5, 'Kasun Car Rent', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,1100.00, 'master card', 'This payment for Car Rent',1);
 
 CREATE TABLE Feedback(
     customerID INT NOT NULL,
@@ -145,10 +126,10 @@ CREATE TABLE Feedback(
 	feedbackTime time,
 	rating INT,
 	fbdescription varchar(300),
-	CONSTRAINT feedback_pk PRIMARY KEY (customerID,adID,feedbackID),
+	CONSTRAINT feedback_pk PRIMARY KEY (feedbackID),
 	CONSTRAINT feedbackCus_fk FOREIGN KEY (customerID) REFERENCES Customer(customerID) ON DELETE CASCADE,
-	CONSTRAINT feedbackAd_fk FOREIGN KEY (adID) REFERENCES Advertisement(adID) ON DELETE CASCADE
-)Engine=MyISAM;
+	CONSTRAINT feedbackAd_fk FOREIGN KEY (adID) REFERENCES Advertisement_payment(adID) ON DELETE CASCADE
+);
 
 INSERT INTO Feedback
 	(customerID, adID, feedbackDate, feedbackTime, rating, fbdescription)
@@ -184,9 +165,9 @@ CREATE TABLE Choice(
     adID INT NOT NULL,
 	CID INT NOT NULL,
 	CONSTRAINT choice_pk PRIMARY KEY (adID,CID),
-	CONSTRAINT choicecid_fk FOREIGN KEY (adID) REFERENCES Advertisement(adID) ON DELETE CASCADE,
+	CONSTRAINT choicecid_fk FOREIGN KEY (adID) REFERENCES Advertisement_payment(adID) ON DELETE CASCADE,
 	CONSTRAINT choiceadid_fk FOREIGN KEY (CID) REFERENCES Customer(customerID) ON DELETE CASCADE
-)Engine=MyISAM;
+);
 
 INSERT INTO Choice
 	(adID, CID)
