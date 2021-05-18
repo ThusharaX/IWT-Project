@@ -253,32 +253,44 @@
             <!-- <h3>Advertisements</h3> -->
                 <table id="customers">
                     <tr>
-                        <th>adID</th>
-                        <th>catID</th>
-                        <th>title</th>
-                        <th>addDescription</th>
-                        <th>mobile</th>
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Mobile</th>
                         <th>addImageLoc</th>
-                        <th>publishDateTime</th>
-                        <th>status</th>
+                        <th>Date & Time</th>
+                        <th>Status</th>
                         <th>Delete</th>
                     </tr>
+                    
                     <?php
                         $sql = "SELECT * from Advertisement";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
+
+                                // Get Category Name from catID
+                                $sql = mysqli_query($conn, "SELECT catName FROM Category WHERE catID= '" . $row['catID'] . "' ");
+                                $catName  = mysqli_fetch_array($sql);
+
                             echo "
                             <tr>
                                 <td>".$row['adID']."</td>
-                                <td>".$row['catID']."</td>
+                                <td>".$catName[0]."</td>
                                 <td>".$row['title']."</td>
                                 <td>".$row['addDescription']."</td>
                                 <td>".$row['mobile']."</td>
                                 <td><img height='50px' width='50px' src='./Uploads/advertisements/".$row['addImageLoc']."'></td>
                                 <td>".$row['publishDateTime']."</td>
-                                <td>".$row['status']."</td>
+                                <td>"
+                                    .(($row['status'])?
+                                    " Approved ":
+                                    "<a href='./approveAdvertisement.php?adID=$row[adID]'>
+                                    <input name='approve' type='submit' value='Approve'></a>").
+                                    "
+                                </td>
                                 <td>
                                     <a href='./deleteAdvertisement.php?catID=$row[adID]'>
                                     <input name='delete' type='submit' value='Delete'></a>
@@ -305,7 +317,9 @@
         <section class="categories">
             <div class="ad__table">
             <!-- <h3>Categories</h3> -->
-            <button><a href="./addCategory.php">Add new Category</a></button>
+            <div class="ann__btn">
+                <a class="nav__login" href="./addCategory.php">Add new Category</a>
+            </div>
                 <table id="customers">
                     <tr>
                         <th>catID ID</th>
@@ -354,8 +368,10 @@
         <!-- Announcement -->
         <section class="categories">
             <div class="ad__table">
+            <div class="ann__btn">
+                <a class="nav__login" href="./addAnnouncement.php">Add new Announcement</a>
+            </div>
             <!-- <h3>Announcement</h3> -->
-            <button><a href="./addAnnouncement.php">Add new Announcement</a></button>
                 <table id="customers">
                     <tr>
                         <th>annID</th>
