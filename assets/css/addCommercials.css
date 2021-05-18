@@ -1,11 +1,9 @@
-   
+ /*By It20654962*/  
     * {
-        /* by removing this line fixed header collapsion */
-        /* but still font changed */
-        /* box-sizing: border-box; */
+   
         padding: 0;
         margin: 0;
-        font-family: 'Poppins', sans-serif;
+        
     }
     
     body {
@@ -19,9 +17,10 @@
 		margin:10px;
 		border-radius:10px;
 	}
-	.category_display{
+	.payment_display{
 		width:70vw;
 		height:70vh;
+		position
 		
 	}
 	
@@ -30,48 +29,12 @@
 	flex-wrap:wrap;
 }
     
-     #vnavBar{
-		 display:flex;
-		 justify-content:space-around;
-		 align-items:center;
-		 min-height:8vh;
-		 font-family: 'Poppins', sans-serif;
-		 
-	}
-	.vendorNavbar{
-    display:flex;
-	justify-content:space-around;
-	width:100%;
-   
-}
+
 
 .display{
 	margin:10px;
 }
-li{
-	list-style:none;
-}
-a{
-	text-decoration:none;
-}
-li a {
-    color: #948392;
-    
-	letter-spacing:3px;
-	font-size:10px;
-	font-weight:bold;
-    text-align: center;
-    padding: 14px 16px;
-	
-}
-
- li a:hover {
-    background-color: #948392;
-	color:white;
-}
- hr{
-	margin:0px 10px;
-   } 
+ 
     textarea {
         outline: none;
         border-radius: 5px;
@@ -110,7 +73,7 @@ li a {
     
    
     
-    .ads-details .inputs input {
+    .inputs input {
         height: 40px;
         width: 95%;
         outline: none;
@@ -122,7 +85,7 @@ li a {
     
    
     
-    .ads-details .cinputs input {
+    .cinputs input {
         height: 40px;
         width: 90%;
         outline: none;
@@ -134,6 +97,9 @@ li a {
     .sdbutton {
        
         display: flex;
+		position:absolute;
+		bottom:20px;
+		right:20px;
     }
     
 /*buttons*/
@@ -153,13 +119,13 @@ li a {
     }
 	
     
-    .ads-details .inputs {
+    .inputs {
         margin: 10px 0px;
 		
 	
     }
     
-    .ads-details .cinputs {
+    .cinputs {
         margin: 10px 0px;
 	
     }
@@ -209,7 +175,27 @@ li a {
 	small{
 		font-size:10px;
 	}
-	h3{
+	h2{
 		text-align:center;
+		font-size:14px;
 	}
-	
+	#paymentTitle{
+		 font-size: 25px;
+        font-weight: 500;
+        text-align: center;
+		margin-top:15px;
+      
+        background:#DCD4D0;
+		margin-right:10px;
+		
+	}
+	.pay{
+		margin-left:10px;
+		
+	}
+	#amountInput{
+		width:50%;
+	}
+	.Message{
+		visibility:hidden;
+	}

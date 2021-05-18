@@ -1,5 +1,5 @@
 <?php
-   //By IT20654962
+ //By IT20654962
     // Dynamic Header
     $title = 'Vendor Dashboard'; include("header.php");
 	 //session_start();
@@ -115,8 +115,13 @@
 
 	
     <div class="profilebtn">	
-    <input type="button" name="update" id="update" value="Update" onclick="window.location.href='accountDetailsDelete.php'">
 	
+
+
+	
+
+    <input type="button" name="Edit" id="update" value="Edit" onclick="window.location.href='accountDetailsEdit.php'">
+	 <input type="submit" name="delete" id="delete" value="Delete">
 	</div>
 	</div>
 	 </div>
@@ -127,7 +132,24 @@
   
 </form>
 	
+	<?php
+	if(isset($_POST["delete"])){
+		  
+           //vendorID must be taken as  a session.	  
+		   $sqlstatementDel="DELETE FROM Vendor WHERE vendorID=1;";
+		   
+		   if(mysqli_query($conn,$sqlstatementDel)){
+			   //header("Location:vendorSignup.php?userdeleted");
+              echo "<script>alert('user deleted')</script>" ;			  
+			  
+		   }else{
+			  echo "Error cannot be deleted user because: ".$conn->error;   
+		  }
+		   
+		   
+	   }
 	
+	?>
 	</div>
 	
 <!-- Code segment for display Announcements related to vendor ------------------>

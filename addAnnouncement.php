@@ -1,6 +1,6 @@
 <?php
     // Dynamic Header
-    $title = 'Add Announcements'; include("header.php");
+    $title = 'Update'; include("header.php");
     // Check if user is an admin
     include("./src/admin/adminConfig.php");
 ?>

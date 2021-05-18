@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+/*By IT20654962*/
+#vnavBar{
+		 display:flex;
+		 justify-content:space-around;
+		 align-items:center;
+		 min-height:8vh;
+		 
+		 
+	 }
+	.vendorNavbar{
+    display:flex;
+	justify-content:space-around;
+	width:100%;
+ 
+  
+}
+#vnavBar .vendorNavbar li{
+	list-style:none;
+}
+#vnavBar .vendorNavbar a{
+	text-decoration:none;
+}
+#vnavBar .vendorNavbar a{
+    
+   	letter-spacing:3px;
+	font-weight:bold;
+    text-align: center;
+    padding: 10px 15px;
+	
+}
+.vendorNavbar a{
+	font-size:12px;
+	font-style:'Poppins',sans-serif;
+}
+.vendorNavbar a:hover {
+    background-color: #948392;	
+	color:white;
+	border-radius:10px 10px 0px 0px;
+}
+hr{
+	margin:0px 10px;
+}
+.current{
+	background-color: #948392;	
+	color:white;
+	border-radius:10px 10px 0px 0px;
+}

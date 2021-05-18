@@ -1,52 +1,41 @@
 *{
-	margin:0;
-	padding:0;
-	/*box-sizing:border-box;*/	
-	}
+	padding:0px;
+	margin:0px;
+}
+
 body{
-	background-color:#FBFBFF;	
-		
+	        background-color:#FBFBFF;
 }
 
- #vnavBar{
-		 display:flex;
-		 justify-content:space-around;
-		 align-items:center;
-		 min-height:8vh;
-		
-		 
-		 
-		 font-family: 'Poppins', sans-serif;
-		 
-	 }
-	.vendorNavbar{
-    display:flex;
-	justify-content:space-around;
-	width:100%;
- 
-  
+textarea{
+	display:block;
 }
-li{
-	list-style:none;
-}
-a{
-	text-decoration:none;
-}
-li a {
-    color: #948392;
-    
-	letter-spacing:3px;
-	font-size:10px;
-	font-weight:bold;
-    text-align: center;
-    padding: 14px 16px;
+.data{
+	margin-left:10px;
+	margin-top:10px;
+}img{
+	display:block;
+}.acdetails{
+	margin:50px;
+	width:50%;
+}.data{
+	display:flex;
+}.data input{
+	width:60%;
+	height:40px;
 	
-}
-
-li a:hover {
-    background-color: #948392;
-	color:white;
-}
-hr{
-	margin:0px 10px;
+}.profilebtn{
+	display:flex;
+	float:right;
+	margin:10px;
+	
+	justify-content:space-evenly;
+}#update{
+	margin-right:10px;
+	
+}#delete{
+	margin-left:10px;
+	
+}.profilebtn input{
+	width:100px;
 }

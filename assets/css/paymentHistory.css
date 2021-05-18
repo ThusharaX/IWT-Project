@@ -1,52 +1,32 @@
+/*BY IT20654962*/
 *{
 	margin:0px;
 	padding:0px;
-	box-sizing:border-box;
-	
+	/*box-sizing:border-box;*/
 }
 body{
 	 background-color:#FBFBFF;	
     
-}
- #vnavBar{
-		 display:flex;
-		 justify-content:space-around;
-		 align-items:center;
-		 min-height:8vh;
-		
-		 
-		 
-		 font-family: 'Poppins', sans-serif;
-		 
-	 }
-	.vendorNavbar{
-    display:flex;
-	justify-content:space-around;
-	width:100%;
- 
-  
-}
-li{
-	list-style:none;
-}
-a{
-	text-decoration:none;
-}
-li a {
-    color: #948392;
-    
-	letter-spacing:3px;
-	font-size:10px;
-	font-weight:bold;
-    text-align: center;
-    padding: 14px 16px;
+}.pays{
+	display:flex;
+	justify-content:center;
+	align-items:center;
 	
 }
-
-li a:hover {
-    background-color: #948392;
-	color:white;
+table{	  
+	  width:90%;
+	  margin:10px;
+	  margin-right:10px;
+	  border-collapse: collapse;
+}tr{
+	  text-align:center;
+	  overflow-wrap: break-word;
+	
+}tbody{
+	 
+		 word-break: break-word;
 }
-hr{
-	margin:0px 10px;
+th{
+	background:blanchedalmond;
 }
+ 
