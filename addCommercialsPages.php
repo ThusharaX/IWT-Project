@@ -13,7 +13,8 @@
  $fileTempName=$_FILES["images"]["tmp_name"];  
  
  //create directory
-  $target_dir="Uploads/";
+ //changed
+  $target_dir="./Uploads/adsImage/";
 
   //contains the path
   $target_file=$target_dir.basename($fileName);
@@ -57,6 +58,7 @@ if ($uploadOk ==false) {
 } 
 else 
   if (move_uploaded_file($fileTempName, $target_file)) {
+	  echo "<br>";
     echo "The file ". htmlspecialchars( basename( $fileName)). " has been uploaded.";
   } else {
     echo "Sorry, there was an error uploading your file.";

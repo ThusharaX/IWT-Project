@@ -46,18 +46,18 @@
 		 
           echo "<tr><td>".$row['title']."</td></tr>";			
           echo "<tr><td>".$row['addDescription']."</td></tr>";
-          $row['adID'];
+         // $row['adID'];
           echo "<tr><td>".$row['publishDateTime']."</td></tr>";
           echo "<tr><td>".$row['mobile']."</td></tr>";
                   
-         echo "<tr><td><a class='update'id='edit' href='adsEdit.php?title=$row[title]&addes=$row[addDescription]&mobile=$row[mobile]'>Edit</a></td></tr>";
+         echo "<tr><td><a class='update'id='edit' href='adsEdit.php?id=$row[adID]&title=$row[title]&addes=$row[addDescription]&mobile=$row[mobile]&imglocation=$row[addImageLoc]'>Edit</a></td></tr>";
 		  //no need of quotations in the url adID and  others
          echo "<tr><td><a class='update' id='delete' href='adsDelete.php?id=$row[adID]'   class='button'>Delete</a></td></tr>";
 		  echo "</table>";
 		  echo "</div>";
        }
    }else{
-	   echo "No records found";
+	   echo "No advertisements published";
    }
  }else{
 	 echo "Error: ".$conn->error;
