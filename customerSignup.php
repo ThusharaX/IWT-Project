@@ -5,7 +5,7 @@
     include("./src/isloginConfig.src.php")
 ?>
 
-<link rel="stylesheet" href="./assets/css/signup.css" />
+<link rel="stylesheet" href="./assets/css/customerSignup.css" />
 
 <!-- Niki -->
 <!-- Type your code here -->

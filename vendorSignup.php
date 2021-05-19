@@ -5,7 +5,7 @@
     include("./src/isloginConfig.src.php")
 ?>
 
-<link rel="stylesheet" href="./assets/css/signup.css">
+<link rel="stylesheet" href="./assets/css/vendorSignup.css">
 
 <!-- Niki -->
 <!-- Type your code here -->
@@ -44,6 +44,9 @@
         <h3>Are you a Customer?</h3>
         <a href="./customerSignup.php">Customer Signup</a>
     </div>
+  </div>
+  <div class="vbgImage">
+    <img src="assets/images/signupvender-bg.jpg"" alt="Vendor">
   </div>
 </section>
 
