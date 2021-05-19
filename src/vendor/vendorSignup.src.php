@@ -40,7 +40,7 @@ if (isset($_POST["submit"])) {
     else {
         echo "<script>alert ('Something went wrong :-(')</script>";
     }
-    mysql_close($conn);
+    mysqli_close($conn);
 // }
 
 
