@@ -27,7 +27,6 @@ function uidExists($conn, $username, $email, $role) {
         return true;
     }
     else {
-
         return false;
     }
 
@@ -170,7 +169,7 @@ function addUser($conn, $fname, $lname, $email, $username, $pwd, $role) {
         echo "<script>alert ('Something went wrong :-(')</script>";
     }
 
-    mysql_close($conn);
+    mysqli_close($conn);
 }
 
 
@@ -289,8 +288,7 @@ function addAnnouncement($conn, $title, $annDescription, $publish_date, $adminID
     $sql = "INSERT INTO Announcement
                 (annID, adminID, title, user_type, publish_date, annDescription) 
             VALUES
-                ('', '$adminID', '$title', '$role', '$publish_date', '$annDescription');
-            ";
+                ('', '$adminID', '$title', '$role', '$publish_date', '$annDescription');";
     
     if (mysqli_query($conn, $sql)) {
         // echo "<script>alert ('Successfully Sign Up')</script>";
@@ -300,8 +298,12 @@ function addAnnouncement($conn, $title, $annDescription, $publish_date, $adminID
         echo "<script>alert ('Something went wrong :-(')</script>";
     }
 
-    mysql_close($conn);
+    mysqli_close($conn);
 }
+
+
+
+
 
 
 
@@ -355,7 +357,7 @@ function addAnnouncement($conn, $title, $annDescription, $publish_date, $adminID
 //     else {
 //         echo "<script>alert ('Something went wrong :-(')</script>";
 //     }
-//     mysql_close($conn);
+//     mysqli_close($conn);
 // }
 
 // Niki

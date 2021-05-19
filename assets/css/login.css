@@ -5,7 +5,7 @@
 *{
     margin: 0;
     padding:0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     text-decoration: none;
 }
 
@@ -56,7 +56,7 @@
     margin-bottom: 20px;
  }
 
-h1{
+.log_in_to_your_acc {
 
     text-align: center;
     font-size: x-large;

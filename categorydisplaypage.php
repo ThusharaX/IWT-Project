@@ -6,10 +6,31 @@
 <link rel="stylesheet" href="./assets/css/categorydisplay.css">
 
 <!-- Gaween -->
-<!-- Type your code here -->	<center>
+<!-- Type your code here -->
+
+
+div.categorie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 			
-<video width="1200" height="600" autoplay loop="loop" >
+<!-- <video width="1200" height="600" autoplay loop="loop" >
   <source src="./assets/video/heroVideo.mp4" type="video/mp4">
 </video>
 
@@ -34,7 +55,7 @@
   </tbody>
 </table>
 
-	  <img src="./assets/img/CATEGORIES/category background.jpg" width="1230" height="750" >
+	  <img src="./assets/img/CATEGORIES/category background.jpg" width="1230" height="750" > -->
 
 
 <script src="./assets/js/categorydisplay.js"></script>
