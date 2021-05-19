@@ -1,43 +1,58 @@
 /*signup page styles(choose type)*/
-.column {
+.m-container {
+  text-align: center;
+}
+.m-container h1 {
+  font-size: 40px;
+  color: black;
+}
+
+.m-types {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.m-type img {
+  width: 300px;
+  height: 300px;
+}
+
+.m-type {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 50vh;
+  align-items: center;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.customer button {
-  font-size: large;
-  font-weight: bold;
-  background-color: aqua;
-  width: 25vw;
-  height: 50px;
+.m-btn1,
+.m-btn2 {
   cursor: pointer;
-}
-
-.customer button:hover {
+  margin-top: 20px;
   color: white;
-  background-color: red;
-}
+  padding: 14px 20px;
+  border: none;
+  border-radius: 5px;
+  width: 250px;
+  /* opacity: 0.9; */
 
-.vendor button {
-  font-size: large;
+  font-size: 15px;
   font-weight: bold;
-  background-color: aqua;
-  width: 25vw;
-  height: 50px;
-  cursor: pointer;
 }
 
-.vendor button:hover {
-  color: white;
-  background-color: red;
+.m-btn1 {
+  background-color: #e16b62;
+}
+
+.m-btn2 {
+  background-color: #3dc1a7;
+}
+
+.m-btn1:hover,
+.m-btn2:hover {
+  filter: brightness(95%);
 }
 
 /* PopUP Style */

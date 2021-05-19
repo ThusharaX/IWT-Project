@@ -8,19 +8,21 @@
 
 <!-- Niki -->
 <!-- Type your code here -->
-<section>
-    <h1 class="main-title">Signup Page</h1>
-    <div class="column">
-        <div class="row">
-            <div class="customer">
+<section class="m-container">
+    <h1 class="main-title">SIGN UP</h1>
+    <div class="m-types">
+            <div class="m-type">
+                <img src="assets/images/customersignup.png" alt="Customer">
                 <a href='./customerSignup.php?role=customer'>
-                <button type="submit">I am Customer</button></a>
+                    <button class="m-btn1">I am Customer</button>
+                </a>
             </div>
-            <div class="vendor">
+            <div class="m-type">
+                <img src="assets/images/vendorsignup.png" alt="Vendor">
                 <a href='./vendorSignup.php?role=vendor'>
-                <button type="submit">I am Vendor</button></a>
+                    <button class="m-btn2">I am Vendor</button>
+                </a>
             </div>
-        </div>
     </div>
 </section>
 

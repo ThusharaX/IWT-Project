@@ -73,6 +73,7 @@ form input:focus {
   margin: 0 10%;
 }
 .submit-btn {
+  cursor: pointer;
   background-color: #0061a7;
   margin-top: 20px;
   color: white;

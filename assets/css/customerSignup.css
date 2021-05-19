@@ -6,6 +6,7 @@
   background-position: center top;
   height: 750px;
   padding-top: 100px;
+  margin-top: 20px;
 }
 
 .signup {
@@ -72,6 +73,7 @@ form input:focus {
   margin: 0 10%;
 }
 .submit-btn {
+  cursor: pointer;
   background-color: #0061a7;
   margin-top: 20px;
   color: white;
