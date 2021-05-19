@@ -5,27 +5,46 @@
     include("./src/isloginConfig.src.php")
 ?>
 
-<link rel="stylesheet" href="./assets/css/vendorSignup.css">
+<link rel="stylesheet" href="./assets/css/signup.css">
 
 <!-- Niki -->
 <!-- Type your code here -->
-<section>
-    <h1 class="main-title">Hello Vendor</h1>
-    <br>
-    <form action="./src/vendor/vendorSignup.src.php" method="post">
-        <input required placeholder="First Name..." type="text" name="fname"><br>
-        <input required placeholder="Last Name..." type="text" name="lname"><br>
-        <input required placeholder="Email..." type="text" name="email"><br>
-        <input required placeholder="Username..." type="text" name="user"><br>
-        <input required placeholder="Password..." type="password" name="pwd"><br>
-        <input required placeholder="Re-Password..." type="password" name="repwd"><br>
+<section class="su-container">
+  <div class="signup">
+    <h1 class="main-title">Create an <u>Vendor</u> account</h1>
+    <div class="signup-form">
+      <form action="./src/vendor/vendorSignup.src.php" method="post">
+        <div class="form-row">
+          <input
+            required
+            placeholder="First Name..."
+            type="text"
+            name="fname"
+          />
+          <input required placeholder="Last Name..." type="text" name="lname" />
+        </div>
+        <input required placeholder="Email..." type="text" name="email" />
+        <input required placeholder="Username..." type="text" name="user" />
+        <input required placeholder="Password..." type="password" name="pwd" />
+        <input
+          required
+          placeholder="Re-Password..."
+          type="password"
+          name="repwd"
+        />
         <!-- <input hidden value="customer" type="text" name="user_type"><br> -->
-        <button type="submit" name="submit">Sign Up</button>
-    </form>
-
-    <br>
-    <h3>Are you a Customer?</h3>
-    <a href="./customerSignup.php">Customer Signup</a>
+        <div class="btn-div">
+          <button class="submit-btn" type="submit" name="submit">
+            Sign Up
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="changeform">
+        <h3>Are you a Customer?</h3>
+        <a href="./customerSignup.php">Customer Signup</a>
+    </div>
+  </div>
 </section>
 
 
