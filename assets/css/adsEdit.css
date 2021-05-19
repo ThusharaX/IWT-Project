@@ -1,0 +1,20 @@
+.ads{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}#adsDescription{
+	min-width:100%;
+	min-height:100%;
+	display:block;
+}	
+
+}tbody{
+	border-box:box-sizing;
+	margin:0px;
+	padding:0px;
+	
+}input{
+	min-width:100%;
+	min-height:20px;
+	display:block;
+}

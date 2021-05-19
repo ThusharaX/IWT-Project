@@ -103,22 +103,19 @@
     }
     
 /*buttons*/
+.button input{
+	  background-color: #DCD4D0;
+      padding: 5px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+	
+}
     .sdbutton #saved {
         margin-right: 10px;
-        background-color: #DCD4D0;
-        padding: 5px 15px;
-        border-radius: 5px;
-        cursor: pointer;
+      
     }
-    
-     .sdbutton #cancel {
-        background-color:#DCD4D0;
-        padding: 5px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-	
-    
+   
+	   
     .inputs {
         margin: 10px 0px;
 		

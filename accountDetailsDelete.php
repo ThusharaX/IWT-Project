@@ -2,70 +2,25 @@
  //By IT20654962
     // Dynamic Header
     $title = 'Vendor Dashboard'; include("header.php");
-	 //session_start();
-	 //$vendorID=$_SESSION["id"];
-     //$$_SESSION["username"];
-     //$_SESSION["fname"];
-     //$_SESSION["lname"];
-     //$_SESSION["email"];
-	 //vendorID=$vendorID;
-	 $company;
-	 $username;
-	 $ImageLoc;
-	 $firstname;
-	 $lastname;
-	 $password;
-	 $mobile;
-	 $address;
-	 $email;
-	 $sqlstmt="SELECT * FROM Vendor WHERE vendorID=3;";
-	 if($result=mysqli_query($conn,$sqlstmt)){
-		 if($result->num_rows>0){
-			 while($row=$result->fetch_assoc()){
-				 $company=$row["v_company"];
-	             $username=$row["v_username"];
-	             $ImageLoc=$row["v_imgLoc"];
-	             $firstname=$row["v_fname"];
-	             $lastname=$row["v_lname"];
-	             $password=$row["v_password"];
-	             $mobile=$row["v_mobile"];
-	             $address=$row["v_address"];
-	             $email=$row["v_email"];
-			 }
-		 }else{
-			 echo "Cannot find this vendor";
-			 
-			 
-		 }
-		 		 
-	 }else{
-		 echo "Errors,vendor retriving:".$conn->error;
-	 }
-?>
-
-<!--paymentHistory css-->
- 
-
-   
-   
-   
-   
- 
+	include "accountDetailsFile.php";
+	
+?>	
 <link rel="stylesheet" href="./assets/css/accountDetails.css">
+
 <link rel="stylesheet" href="./assets/css/vendorNavBar.css">
 	<nav id="vnavBar">
 		<ul class="vendorNavbar">
 			<li>
-				<a class="current" href="accountDetails.php">Account details</a>
+				<a class="links current"  href="accountDetails.php">Account details</a>
 			</li>
 			<li>
-				<a  href="adsInventory.php">Ads Inventory</a>
+				<a class="links"  href="adsInventory.php">Ads Inventory</a>
 			</li>
 			<li>
-				<a  href="addCommercialsPage.php">Add advertisement</a>
+				<a class="links"  href="addCommercialsPage.php">Add advertisement</a>
 			</li>
 			<li>
-				<a  href="paymentHistory.php">Payments</a>
+				<a class="links"   href="paymentHistory.php">Payments</a>
 			</li>
 		</ul>
 	</nav>
@@ -103,7 +58,7 @@
     	 
 		 
     <label for="password">Password:</label>
-    <input class="visible" type="password" id="password" name="password" value="<?php echo $password;?>" disabled><br><br>
+    <input class="visible" type="password" id="password" name="password" value="<?php echo substr($password,0,12);?>" disabled><br><br>
 
 	
 	 <label for="mobile">Mobile name:</label>
@@ -152,45 +107,7 @@
 	?>
 	</div>
 	
-<!-- Code segment for display Announcements related to vendor ------------------>
-<section class="adminAnnouncement">
-    <?php
-        $today = date("Y-m-d");
-        $sql = "SELECT * from Announcement 
-                WHERE
-                    user_type = 'vendor' AND
-                    publish_date = '" . $today . "'
-        ";
-
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-            echo "
-                <div class='announcements'>
-                    <h3>Title = ". $row["title"] ."</h3>
-                    <h5>Description = ". $row["annDescription"] ."</h5>
-                </div>
-                ";
-            }
-        } else {
-            echo "
-                <div class='announcements'>
-                    <h3>No Announcements Today!</h3>
-                </div>
-                ";
-        }
-    ?>
-</section>
-<!-- --------------------------------------------------------------------------------- -->
-
-<section>
-    <h1 class="main-title">vendorDashboard Page</h1>
-</section>
-
-
-<script src="./assets/js/vendorDashboard.js"></script>
-<?php include("footer.php"); ?>
+<?php include "vendorAnnouncementFooter.php";?>
 
 	
 	

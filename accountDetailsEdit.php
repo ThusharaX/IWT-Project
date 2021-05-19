@@ -1,75 +1,47 @@
-<?php
- //By IT20654962
-    // Dynamic Header
-    $title = 'Vendor Dashboard'; include("header.php");
-	 //session_start();
-	 //$vendorID=$_SESSION["id"];
-     //$$_SESSION["username"];
-     //$_SESSION["fname"];
-     //$_SESSION["lname"];
-     //$_SESSION["email"];
-	 //vendorID=$vendorID;
-	 $company;
-	 $username;
-	 $ImageLoc;
-	 $firstname;
-	 $lastname;
-	 $password;
-	 $mobile;
-	 $address;
-	 $email;
-	 $sqlstmt="SELECT * FROM Vendor WHERE vendorID=3;";
-	 if($result=mysqli_query($conn,$sqlstmt)){
-		 if($result->num_rows>0){
-			 while($row=$result->fetch_assoc()){
-				 $company=$row["v_company"];
-	             $username=$row["v_username"];
-	             $ImageLoc=$row["v_imgLoc"];
-	             $firstname=$row["v_fname"];
-	             $lastname=$row["v_lname"];
-	             $password=$row["v_password"];
-	             $mobile=$row["v_mobile"];
-	             $address=$row["v_address"];
-	             $email=$row["v_email"];
-			 }
-		 }else{
-			 echo "Cannot find this vendor";
-			 
-			 
-		 }
-		 		 
-	 }else{
-		 echo "Errors,vendor retriving:".$conn->error;
-	 }
+<?php 
+   //By IT20654962
+   // Dynamic Header
+   $title = 'Vendor Dashboard'; include("header.php");
+   include "accountDetailsFile.php";
+  
 ?>
-
-<!--paymentHistory css-->
- 
-
-   
-   
-   
-   
- 
-<link rel="stylesheet" href="./assets/css/accountDetails.css">
+	<link rel="stylesheet" href="./assets/css/accountDetails.css">
+	
 <link rel="stylesheet" href="./assets/css/vendorNavBar.css">
 	<nav id="vnavBar">
 		<ul class="vendorNavbar">
 			<li>
-				<a class="current" href="accountDetails.php">Account details</a>
+				<a class="current"  href="accountDetails.php">Account details</a>
 			</li>
 			<li>
-				<a  href="adsInventory.php">Ads Inventory</a>
+				<a href="adsInventory.php">Ads Inventory</a>
 			</li>
 			<li>
-				<a  href="addCommercialsPage.php">Add advertisement</a>
+				<a href="addCommercialsPage.php">Add advertisement</a>
 			</li>
 			<li>
-				<a  href="paymentHistory.php">Payments</a>
+				<a href="paymentHistory.php">Payments</a>
 			</li>
 		</ul>
 	</nav>
 	<hr>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	<div class="acdetails">
 	<!--my code-->
@@ -103,7 +75,7 @@
     	 
 		 
     <label for="password">Password:</label>
-    <input class="visible" type="password" id="password" name="password" value="<?php echo $password;?>"><br><br>
+    <input class="visible" type="password" id="password" name="password" value="<?php echo substr($password,0,12);?>"><br><br>
 
 	
 	 <label for="mobile">Mobile name:</label>
@@ -121,22 +93,18 @@
 	</div>
 	</div>
 	 </div>
-  </fieldset>
-  
-  
-  
-  
-</form>
-	
+  </fieldset>  
+</form>	
 	<?php
 	   if(isset($_POST["save"])){
-		   // echo htmlspecialchars($message);
+		   
 		   //get updated  details
 		   $companyName=$_POST["company"];
 		   $userNameUp=$_POST["username"];
 		   $firstName=$_POST["fname"];
 		   $lastName=$_POST["lname"];
 		   $emailNew=$_POST["email"];
+		   //encryptingnew password
 		   $passwordNew=password_hash($_POST["password"],PASSWORD_DEFAULT);
 		   $newMobile=$_POST["mobile"];
 		   $companyAddress=$_POST["address"];
@@ -171,7 +139,7 @@
 		  
 	
 		  		  		   
-      $sqlstatement="Update Vendor
+$sqlstatement="Update Vendor
                SET  v_username='$userNameUp',v_imgLoc='$target_image',v_fname='$firstName',
 			   v_lname='$lastName',v_password='$passwordNew',v_mobile=$newMobile,v_address='$companyAddress',
 			   v_company='$companyName',v_email='$emailNew'
@@ -183,71 +151,10 @@
 			
 		   }else{
 			   echo "Error cannot update vendor because: ".$conn->error;
-		   }
-		   
-		   
-	   }
-	
-		 
-	
-	
-	
-		
-	
+		   }		   
+	   }	
 	
 	?>
 	</div>
 	
-<!-- Code segment for display Announcements related to vendor ------------------>
-<section class="adminAnnouncement">
-    <?php
-        $today = date("Y-m-d");
-        $sql = "SELECT * from Announcement 
-                WHERE
-                    user_type = 'vendor' AND
-                    publish_date = '" . $today . "'
-        ";
-
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-            echo "
-                <div class='announcements'>
-                    <h3>Title = ". $row["title"] ."</h3>
-                    <h5>Description = ". $row["annDescription"] ."</h5>
-                </div>
-                ";
-            }
-        } else {
-            echo "
-                <div class='announcements'>
-                    <h3>No Announcements Today!</h3>
-                </div>
-                ";
-        }
-    ?>
-</section>
-<!-- --------------------------------------------------------------------------------- -->
-
-<section>
-    <h1 class="main-title">vendorDashboard Page</h1>
-</section>
-
-
-<script src="./assets/js/vendorDashboard.js"></script>
-<?php include("footer.php"); ?>
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+<?php include "vendorAnnouncementFooter.php";?>

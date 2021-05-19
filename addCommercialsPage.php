@@ -2,31 +2,39 @@
 //BY IT20654962
     // Dynamic Header
     $title = 'Vendor Dashboard'; include("header.php");
+	
 ?>
-
-
 <link rel="stylesheet" href="./assets/css/addCommercials.css">
+
 <link rel="stylesheet" href="./assets/css/vendorNavBar.css">
-	<!--This part is done by IT20654962-->
 	<nav id="vnavBar">
 		<ul class="vendorNavbar">
 			<li>
-				<a  href="accountDetails.php">Account details</a>
+				<a href="accountDetails.php">Account details</a>
 			</li>
 			<li>
-				<a  href="adsInventory.php">Ads Inventory</a>
+				<a href="adsInventory.php">Ads Inventory</a>
 			</li>
 			<li>
-				<a class="current " href="addCommercialsPage.php">Add advertisement</a>
+				<a class="current"  href="addCommercialsPage.php">Add advertisement</a>
 			</li>
 			<li>
-				<a  href="paymentHistory.php">Payments</a>
+				<a href="paymentHistory.php">Payments</a>
 			</li>
 		</ul>
 	</nav>
-	<hr>
-		
-				
+	<hr>	
+
+
+
+
+
+
+
+
+
+
+	
 				<form action="addCommercialsPages.php" onsubmit="return checking();" method="POST" enctype="multipart/form-data" id="formi">
 				<div class="whole">
 				<div class="container">
@@ -125,43 +133,4 @@
 					</form>
 				<script type="text/javascript" src="./assets/js/addCommercial.js"></script>
 
-<!-- Code segment for display Announcements related to vendor ---------------- -->
-<section class="adminAnnouncement">
-    <?php
-        $today = date("Y-m-d");
-        $sql = "SELECT * from Announcement 
-                WHERE
-                    user_type = 'vendor' AND
-                    publish_date = '" . $today . "'
-        ";
-
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-            echo "
-                <div class='announcements'>
-                    <h3>Title = ". $row["title"] ."</h3>
-                    <h5>Description = ". $row["annDescription"] ."</h5>
-                </div>
-                ";
-            }
-        } else {
-            echo "
-                <div class='announcements'>
-                    <h3>No Announcements Today!</h3>
-                </div>
-                ";
-        }
-    ?>
-</section>
-<!-- --------------------------------------------------------------------------------- -->
-
-<section>
-    <h1 class="main-title">vendorDashboard Page</h1>
-</section>
-
-
-<script src="./assets/js/vendorDashboard.js"></script>
-
-<?php include("footer.php"); ?>
+<?php include "vendorAnnouncementFooter.php"?>

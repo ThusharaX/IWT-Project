@@ -11,20 +11,38 @@
 	<nav id="vnavBar">
 		<ul class="vendorNavbar">
 			<li>
-				<a  href="accountDetails.php">Account details</a>
+				<a href="accountDetails.php">Account details</a>
 			</li>
 			<li>
-				<a  href="adsInventory.php">Ads Inventory</a>
+				<a href="adsInventory.php">Ads Inventory</a>
 			</li>
 			<li>
-				<a  href="addCommercialsPage.php">Add advertisement</a>
+				<a href="addCommercialsPage.php">Add advertisement</a>
 			</li>
 			<li>
-				<a class="current" href="paymentHistory.php">Payments</a>
+				<a class="current"   href="paymentHistory.php">Payments</a>
 			</li>
 		</ul>
 	</nav>
-	<hr>
+	<hr>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	
 	<H2>Payments</H2>
@@ -76,42 +94,4 @@
 	?>
 	    </table>
 	</div>
-
-<!-- Code segment for display Announcements related to vendor ------------------>
-<section class="adminAnnouncement">
-    <?php
-        $today = date("Y-m-d");
-        $sql = "SELECT * from Announcement 
-                WHERE
-                    user_type = 'vendor' AND
-                    publish_date = '" . $today . "'
-        ";
-
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-            echo "
-                <div class='announcements'>
-                    <h3>Title = ". $row["title"] ."</h3>
-                    <h5>Description = ". $row["annDescription"] ."</h5>
-                </div>
-                ";
-            }
-        } else {
-            echo "
-                <div class='announcements'>
-                    <h3>No Announcements Today!</h3>
-                </div>
-                ";
-        }
-    ?>
-</section>
-<!-- --------------------------------------------------------------------------------- -->
-
-<section>
-    <h1 class="main-title">vendorDashboard Page</h1>
-</section>
-<script src="./assets/js/vendorDashboard.js"></script>
-
-<?php include("footer.php"); ?>
+<?php include "vendorAnnouncementFooter.php"; ?>
