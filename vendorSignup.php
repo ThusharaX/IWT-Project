@@ -43,6 +43,7 @@
     <div class="changeform">
         <h3>Are you a Customer?</h3>
         <a href="./customerSignup.php">Customer Signup</a>
+        <p>Already a member ? <a href="login.php">Log In!</a></p>
     </div>
   </div>
   <div class="vbgImage">

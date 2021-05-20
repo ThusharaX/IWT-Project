@@ -122,6 +122,10 @@
       <img src="assets/images/6.jpg" alt="Wedding Planning" />
     </div>
   </div>
+  <div class="column4">
+    <h1>Reach Our Team</h1>
+    <a href="contactUs.php"><button class="a-btn">Contact Us Now》</button></a>
+  </div>
 </section>
 
 <script src="./assets/js/about.js"></script>

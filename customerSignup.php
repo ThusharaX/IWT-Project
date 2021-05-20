@@ -44,6 +44,7 @@
     <div class="changeform">
       <h3>Are you a Vendor?</h3>
       <a href="./vendorSignup.php">Vendor Signup</a>
+      <p>Already a member ? <a href="login.php">Log In!</a></p>
     </div>
   </div>
 </section>
