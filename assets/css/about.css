@@ -1,0 +1,106 @@
+.about-container {
+  width: 80%;
+  margin: auto;
+}
+
+.img-slider {
+  background-image: url("../images/wedding_banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+}
+
+.column1 h1 {
+  font-size: 30px;
+  margin-top: 40px;
+}
+
+.column1 h2 {
+  margin: 0px;
+}
+
+.column1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(224, 217, 217);
+}
+
+.row1 {
+  display: flex;
+  align-items: top;
+  margin: 20px 0px;
+}
+.row1 img {
+  width: 20px;
+  height: 20px;
+  padding: 0 20px;
+}
+.row1 p {
+  margin: 0;
+  text-align: left;
+}
+
+.sub-column2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+  margin: auto;
+}
+.sub-column2 div {
+  width: 30%;
+}
+
+.column2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(224, 217, 217);
+  padding-bottom: 0px;
+}
+
+.item1 {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.item1 img {
+  width: 100px;
+  width: 100px;
+}
+
+.column3 {
+  width: 80%;
+  margin: 50px auto;
+}
+
+.item2 {
+  display: flex;
+  align-items: center;
+}
+.item2 img {
+  width: 50%;
+  height: 250px;
+}
+.p1 {
+  text-align: center;
+  width: 50%;
+  padding-left: 20px;
+}
+.p2 {
+  text-align: center;
+  width: 50%;
+  padding-right: 20px;
+}
