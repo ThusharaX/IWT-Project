@@ -76,14 +76,19 @@ CREATE TABLE Category(
 
 
 INSERT INTO Category
-	(catName, catDescription, price)
+	(catName, cat_imgLoc, catDescription, price)
 VALUES
-	('Uncategorized', 'This is a category for uncategorized ads', 0.00),
-	('Catering ', 'The best Catering services in the country', 500.00),
-	('Music', 'After the ceremony, there is often a celebratory dance', 1500.00),
-	('Dress', 'Our tailors can create amazing modern-day gowns from vintage wedding gowns', 800.00),
-	('Car Rent', 'Which provides some of the most competitive rates in the industry.', 1100.00);
-
+	('Uncategorized', 'uncategorized.gif', 'This is a category for uncategorized ads', 0.00),
+	('Catering ', 'catering.gif', 'The best Catering services in the country', 500.00),
+	('DJ Music', 'djMusic.gif', 'After the ceremony, there is often a celebratory dance', 1500.00),
+	('Wedding Dress', 'weddingDress.gif', 'Our tailors can create amazing modern-day gowns from vintage wedding gowns', 800.00),
+	('Cosmetics', 'cosmetics.gif', 'Which provides some of the most competitive rates in the industry.', 1100.00),
+	('Wedding Vehivle', 'weddingVehivle.gif', 'This is a category for uncategorized ads', 0.00),
+	('Flower', 'flower.gif', 'This is a category for uncategorized ads', 0.00),
+	('Videography', 'videography.gif', 'This is a category for uncategorized ads', 0.00),
+	('Wedding Cards', 'weddingCards.gif', 'This is a category for uncategorized ads', 0.00),
+	('Wedding Halls', 'weddingHalls.gif', 'This is a category for uncategorized ads', 0.00),
+	('Photography', 'photography.gif', 'This is a category for uncategorized ads', 0.00);
 
 
 CREATE TABLE Advertisement_payment(
@@ -113,11 +118,17 @@ CREATE TABLE Advertisement_payment(
 INSERT INTO Advertisement_payment
 	( paymentID,catID,title, addDescription, mobile, addImageLoc, publishDateTime, status,amount,pay_type,pymntDescription,vendorID)
 VALUES
-	(1,1,  'Kalana Catering', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1,1000.00, 'visa card', 'This payment for Bride',1),
-	(2,2,  'Laka Music', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1,500.00, 'master card', 'This payment for Catering',2),
-	(3,3,  'Lahiru Dress', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1,1500.00,'american express', 'This payment for Music',2),
-	(5,4,  'Anjalee Photography', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1,800.00,'visa card', 'This payment for Dress',4),
-	(6,5, 'Kasun Car Rent', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,1100.00, 'master card', 'This payment for Car Rent',1);
+	(1,1,  'Uncategorized', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1,1000.00, 'visa card', 'This payment for Bride',1),
+	(2,2,  'Laka Catering', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1,500.00, 'master card', 'This payment for Catering',2),
+	(3,3,  'Lahiru DJ Music', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1,1500.00,'american express', 'This payment for Music',2),
+	(4,4,  'Anjalee Wedding Dress', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1,800.00,'visa card', 'This payment for Dress',4),
+	(5,5,  'Kasun Wedding Vehivle', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,1100.00, 'master card', 'This payment for Car Rent',1),
+	(6,6,  'Kasun Cosmetics', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,1100.00, 'master card', 'This payment for Car Rent',1),
+	(7,7,  'Niki Flowers', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1,1000.00, 'visa card', 'This payment for Bride',1),
+	(8,8,  'Gaween Videography', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1,500.00, 'master card', 'This payment for Catering',2),
+	(9,9,  'Dilki Wedding Cards', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1,1500.00,'american express', 'This payment for Music',2),
+	(10,10,  'Anjalee Wedding Halls', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1,800.00,'visa card', 'This payment for Dress',4),
+	(11,11, 'Kasun Photography', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,1100.00, 'master card', 'This payment for Car Rent',1);
 
 CREATE TABLE Feedback(
     customerID INT NOT NULL,
@@ -216,3 +227,25 @@ VALUES
 	('Chamath Jayasekara', 'chamath@sliit.lk', '774589632', 'Website too slow please fix'),
 	('Nikethani Gangoda', 'nikethani@sliit.lk', '775896458', 'Just want to say thanks'),
 	('Pamodya Daundasekara', 'pamodya@sliit.lk', '736526985', 'Nice website');
+
+
+CREATE TABLE GuestList(
+	guestID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	g_name varchar(30) NOT NULL,
+	customerID INT,
+	CONSTRAINT guestCusID_fk FOREIGN KEY (customerID) REFERENCES Customer(customerID) ON DELETE SET NULL
+);
+
+INSERT INTO GuestList
+	(guestID, g_name, customerID)
+VALUES
+	(1, 'Thushara Thiwanka', 1),
+	(2, 'Gaween Kanishka', 2),
+	(3, 'Chamath Jayasekara', 3),
+	(4, 'Nikethani Gangoda', 4),
+	(5, 'Pamodya Daundasekara', 5),
+	(6, 'Thushara Thiwanka', 1),
+	(7, 'Gaween Kanishka', 2),
+	(8, 'Chamath Jayasekara', 3),
+	(9, 'Nikethani Gangoda', 4),
+	(10, 'Pamodya Daundasekara', 5);

@@ -16,7 +16,7 @@
 
     <?php
         $sql = mysqli_query($conn,"SELECT *
-        FROM Advertisement AS A, Vendor AS V
+        FROM Advertisement_payment AS A, Vendor AS V
         WHERE A.adID ='" . $_GET['adID'] . "' AND V.vendorID=A.vendorID
         ;");
 

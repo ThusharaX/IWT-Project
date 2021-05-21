@@ -14,7 +14,7 @@
     <h2>We Are Many Things In One...</h2>
     <div class="sub-column1">
       <div class="row1">
-        <img src="assets/images/next-icon.png" alt=">>" />
+        <img src="assets/img/next-icon.png" alt=">>" />
         <p>
           We at My Wedding as the pimeers in SriLanka wedding planning work
           together with you at any stage of the planning process to ensure that
@@ -24,7 +24,7 @@
         </p>
       </div>
       <div class="row1">
-        <img src="assets/images/next-icon.png" alt=">>" />
+        <img src="assets/img/next-icon.png" alt=">>" />
         <p>
           An online wedding directory that provides all contact information and
           image galleries of wedding service provider in Sri Lanka
@@ -41,7 +41,7 @@
         </p>
       </div>
       <div>
-        <img src="assets/images/aboutus_heart_arrows.png" alt="heart" />
+        <img src="assets/img/aboutus_heart_arrows.png" alt="heart" />
       </div>
       <div>
         <h3>Vendors</h3>
@@ -55,42 +55,42 @@
   </div>
   <div class="column2">
     <div class="item1">
-      <img src="assets/images/aboutus_3.gif" alt="" />
+      <img src="assets/img/aboutus_3.gif" alt="" />
       <div>
         <p>10,000</p>
         <p>Monthly Users</p>
       </div>
     </div>
     <div class="item1">
-      <img src="assets/images/aboutus_2.gif" alt="" />
+      <img src="assets/img/aboutus_2.gif" alt="" />
       <div>
         <p>30,000</p>
         <p>Reviews</p>
       </div>
     </div>
     <div class="item1">
-      <img src="assets/images/aboutus_4.gif" alt="" />
+      <img src="assets/img/aboutus_4.gif" alt="" />
       <div>
         <p>1000</p>
         <p>Vendors</p>
       </div>
     </div>
     <div class="item1">
-      <img src="assets/images/aboutus_5.gif" alt="" />
+      <img src="assets/img/aboutus_5.gif" alt="" />
       <div>
         <p>500</p>
         <p>Employees</p>
       </div>
     </div>
     <div class="item1">
-      <img src="assets/images/aboutus_6.gif" alt="" />
+      <img src="assets/img/aboutus_6.gif" alt="" />
       <div>
         <p>15</p>
         <p>Countries</p>
       </div>
     </div>
     <div class="item1">
-      <img src="assets/images/aboutus_7.png" alt="" />
+      <img src="assets/img/aboutus_7.png" alt="" />
       <div>
         <p>5</p>
         <p>Branches</p>
@@ -100,7 +100,7 @@
   <div class="column3">
     <div class="item2">
       <img
-        src="assets/images/wedding-photographer.jpeg"
+        src="assets/img/wedding-photographer.jpeg"
         alt="Wedding Professional"
       />
       <div class="p1">
@@ -119,7 +119,7 @@
           online tools to help them create their ideal wedding day.
         </p>
       </div>
-      <img src="assets/images/6.jpg" alt="Wedding Planning" />
+      <img src="assets/img/6.jpg" alt="Wedding Planning" />
     </div>
   </div>
   <div class="column4">

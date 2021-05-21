@@ -12,13 +12,13 @@
     <h1 class="main-title">LOG IN</h1>
     <div class="m-types">
             <div class="m-type">
-                <img src="assets/images/customerlogin (1).png" alt="Customer">
+                <img src="assets/img/customerlogin (1).png" alt="Customer">
                 <a href='./customer-login.php'>
                     <button class="m-btn1">I am Customer</button>
                 </a>
             </div>
             <div class="m-type">
-                <img src="assets/images/vendorlogin.png" alt="Vendor">
+                <img src="assets/img/vendorlogin.png" alt="Vendor">
                 <a href='./vendor-login.php'>
                     <button class="m-btn2">I am Vendor</button>
                 </a>

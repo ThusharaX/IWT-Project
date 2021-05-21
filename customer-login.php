@@ -40,7 +40,7 @@
     </div>
   </div>
   <div class="bg-image">
-    <img src="assets/images/customerlogin1.png" alt="">
+    <img src="assets/img/customerlogin1.png" alt="">
   </div>
 </section>
 

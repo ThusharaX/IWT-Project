@@ -47,7 +47,7 @@
     </div>
   </div>
   <div class="vbgImage">
-    <img src="assets/images/signupvender-bg.jpg"" alt="Vendor">
+    <img src="assets/img/signupvender-bg.jpg"" alt="Vendor">
   </div>
 </section>
 

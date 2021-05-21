@@ -13,7 +13,7 @@
 
     <?php
         $sql = "SELECT adID, title, addImageLoc, publishDateTime, status
-        FROM Advertisement AS A
+        FROM Advertisement_payment AS A
         WHERE A.catID ='" . $_GET['catID'] . "'
         ;";
 
@@ -37,9 +37,9 @@
                         }
                     }
                 }
-                else {
-                    echo "No active Ads";
-                }
+                // else {
+                //     echo "No active Ads";
+                // }
             }
         }
         else {
