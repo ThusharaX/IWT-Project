@@ -68,6 +68,7 @@ VALUES
 
 CREATE TABLE Category(
     catID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    cat_imgLoc varchar(30) NOT NULL,
 	catName varchar(30) NOT NULL,
 	catDescription varchar(300),
 	price real

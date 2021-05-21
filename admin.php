@@ -78,10 +78,13 @@
         <!-- Customers -->
         <section class="users">
             <div class="user__table">
+                <div class="user__tableHeader">
                 <h3>Customers</h3>
-                <div class="ann__btn">
-                    <a class="nav__login" href="./addUser.php">Add new Customer</a>
+                    <div class="">
+                        <a class="nav__login" href="./addUser.php">Add new Customer</a>
+                    </div>
                 </div>
+                
                 <table id="customers">
                     <tr>
                         <th>ID</th>
@@ -135,10 +138,13 @@
         <!-- Vendors -->
         <section class="users">
             <div class="user__table">
-                <h3>Vendors</h3>
-                <div class="ann__btn">
+            <div class="user__tableHeader">
+            <h3>Vendors</h3>
+                <div class="">
                     <a class="nav__login" href="./addUser.php">Add new Vendor</a>
                 </div>
+            </div>
+                
                 <table id="customers">
                     <tr>
                         <th>ID</th>
@@ -192,10 +198,13 @@
         <!-- Admins -->
         <section class="users">
             <div class="user__table">
-                <h3>Admins</h3>
-                <div class="ann__btn">
+            <div class="user__tableHeader">
+            <h3>Admins</h3>
+                <div class="">
                     <a class="nav__login" href="./addUser.php">Add new Admin</a>
                 </div>
+            </div>
+                
                 <table id="customers">
                     <tr>
                         <th>ID</th>
@@ -323,6 +332,7 @@
             <div class="ann__btn">
                 <a class="nav__login" href="./addCategory.php">Add new Category</a>
             </div>
+            <br>
                 <table id="customers">
                     <tr>
                         <th>catID ID</th>
@@ -376,6 +386,7 @@
             <div class="ann__btn">
                 <a class="nav__login" href="./addAnnouncement.php">Add new Announcement</a>
             </div>
+            <br>
             <!-- <h3>Announcement</h3> -->
                 <table id="customers">
                     <tr>

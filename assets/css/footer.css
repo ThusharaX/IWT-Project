@@ -1,41 +1,41 @@
-.lower__footer {
-  text-align: center;
-  padding: 3px;
-  background-color: rgb(0, 0, 0);
-  color: white;
-}
-
-.lower__footer .mail{
-  text-decoration: none;
-  color: rgb(30, 255, 0);
-}
-
-.lower__footer .admin {
-  text-decoration: none;
-  color: rgb(30, 255, 0);
-  display: flex;
-  justify-content: right;
-}
-
-
 .footer__container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0px 20px 0px;
-  background-color: red;
+  /* background-color: red; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+  /* background-color: rgb(255, 255, 255); */
+  background: #252a47;
+  margin-top: 30px;
+  color: white;
+}
+
+.footer__container a {
+  color: white;
 }
 
   .footer__section {
-    background-color: rgb(0, 255, 64);
+    /* background-color: rgb(255, 255, 255); */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    /* min-width: 300px; */
+    border-color: rgb(170, 170, 170);
+    padding: 20px;
+
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: none;
+    border-left-style: none;
   }
 
-  .links {
+  .links a{
+    
+  }
 
+  .sh__links {
+      list-style: square;
   }
 
   .moddle {
@@ -44,5 +44,27 @@
 
   .social {
 
+  }
+
+
+
+
+  .lower__footer {
+    text-align: center;
+    padding: 3px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+  }
+  
+  .lower__footer .mail{
+    text-decoration: none;
+    color: rgb(30, 255, 0);
+  }
+  
+  .lower__footer .admin {
+    text-decoration: none;
+    color: rgb(30, 255, 0);
+    display: flex;
+    justify-content: right;
   }
 

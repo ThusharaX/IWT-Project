@@ -9,7 +9,32 @@
 <!-- Type your code here -->
 
 
-div.categorie
+<div class="categories">
+  <h1>Categories</h1>
+  
+
+  <?php
+    $sql = "SELECT catID, cat_imgLoc, catName, catDescription, price
+    FROM Category";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        echo "
+        <a class='category' href='./commercialsListPage.php?catID=". $row['catID'] ."&catName=". $row['catName'] ."'>
+          <img src='./Uploads/categories/".$row['cat_imgLoc']."'>
+        </a>
+      ";
+        
+      }
+    }
+    else {
+      echo "0 results";
+    }
+  ?>
+
+</div>
 
 
 
