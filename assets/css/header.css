@@ -1,145 +1,158 @@
-.nav {
-    /* background-color: rgb(255, 255, 255); */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(../img/navBackground2.jpg);
-    background-repeat: no-repeat, repeat;
-    background-position: center;
-    /* background-size: 1360px 330px; */
-    background-size: cover;
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.nav__container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  place-items: center;
+  background-color: white;
+  z-index: 99999;
 }
 
-    .nav__logo {
-        /* background-color: rgb(255, 255, 255); */
-    }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 
-    .nav__middle {
-        /* background-color: rgb(255, 255, 255); */
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
-    }
-        .nav__title {
-            /* background-color: rgb(255, 255, 255); */
-            color: rgb(255, 255, 255);
-            font-size: 40px;
-            font-weight: bolder;
-            /* text-shadow: 2px 2px #ff0000; */
-            font-family: 'Ubuntu', sans-serif;
-        }
-        .nav__list {
-            /* background-color: rgb(255, 255, 255); */
-            display: flex;
-            justify-content: space-between;
-            list-style: none;
-        }
-            .nav__item a {
-                background-color: blanchedalmond;
-                display: inline-block;
-                padding: 10px 15px;
-                text-decoration: none;
-                color: rgb(0, 0, 0);
-            }
+}
 
-            .nav__item:hover {
-                background-color: white;
-            }
+.nav__logo img{
+  height: 80px;
+  width: 200px;
+  margin-left: 5px;
+}
 
-            .nav__item:hover a {
-                color: rgb(255, 255, 255);
-                background-color: crimson;
-            }
+.nav__links ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav__links ul li a{
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  padding: 0px 20px 0px;
+  text-decoration: none;
+  font-size: large;
+  color: black;
+}
+
+/* .nav__links ul li button{
+  box-shadow:inset 0px 1px 0px 0px #54a3f7;
+  background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+  background-color:#007dc1;
+  border-radius:3px;
+  border:1px solid #124d77;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:5px 5px 5px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #154682;
+} */
+
+.nav__btn button {
+  background-color: black;
+  border-radius: 100px;
+  color: white;
+  border-color: white;
+  border-style: solid;
+  padding: 5px 8px 5px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav__links ul li:hover{
+  transform: scale(1.2);
+  transition-duration: .5s;
+}
+
+.links {
+  list-style: none;
+}
 
 
-    .nav__buttons {
-        /* background-color: rgb(255, 255, 255); */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
+.nav__search {
+  padding: 5px;
+}
+  .nav__search input {
+      /* border-radius: 4px; */
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 2px solid #ebebeb;
+      height: 25px;
+      /* width: 300px; */
+      float: left;
+  }
 
-        .nav__btnAndProfile {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-        }
+  .nav__search input:focus {
+    outline: none;
+    border-bottom-color: #407bff;
+  }
 
-            .nav__btn {
-                /* background-color: rgb(255, 255, 255); */
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
-            }
+  .nav__search button {
+      border-radius: 4px;
+      border: none;
+      background-color: white;
+      height: 15px;
+      width: 15px;
+      cursor: pointer;
+  }
 
-                .nav__register {
-                    box-shadow:inset 0px 1px 0px 0px #54a3f7;
-                    background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
-                    background-color:#007dc1;
-                    border-radius:3px;
-                    border:1px solid #124d77;
-                    display:inline-block;
-                    cursor:pointer;
-                    color:#ffffff;
-                    font-family:Arial;
-                    font-size:15px;
-                    padding:10px 11px;
-                    text-decoration:none;
-                    text-shadow:0px 1px 0px #154682;
-                    margin-bottom: 5px;
-                }
-                .nav__register:hover {
-                    background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
-                    background-color:#0061a7;
-                }
-                .nav__register:active {
-                    position:relative;
-                    top:1px;
-                }
 
-                .nav__login {
-                    box-shadow:inset 0px 1px 0px 0px #54a3f7;
-                    background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
-                    background-color:#007dc1;
-                    border-radius:3px;
-                    border:1px solid #124d77;
-                    display:inline-block;
-                    cursor:pointer;
-                    color:#ffffff;
-                    font-family:Arial;
-                    font-size:15px;
-                    padding:10px 11px;
-                    text-decoration:none;
-                    text-shadow:0px 1px 0px #154682;
-                }
-                .nav__login:hover {
-                    background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
-                    background-color:#0061a7;
-                }
-                .nav__login:active {
-                    position:relative;
-                    top:1px;
-                }
+@media screen and (max-width: 1000px) {
+  .nav__links ul li a{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    padding: 0px 10px 0px;
+    text-decoration: none;
+    font-size: medium;
+    color: black;
+  }
 
-        .nav__profile {
-            height: 80px;
-            width: 80px;
-        }
+  .nav__btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-        .nav__search {
-            padding: 5px;
-        }
-            .nav__search input {
-                border-radius: 4px;
-                box-sizing: border-box;
-                height: 30px;
-                width: 300px;
-            }
-            .nav__search button {
-                border-radius: 4px;
-                height: 30px;
-                width: 30px;
-            }
-    
+  .nav__search input {
+    /* border-radius: 4px; */
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ebebeb;
+    height: 25px;
+    width: 50px;
+    float: left;
+  }
+
+  .nav__logo img{
+    height: 40px;
+    width: 100px;
+    margin-left: 5px;
+  }
+}
+
+
+/* Buttons */
+.button {
+  /* background: #000000;
+  border-radius: 100px;
+  border-color: white;
+  padding: 5px 15px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: large;
+  box-shadow: none; */
+  /* margin: 0 15px; */
+}
+
+.wrapper {
+  margin-top: 100px;
+}
+
+
+
+

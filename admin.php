@@ -11,7 +11,7 @@
 
 <!-- Thushara -->
 <!-- Type your code here -->
-<!-- <h1 class="main_title">Admin Panel</h1> --><br>
+<!-- <h1 class="main_title">Admin Panel</h1><br> -->
 
 <!-- <div class="ann__btn">
     <a class="nav__login" href="./addAnnouncement.php">Add Announcement</a>
@@ -19,6 +19,7 @@
 
 <!-- Statistics -->
 <section class='statics'>
+    <h1 class="main_title">Admin Panel</h1><br>
     <?php
         $result = mysqli_query($conn, "SELECT COUNT(*) FROM Vendor");
         $vendorCount = mysqli_fetch_array($result);
@@ -264,21 +265,23 @@
                         <th>Delete</th>
                     </tr>
                     
+                    <!-- Need SQL fix -->
                     <?php
-                        $sql = "SELECT * from Advertisement";
+                        // $sql = "SELECT * from Advertisement";
+                        $sql = "SELECT catName, adID, title, addDescription, mobile, addImageLoc, publishDateTime, status
+                        FROM Advertisement AS A, Category AS C
+                        WHERE A.catID = C.catID
+                        ;";
+
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
 
-                                // Get Category Name from catID
-                                $sql = mysqli_query($conn, "SELECT catName FROM Category WHERE catID= '" . $row['catID'] . "' ");
-                                $catName  = mysqli_fetch_array($sql);
-
                             echo "
                             <tr>
                                 <td>".$row['adID']."</td>
-                                <td>".$catName[0]."</td>
+                                <td>".$row['catName']."</td>
                                 <td>".$row['title']."</td>
                                 <td>".$row['addDescription']."</td>
                                 <td>".$row['mobile']."</td>
@@ -292,7 +295,7 @@
                                     "
                                 </td>
                                 <td>
-                                    <a href='./deleteAdvertisement.php?catID=$row[adID]'>
+                                    <a href='./deleteAdvertisement-Admin.php?adID=$row[adID]'>
                                     <input name='delete' type='submit' value='Delete'></a>
                                 </td>
                                 
@@ -331,7 +334,9 @@
                     </tr>
                     
                     <?php
-                        $sql = "SELECT * from Category";
+                        $sql = "SELECT catID, cat_imgLoc, catName, catDescription, price
+                        from Category";
+
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
@@ -384,7 +389,9 @@
                     </tr>
                     
                     <?php
-                        $sql = "SELECT * from Announcement";
+                        $sql = "SELECT annID, adminID, title, user_type, publish_date, annDescription
+                        FROM Announcement";
+                        
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {

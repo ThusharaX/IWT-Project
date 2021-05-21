@@ -17,68 +17,52 @@
   </head>
 
   <body>
-    <div class="nav">
-
-      <!-- Logo -->
-      <img class="nav__logo" src="./assets/img/logo.png" alt="">
-
-    <!-- Middle area of Navbar -->
-      <div class="nav__middle">
-        <div class="nav__title">
-          <?php
-            if (isset($siteName)) {
-              echo $siteName;
-            } else {
-              echo "RANHUYA WEDDING PLANNERS";
-            }
-          ?>
-          
+    <nav>
+      <div class="nav__container sticky">
+        <div class="nav__logo">
+          <a href="./index.php"><img src="./assets/img/logo.png" alt="Ranhuya"></a>
+          <!-- <h2><a href="./index.php">Wedding Planning System</a></h2> -->
         </div>
-        <ul class="nav__list">
-            <li class="nav__item"><a href="./index.php">Home</a></li>
-            <li class="nav__item"><a href="./about.php">About Us</a></li>
-            <li class="nav__item"><a href="./categorydisplaypage.php">Categories</a></li>
-            <li class="nav__item"><a href="./contactUs.php">Contact Us</a></li>
-            <li class="nav__item"><a href="./gallery.php">Gallery</a></li>
-            
-            
-        </ul>
-      </div>
+        <div class="nav__links">
+          <ul class="links">
+            <li><a href="./categorydisplaypage.php">Category</a></li>
+            <li><a href="./gallery.php">Gallery</a></li>
+            <li><a href="./about.php">About</a></li>
+            <li><a href="./contactUs.php">Contact Us</a></li>
+          </ul>
+        </div>
 
-    <!-- Login Signup Profile -->
-    <div class="nav__buttons">
-      <div class="nav__btnAndProfile">
+        <div>
+        <form class="nav__search" action="search.src.php" method="get">
+              <input type="text" placeholder="Search.." name="search" id="">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
         <div class="nav__btn">
-          <?php
+        <?php
             if (isset($_SESSION["id"])) {
               if ($_SESSION["role"] === 'admin') {
-                echo '<a href="./admin.php"><button class="nav__register">Admin Dashboard</button></a>';
+                echo '<a href="./admin.php"><button class="button">Admin Dashboard</button></a>';
               }
               else if (($_SESSION["role"] === 'customer')) {
-                echo '<a href="./customerDashboard.php"><button class="nav__register">Customer Dashboard</button></a>';
+                echo '<a href="./customerDashboard.php"><button class="button">Dashboard</button></a>';
               }
               else if (($_SESSION["role"] === 'vendor')) {
-                echo '<a href="./vendorDashboard.php"><button class="nav__register">Vendor Dashboard</button></a>';
+                echo '<a href="./vendorDashboard.php"><button class="button">Dashboard</button></a>';
               }
-              echo '<a href="./src/logout.src.php"><button class="nav__login">Logout</button></a>';
+              echo '<a href="./src/logout.src.php"><button class="button">Logout</button></a>';
             }
             else {
-              echo '<a href="./signup.php"><button class="nav__register">Join Now</button></a>';
-              echo '<a href="./login.php"><button class="nav__login">Login</button></a>';
+              echo '<a href="./signup.php"><button class="button">Join Now</button></a>';
+              echo '<a href="./login.php"><button class="button">Login</button></a>';
             }
-          ?>
-          
+            ?>
         </div>
-        <img class="nav__profile" src="./assets/img/profilePic.png" alt="">
+
+        
       </div>
-    
-      <form class="nav__search" action="search.src.php" method="get">
-        <input type="text" placeholder="Search.." name="search" id="">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
-      
-    </div>
-  </div>
+    </nav>
 
   <div class="wrapper">
 
@@ -86,3 +70,6 @@
 <!-- <header id="navbar">
   
 </header> -->
+
+
+<script src="./assets/js/header.js"></script>
