@@ -1,6 +1,9 @@
 <?php
     // Dynamic Header
     $title = 'Commercial Detail'; include("header.php");
+    if (!(isset($_SESSION["id"]))) {
+        header("location: ./index.php");
+    }
 ?>
 
 <link rel="stylesheet" href="./assets/css/commercialsList.css">

@@ -26,7 +26,8 @@
             
                 if($row['status']) {
                     echo "
-                    <a href='./adDetailsPage.php?adID=". $row['adID'] ."'>". $row['title'] ."</a>
+                    ".(isset($_SESSION['id'])?"<a href='./adDetailsPage.php?adID=". $row['adID'] ."'>". $row['title'] ."</a>":"<p>". $row['title'] ."</p>")."
+                    
                     <p>". $row['publishDateTime'] ."</p>
                     ";
 
