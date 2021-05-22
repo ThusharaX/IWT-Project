@@ -9,11 +9,8 @@ var slideArray = [];
 
 /* THE TEMPLATE */
 // Template for creating a custom Slide object
-function Slide(title, subtitle, background, link) {
-  this.title = title;
-  this.subtitle = subtitle;
+function Slide(background) {
   this.background = background;
-  this.link = link;
   // we need an id to target later using getElementById
   this.id = "slide" + slideIndex;
   // Add one to the index for the next slide number
@@ -25,13 +22,13 @@ function Slide(title, subtitle, background, link) {
 /* SLIDE CREATION */
 // Creating our slide objects, you can make as many as you want
 
-var slide1 = new Slide("", "", "assets/img/slideshow-pic1.jpg", "");
+var slide1 = new Slide("assets/img/slideshow-pic1.jpg");
 
-var slide1 = new Slide("", "", "assets/img/slideshow-pic2.jpg", "");
+var slide1 = new Slide("assets/img/slideshow-pic2.jpg");
 
-var slide2 = new Slide("", "", "assets/img/slideshow-pic3.jpg", "");
+var slide2 = new Slide("assets/img/slideshow-pic3.jpg");
 
-var slide3 = new Slide("", "", "assets/img/slideshow-pic4.jpg", "");
+var slide3 = new Slide("assets/img/slideshow-pic4.jpg");
 
 /* ADD TO WEB PAGE */
 function buildSlider() {
@@ -45,16 +42,7 @@ function buildSlider() {
       slideArray[i].id +
       "' class='singleSlide' style='background-image:url(" +
       slideArray[i].background +
-      ");'>" +
-      "<div class='slideOverlay'>" +
-      "<h1 class='h1s'>" +
-      slideArray[i].title +
-      "</h1>" +
-      "<h4 class='h4s'>" +
-      slideArray[i].subtitle +
-      "</h4>" +
-      "</div>" +
-      "</div>";
+      ");'></div>";
   }
 
   // Print our HTML to the web page

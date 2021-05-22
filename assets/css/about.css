@@ -146,22 +146,6 @@
   padding-top: 0;
 }
 
-.h1s {
-  font-size: 48px;
-}
-
-.h4s {
-  font-size: 24px;
-}
-
-.as {
-  padding: 10px 25px;
-  background-color: #4ca74c;
-  color: #fff;
-  border-radius: 25px;
-  text-decoration: none;
-}
-
 #mySlider {
   overflow: hidden;
   position: relative;
@@ -178,11 +162,6 @@
   left: 100%;
   width: 100%;
   top: 0px;
-}
-
-.slideOverlay {
-  padding: 50px;
-  height: 100%;
 }
 
 #sliderNav {
