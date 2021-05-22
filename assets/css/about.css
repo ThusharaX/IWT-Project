@@ -146,14 +146,14 @@
   padding-top: 0;
 }
 
-#mySlider {
+#slider {
   overflow: hidden;
   position: relative;
   width: 100%;
   height: 400px;
 }
 
-.singleSlide {
+.single-slide {
   background-size: 1300px;
   background-repeat: no-repeat;
   background-position: center top;
@@ -164,33 +164,33 @@
   top: 0px;
 }
 
-#sliderNav {
+#slider-nav {
   position: relative;
   top: -230px;
 }
 
-#sliderNav:hover {
+#slider-nav:hover {
   cursor: pointer;
 }
 
-#sliderPrev {
+#slider-prev {
   position: relative;
   float: left;
   left: 40px;
 }
 
-#sliderPrev img {
+#slider-prev img {
   width: 50px;
   height: 50px;
 }
 
-#sliderNext {
+#slider-next {
   position: relative;
   float: right;
   right: 40px;
 }
 
-#sliderNext img {
+#slider-next img {
   width: 50px;
   height: 50px;
 }
@@ -207,13 +207,13 @@
   }
 }
 
-.slideInRight {
+.slide-in-right {
   left: -100%;
   -webkit-animation: slideIn 1s forwards;
   animation: slideIn 1s forwards;
 }
 
-.slideInLeft {
+.slide-in-left {
   left: 100%;
   -webkit-animation: slideIn 1s forwards;
   animation: slideIn 1s forwards;
@@ -231,7 +231,7 @@
   }
 }
 
-.slideOutLeft {
+.slide-out-left {
   -webkit-animation: slideOutLeft 1s forwards;
   animation: slideOutLeft 1s forwards;
 }
@@ -248,7 +248,7 @@
   }
 }
 
-.slideOutRight {
+.slide-out-right {
   -webkit-animation: slideOutRight 1s forwards;
   animation: slideOutRight 1s forwards;
 }

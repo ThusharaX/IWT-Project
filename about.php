@@ -8,10 +8,10 @@
 <!-- Niki -->
 <!-- Type your code here -->
 <div class="image-slider">
-<div id="mySlider"></div>
-		<div id="sliderNav">
-		<div id="sliderPrev" onclick="prevSlide();"><img src="assets/img/prev-btn.png"></div>
-		<div id="sliderNext" onclick="nextSlide();"><img src="assets/img/next-btn.png"></div>
+  <div id="slider"></div>
+  <div id="slider-nav">
+		<div id="slider-prev" onclick="prevSlide();"><img src="assets/img/prev-btn.png"></div>
+		<div id="slider-next" onclick="nextSlide();"><img src="assets/img/next-btn.png"></div>
 </div>
 </div>
 

@@ -23,11 +23,8 @@ function Slide(background) {
 // Creating our slide objects, you can make as many as you want
 
 var slide1 = new Slide("assets/img/slideshow-pic1.jpg");
-
 var slide1 = new Slide("assets/img/slideshow-pic2.jpg");
-
 var slide2 = new Slide("assets/img/slideshow-pic3.jpg");
-
 var slide3 = new Slide("assets/img/slideshow-pic4.jpg");
 
 /* ADD TO WEB PAGE */
@@ -40,13 +37,13 @@ function buildSlider() {
     myHTML +=
       "<div id='" +
       slideArray[i].id +
-      "' class='singleSlide' style='background-image:url(" +
+      "' class='single-slide' style='background-image:url(" +
       slideArray[i].background +
       ");'></div>";
   }
 
   // Print our HTML to the web page
-  document.getElementById("mySlider").innerHTML = myHTML;
+  document.getElementById("slider").innerHTML = myHTML;
 
   // Display the first slide
   document.getElementById("slide" + currentSlideIndex).style.left = 0;
@@ -75,10 +72,10 @@ function prevSlide() {
   // Add the appropriate animation class to the slide
   document
     .getElementById("slide" + nextSlideIndex)
-    .setAttribute("class", "singleSlide slideInLeft");
+    .setAttribute("class", "single-slide slide-in-left");
   document
     .getElementById("slide" + currentSlideIndex)
-    .setAttribute("class", "singleSlide slideOutRight");
+    .setAttribute("class", "single-slide slide-out-right");
 
   // Set current slide to the new current slide
   currentSlideIndex = nextSlideIndex;
@@ -103,10 +100,10 @@ function nextSlide() {
   // Add the appropriate animation class to the slide
   document
     .getElementById("slide" + nextSlideIndex)
-    .setAttribute("class", "singleSlide slideInRight");
+    .setAttribute("class", "single-slide slide-in-right");
   document
     .getElementById("slide" + currentSlideIndex)
-    .setAttribute("class", "singleSlide slideOutLeft");
+    .setAttribute("class", "single-slide slide-out-left");
 
   // Set current slide to the new current slide
   currentSlideIndex = nextSlideIndex;
