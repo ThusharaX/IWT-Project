@@ -38,12 +38,12 @@ if (isset($_POST["addCat"]) && isset($_FILES["cat_imgLoc"])) {
     }
 
 
-
+    echo $new_img_name;
     // Add Category
     $sql = "INSERT INTO Category
-                (catID, cat_imgLoc, catName, catDescription, price) 
+                (catID, catName, cat_imgLoc, catDescription, price) 
             VALUES
-                ('', '$new_img_name', '$catName', '$catDescription', '$price');";
+                ('', '$catName', '$new_img_name', '$catDescription', '$price');";
     
     if (mysqli_query($conn, $sql)) {
         // echo "<script>alert ('Successfully Sign Up')</script>";

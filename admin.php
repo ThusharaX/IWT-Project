@@ -81,7 +81,7 @@
                 <div class="user__tableHeader">
                 <h3>Customers</h3>
                     <div class="">
-                        <a class="nav__login" href="./addUser.php">Add new Customer</a>
+                        <a class="nav__login" href="./addUser.php?role=customer">Add new Customer</a>
                     </div>
                 </div>
                 
@@ -141,7 +141,7 @@
             <div class="user__tableHeader">
             <h3>Vendors</h3>
                 <div class="">
-                    <a class="nav__login" href="./addUser.php">Add new Vendor</a>
+                    <a class="nav__login" href="./addUser.php?role=vendor">Add new Vendor</a>
                 </div>
             </div>
                 
@@ -201,7 +201,7 @@
             <div class="user__tableHeader">
             <h3>Admins</h3>
                 <div class="">
-                    <a class="nav__login" href="./addUser.php">Add new Admin</a>
+                    <a class="nav__login" href="./addUser.php?role=admin">Add new Admin</a>
                 </div>
             </div>
                 
@@ -344,7 +344,7 @@
                     </tr>
                     
                     <?php
-                        $sql = "SELECT catID, cat_imgLoc, catName, catDescription, price
+                        $sql = "SELECT *
                         from Category";
 
                         $result = $conn->query($sql);

@@ -3,7 +3,7 @@ CREATE TABLE Admin(
 	a_fname varchar(30) NOT NULL,
 	a_lname varchar(30) NOT NULL,
 	a_username varchar(30) NOT NULL,
-	a_imgLoc varchar(30),
+	a_imgLoc varchar(300),
 	role varchar(10) NOT NULL,
 	a_password varchar(256) NOT NULL,
 	a_email varchar(25) NOT NULL
@@ -23,7 +23,7 @@ CREATE TABLE Vendor(
     vendorID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,   
 	v_company varchar(30) ,
 	v_username varchar(30) NOT NULL,
-	v_imgLoc varchar(30),
+	v_imgLoc varchar(300),
 	v_fname varchar(30) NOT NULL,
 	v_lname varchar(30) NOT NULL,
 	role varchar(10) NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE Customer(
 	c_lname varchar(30) NOT NULL,
    	c_dob date,
 	c_username varchar(30) NOT NULL,
-	c_imgLoc varchar(30),
+	c_imgLoc varchar(300),
 	role varchar(10) NOT NULL,
     c_password varchar(256) NOT NULL,
 	c_email varchar(30) NOT NULL,
@@ -68,7 +68,7 @@ VALUES
 
 CREATE TABLE Category(
     catID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    cat_imgLoc varchar(30) NOT NULL,
+    cat_imgLoc varchar(300) NOT NULL,
 	catName varchar(30) NOT NULL,
 	catDescription varchar(300),
 	price real
@@ -98,7 +98,7 @@ CREATE TABLE Advertisement_payment(
 	title varchar(20)  NOT NULL,
 	addDescription varchar(300)  NOT NULL,
     mobile INT NOT NULL,
-	addImageLoc varchar(30),
+	addImageLoc varchar(300),
 	publishDateTime DateTime,	
 	status bit,
 	amount real,
