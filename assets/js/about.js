@@ -81,34 +81,6 @@ function prevSlide() {
   currentSlideIndex = nextSlideIndex;
 }
 
-// Navigates to the next slide in the list
-setInterval(function nextSlide() {
-  // Figure out what the next slide is
-  var nextSlideIndex;
-  // If we are at the last slide the next one is the first (zero based)
-  if (currentSlideIndex === slideArray.length - 1) {
-    nextSlideIndex = 0;
-  } else {
-    // Otherwise the next slide is the current one plus 1
-    nextSlideIndex = currentSlideIndex + 1;
-  }
-
-  // Setup the next slide and current slide for animations
-  document.getElementById("slide" + nextSlideIndex).style.left = "100%";
-  document.getElementById("slide" + currentSlideIndex).style.left = 0;
-
-  // Add the appropriate animation class to the slide
-  document
-    .getElementById("slide" + nextSlideIndex)
-    .setAttribute("class", "single-slide slide-in-right");
-  document
-    .getElementById("slide" + currentSlideIndex)
-    .setAttribute("class", "single-slide slide-out-left");
-
-  // Set current slide to the new current slide
-  currentSlideIndex = nextSlideIndex;
-}, 8000);
-
 function nextSlide() {
   // Figure out what the next slide is
   var nextSlideIndex;
@@ -135,3 +107,8 @@ function nextSlide() {
   // Set current slide to the new current slide
   currentSlideIndex = nextSlideIndex;
 }
+
+// Navigates to the next slide in the list
+setInterval(function () {
+  nextSlide();
+}, 8000);
