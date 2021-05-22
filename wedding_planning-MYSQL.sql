@@ -105,11 +105,7 @@ CREATE TABLE Advertisement_payment(
 	pay_type varchar(20),
 	pymntDescription varchar(300),
 	vendorID INT,
-	/*it is good to genrate a payment ID without doing this(make paymentID also a pk to auto increment it)
-	  since ot will be done by my side i will figure out a way.
-	*/
-	
-    CONSTRAINT adIDcat_fk FOREIGN KEY (catID) REFERENCES Category(catID) ON DELETE SET NULL,	
+	CONSTRAINT adIDcat_fk FOREIGN KEY (catID) REFERENCES Category(catID) ON DELETE SET NULL,	
 	CONSTRAINT VPAvendor_fk FOREIGN KEY (vendorID) REFERENCES Vendor(vendorID) ON DELETE SET NULL
 	
 );
