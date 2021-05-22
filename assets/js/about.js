@@ -82,7 +82,7 @@ function prevSlide() {
 }
 
 // Navigates to the next slide in the list
-function nextSlide() {
+setInterval(function nextSlide() {
   // Figure out what the next slide is
   var nextSlideIndex;
   // If we are at the last slide the next one is the first (zero based)
@@ -107,4 +107,4 @@ function nextSlide() {
 
   // Set current slide to the new current slide
   currentSlideIndex = nextSlideIndex;
-}
+}, 3000);

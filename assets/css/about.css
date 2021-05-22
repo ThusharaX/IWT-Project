@@ -209,14 +209,14 @@
 
 .slide-in-right {
   left: -100%;
-  -webkit-animation: slideIn 1s forwards;
-  animation: slideIn 1s forwards;
+  -webkit-animation: slideIn 2s forwards;
+  animation: slideIn 2s forwards;
 }
 
 .slide-in-left {
   left: 100%;
-  -webkit-animation: slideIn 1s forwards;
-  animation: slideIn 1s forwards;
+  -webkit-animation: slideIn 2s forwards;
+  animation: slideIn 2s forwards;
 }
 
 @-webkit-keyframes slideOutLeft {
@@ -232,8 +232,8 @@
 }
 
 .slide-out-left {
-  -webkit-animation: slideOutLeft 1s forwards;
-  animation: slideOutLeft 1s forwards;
+  -webkit-animation: slideOutLeft 2s forwards;
+  animation: slideOutLeft 2s forwards;
 }
 
 @-webkit-keyframes slideOutRight {
@@ -249,6 +249,6 @@
 }
 
 .slide-out-right {
-  -webkit-animation: slideOutRight 1s forwards;
-  animation: slideOutRight 1s forwards;
+  -webkit-animation: slideOutRight 2s forwards;
+  animation: slideOutRight 2s forwards;
 }
