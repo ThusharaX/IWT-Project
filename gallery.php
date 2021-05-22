@@ -10,6 +10,9 @@
 <section>
 <h1 class="main-title"><strong>Gallery Page</strong></h1>
     
+    <video width="1200" height="600" autoplay loop="loop" >
+        <source src="./assets/video/heroVideo.mp4" type="video/mp4">
+    </video>
 
     <table width="1230" height="247" border="1">
     <tbody>
