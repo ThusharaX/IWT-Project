@@ -49,12 +49,12 @@
   justify-content: space-between;
 }
 
-form .form-row input {
+.login-form form .form-row input {
   float: left;
   width: 45%;
 }
 
-form input {
+.login-form form input {
   height: 50px;
   box-sizing: border-box;
   padding: 10px 10px 0px 10px;
@@ -65,10 +65,10 @@ form input {
   width: 100%;
   font-size: 16px;
 }
-form input:hover {
+.login-form form input:hover {
   border-bottom-color: #dcdcdc;
 }
-form input:focus {
+.login-form form input:focus {
   outline: none;
   border-bottom-color: #407bff;
 }

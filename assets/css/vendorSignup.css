@@ -46,12 +46,12 @@
   justify-content: space-between;
 }
 
-form .form-row input {
+.signup-form form form .form-row input {
   float: left;
   width: 45%;
 }
 
-form input {
+.signup-form form input {
   height: 50px;
   box-sizing: border-box;
   padding: 10px 10px 0px 10px;
@@ -62,10 +62,10 @@ form input {
   width: 100%;
   font-size: 16px;
 }
-form input:hover {
+.signup-form form form input:hover {
   border-bottom-color: #dcdcdc;
 }
-form input:focus {
+.signup-form form form input:focus {
   outline: none;
   border-bottom-color: #0061a7;
 }
