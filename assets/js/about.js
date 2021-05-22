@@ -107,4 +107,4 @@ setInterval(function nextSlide() {
 
   // Set current slide to the new current slide
   currentSlideIndex = nextSlideIndex;
-}, 3000);
+}, 8000);
