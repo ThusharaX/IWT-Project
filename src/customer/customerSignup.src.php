@@ -34,7 +34,7 @@ if (isset($_POST["submit"])) {
     
     if (mysqli_query($conn, $sql)) {
         // echo "<script>alert ('Successfully Sign Up')</script>";
-        header("location: ../../login.php");
+        header("location: ../../customer-login.php");
     }
     else {
         echo "<script>alert ('Something went wrong :-(')</script>";
