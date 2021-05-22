@@ -7,7 +7,14 @@
 
 <!-- Niki -->
 <!-- Type your code here -->
-<div class="img-slider"></div>
+<div class="image-slider">
+<div id="mySlider"></div>
+		<div id="sliderNav">
+		<div id="sliderPrev" onclick="prevSlide();"><img src="assets/img/prev-btn.png"></div>
+		<div id="sliderNext" onclick="nextSlide();"><img src="assets/img/next-btn.png"></div>
+</div>
+</div>
+
 <section class="about-container">
   <div class="column1">
     <h1>Who we are</h1>
