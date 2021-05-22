@@ -9,6 +9,11 @@
 
 <!-- Thushara -->
 <!-- Type your code here -->
+
+<?php
+    
+?>
+
 <section>
     <h1 class="main-title">Hello Admin please add Customer</h1>
     <br>
