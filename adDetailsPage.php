@@ -26,7 +26,7 @@
         echo "<h3>". $row['addDescription'] ."</h3>";
         echo "<h3>". $row['mobile'] ."</h3>";
         echo "<h3>". $row['publishDateTime'] ."</h3>";
-        echo "<h3>". $row['vendorID'] ."</h3>";
+        echo "<h3>". $row['v_fname'], " ", $row['v_lname'] ."</h3>";
 
         if (isset($_SESSION["id"])) {
             if($_SESSION["role"] === 'customer') {
@@ -36,6 +36,9 @@
     ?>
 </section>
 
+<section style="margin">
+
+</section>
 
 <script src="./assets/js/commercialsList.js"></script>
 
