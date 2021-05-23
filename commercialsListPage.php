@@ -33,7 +33,8 @@
 
                     if (isset($_SESSION["id"])) {
                         if($_SESSION["role"] === 'customer') {
-                            echo "<a href=''><button>Add</button></a>";
+                            echo "<a href='./wishlist.src.php'><button>Add</button></a>";
+                            
                         }
                     }
                 }

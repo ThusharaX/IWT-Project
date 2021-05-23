@@ -31,6 +31,7 @@
         if (isset($_SESSION["id"])) {
             if($_SESSION["role"] === 'customer') {
                 echo "<a href=''><button>Add</button></a>";
+                echo "<a href='./feedback.php?adID=". $row['adID'] ."'><button>Add Feedback</button></a>";
             }
         }
     ?>
