@@ -11,43 +11,29 @@
 <h1 class="main-title"><strong>Gallery Page</strong></h1>
     
     <video width="1200" height="600" autoplay loop="loop" >
-        <source src="./assets/video/heroVideo.mp4" type="video/mp4">
+        <source src="./assets/video/heroVideo.mp" type="video/mp4">
     </video>
 
-    <table width="1230" height="247" border="1">
-    <tbody>
-     <tr>
-     <td width="970" height="241"><img src="../Documents/My webpage/77.jpg" width="965" height="432" alt=""/></td>
-     
-
-     <td width="244">
-     	<p>IT IS SUCH HONOUR TO BE PART OF EACH AND EVRY BRIDE`S JOURNEY....FROM THEIR VISIT TO THE BOTIQUE THROUGH TO THE DAY YHEY COLLECT THEIR GROWN!</p>
-        <p>LIFE FOR THE MOMENTS YOU CAN'T PUT INTO WORDS....BECAUSE EVERY PICTURE TELLS A STORY!</p>
-    </td></tr>
-    </tbody>
-    </table>
+<img src="./assets/img/gallery/11.jpg" width="1360" height="auto">
+<img src="./assets/img/gallery/13.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/18.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/1.jpg" width="610" height="auto">
+<img src="./assets/img/gallery/2.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/3.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/4.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/5.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/6.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/7.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/8.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/10.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/12.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/14.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/15.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/16.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/17.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/9.jpg" width="1200" height="auto">
+   
     
-    <table width="1236" height="659" border="1">
-    <tbody>
-    <tr>
-    <td width="1226">WEDDING FAVORITE
-    <video width="1230" height="600" controls="controls" autoplay="autoplay" loop="loop" >
-    <source src="../Documents/My webpage/Untitled design.mp4" type="video/mp4">
-    <source src="file:///C|/Users/KANISHKA/Downloads/Untitled design.mp4" type="video/mp4">
-    </video></td>
-    </tr>
-    </tbody>
-    </table>
-    <table width="1230" height="290" border="1">
-    <tbody>
-    <tr>
-    <td></td>
-    </tr>
-    </tbody>
-    </table>
-    
-    <h1 class="main-title"><br>
-    </h1>
 </section>
 
 
