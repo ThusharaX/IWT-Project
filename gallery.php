@@ -9,9 +9,9 @@
 <!-- Type your code here -->
 <section>
 <h1 class="main-title"><strong>Gallery Page</strong></h1>
-    
+    <center>
     <video width="1200" height="600" autoplay loop="loop" >
-        <source src="./assets/video/heroVideo.mp" type="video/mp4">
+        <source src="./assets/video/heroVideo.mp4" type="video/mp4">
     </video>
 
 <img src="./assets/img/gallery/11.jpg" width="1360" height="auto">
@@ -31,9 +31,9 @@
 <img src="./assets/img/gallery/15.jpg" width="600" height="auto">
 <img src="./assets/img/gallery/16.jpg" width="600" height="auto">
 <img src="./assets/img/gallery/17.jpg" width="600" height="auto">
-<img src="./assets/img/gallery/bc1.jpg" width="1200" height="auto">
+<img src="./assets/img/gallery/20.jpg" width="1100" height="auto">
 <img src="./assets/img/gallery/9.jpg" width="1200" height="auto">
-   
+  </center> 
     
 </section>
 
