@@ -13,7 +13,7 @@
     <video width="1200" height="600" autoplay loop="loop" >
         <source src="./assets/video/heroVideo.mp4" type="video/mp4">
     </video>
-
+<div>
 <img src="./assets/img/gallery/11.jpg" width="1360" height="auto">
 <img src="./assets/img/gallery/13.jpg" width="600" height="auto">
 <img src="./assets/img/gallery/18.jpg" width="600" height="auto">
@@ -34,7 +34,7 @@
 <img src="./assets/img/gallery/20.jpg" width="1100" height="auto">
 <img src="./assets/img/gallery/9.jpg" width="1200" height="auto">
   </center> 
-    
+   </div> 
 </section>
 
 
