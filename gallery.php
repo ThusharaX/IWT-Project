@@ -31,6 +31,7 @@
 <img src="./assets/img/gallery/15.jpg" width="600" height="auto">
 <img src="./assets/img/gallery/16.jpg" width="600" height="auto">
 <img src="./assets/img/gallery/17.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/bc1.jpg" width="1200" height="auto">
 <img src="./assets/img/gallery/9.jpg" width="1200" height="auto">
    
     
