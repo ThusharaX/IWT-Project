@@ -22,7 +22,7 @@
 
     <div class="footer__section social">
       <ul class="social__links">
-        <li>www.facebook.com/gaween.kanishka</li>
+        <li>facebook</li>
         <li>facebook</li>
         <li>facebook</li>
         <li>facebook</li>
