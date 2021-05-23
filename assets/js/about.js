@@ -111,4 +111,4 @@ function nextSlide() {
 // Navigates to the next slide in the list
 setInterval(function () {
   nextSlide();
-}, 8000);
+}, 3000);
