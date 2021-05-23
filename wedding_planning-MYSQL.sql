@@ -233,15 +233,39 @@ CREATE TABLE GuestList(
 );
 
 INSERT INTO GuestList
-	(guestID, g_name, customerID)
+	(g_name, customerID)
 VALUES
-	(1, 'Thushara Thiwanka', 1),
-	(2, 'Gaween Kanishka', 2),
-	(3, 'Chamath Jayasekara', 3),
-	(4, 'Nikethani Gangoda', 4),
-	(5, 'Pamodya Daundasekara', 5),
-	(6, 'Thushara Thiwanka', 1),
-	(7, 'Gaween Kanishka', 2),
-	(8, 'Chamath Jayasekara', 3),
-	(9, 'Nikethani Gangoda', 4),
-	(10, 'Pamodya Daundasekara', 5);
+	('Thushara Thiwanka', 1),
+	('Gaween Kanishka', 2),
+	('Chamath Jayasekara', 3),
+	('Nikethani Gangoda', 4),
+	('Pamodya Daundasekara', 5),
+	('Thushara Thiwanka', 1),
+	('Gaween Kanishka', 2),
+	('Chamath Jayasekara', 3),
+	('Nikethani Gangoda', 4),
+	('Pamodya Daundasekara', 5);
+
+
+
+CREATE TABLE WishList(
+	wishID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	adID INT,
+	customerID INT,
+	CONSTRAINT wishAdID_fk FOREIGN KEY (adID) REFERENCES Advertisement_payment(adID) ON DELETE SET NULL,
+	CONSTRAINT wishCusID_fk FOREIGN KEY (customerID) REFERENCES Customer(customerID) ON DELETE SET NULL
+);
+
+INSERT INTO WishList
+	(adID, customerID)
+VALUES
+	(1, 1),
+	(2, 2),
+	(3, 3),
+	(4, 4),
+	(5, 5),
+	(6, 1),
+	(7, 2),
+	(8, 3),
+	(9, 4),
+	(10, 5);
