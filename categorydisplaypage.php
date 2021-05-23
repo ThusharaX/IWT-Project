@@ -11,7 +11,7 @@
 
 <div class="categories">
   <h1>Categories</h1>
-  
+  <body>
 
   <?php
     $sql = "SELECT catID, cat_imgLoc, catName, catDescription, price
@@ -37,7 +37,7 @@
 </div>
 
 
-
+</body>
 
 
 
