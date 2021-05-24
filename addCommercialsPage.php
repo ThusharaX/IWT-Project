@@ -10,16 +10,16 @@
 	<nav id="vnavBar">
 		<ul class="vendorNavbar">
 			<li>
-				<a href="accountDetails.php">Account details</a>
+				<a class="link" href="accountDetails.php">Account details</a>
 			</li>
 			<li>
-				<a href="adsInventory.php">Ads Inventory</a>
+				<a class="link" href="adsInventory.php">Ads Inventory</a>
 			</li>
 			<li>
-				<a class="current"  href="addCommercialsPage.php">Add advertisement</a>
+				<a class="link current"  href="addCommercialsPage.php">Add advertisement</a>
 			</li>
 			<li>
-				<a href="paymentHistory.php">Payments</a>
+				<a class="link" href="paymentHistory.php">Payments</a>
 			</li>
 		</ul>
 	</nav>
