@@ -12,11 +12,11 @@
 <center>
 <h1 class="main-title"><strong>Gallery Page</strong></h1>
 <h5>WE PROUDLY PRESENT BEST MOMENT IN THEIR LIFE WITH US</h5>
-  <div class="div-1">
+
     <video width="1200" height="500" autoplay loop="loop" >
-        <source src="./assets/video/heroVideo.mp4" type="video/mp4">
+        <source src="./assets/video/Video1.mp4" type="video/mp4">
     </video>
-    </div>
+   
 </center> 
 <br>
 
