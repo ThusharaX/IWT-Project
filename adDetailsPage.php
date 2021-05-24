@@ -16,7 +16,7 @@
 
     <?php
         $sql = mysqli_query($conn,"SELECT *
-        FROM Advertisement_payment AS A, Vendor AS V
+        FROM Advertisement AS A, Vendor AS V
         WHERE A.adID ='" . $_GET['adID'] . "' AND V.vendorID=A.vendorID
         ;");
 
@@ -30,7 +30,7 @@
 
         if (isset($_SESSION["id"])) {
             if($_SESSION["role"] === 'customer') {
-                echo "<a href=''><button>Add</button></a>";
+                echo "<a href='./src/customer/choice.src.php?adID=". $row['adID'] ."&cID=". $_SESSION['id'] ."'><button>Add</button></a>";
                 echo "<a href='./feedback.php?adID=". $row['adID'] ."'><button>Add Feedback</button></a>";
             }
         }
