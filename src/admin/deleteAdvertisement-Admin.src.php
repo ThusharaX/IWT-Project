@@ -8,7 +8,7 @@ if (isset($_POST["delete"])) {
 
     
     $sql = mysqli_query($conn, "DELETE
-                                FROM Advertisement
+                                FROM Advertisement_payment
                                 WHERE adID='" . $adID . "' 
                                  ");
 
