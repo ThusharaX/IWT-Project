@@ -2,6 +2,7 @@
 include './src/dbh.php';
 include 'ImageCheckAdvertisements.php';
 if(isset($_POST['save'])){
+	//getadID using  hiddenfeild
 	$adID=$_POST["adID"];
 	
 	// $target_file
@@ -74,12 +75,12 @@ else
 			  
 	//$sqlstmt="INSERT INTO Advertisement_payment(paymentID,catID,title,addDescription,mobile,addImageLoc,publishDateTime,status,amount,pay_type,pymntDescription,vendorID) 
             		 
-			 $sqlstmt="UPDATE Advertisement_payment
+			 $sqlstmt="UPDATE Advertisement
  			           SET title='$title',addDescription='$adsDescription',mobile=$mobile,addImageLoc='$target_file'
 					   WHERE adID=$adID;";
 			 if(mysqli_query($conn,$sqlstmt)){
 				 echo "<script>alert('$target_file')</script>";
-				header("Location:adsInventory.php?id=&title=&addes=&mobile=&imglocation=");
+				header("Location:adsInventory.php?adID=$adID&UPDATED");
 			 }else{
 				 echo "Error : ".$conn->error;
 			 }			 

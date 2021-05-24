@@ -34,7 +34,7 @@
    global $conn;
    //statement to retrieve ad ids which belongs to vendorID=3;
    $sqlstmt="SELECT *
-             FROM  Advertisement_payment 
+             FROM  Advertisement 
 			 WHERE status=1 AND  vendorID=3";			             			
 //vendorID, adID
 

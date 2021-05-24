@@ -22,22 +22,50 @@
   $currentDateTime=date("Y-m-d H:i:s");
 //This vendor ID should be taken as session
   $vendorID=3;
-  $paymentID=rand(1,1000);
+ 
   //sql statement to insert advertisemnt and payment details
   
-//	( paymentID,catID,title, addDescription, mobile, addImageLoc, publishDateTime, status,amount,pay_type,pymntDescription,vendorID)
+//	( paymentID,catID,title, addDescription, mobile, addImageLoc, publishDateTime, status,vendorID)
   
-  $sqlstmt="INSERT INTO Advertisement_payment(paymentID,catID,title,addDescription,mobile,addImageLoc,publishDateTime,status,amount,pay_type,pymntDescription,vendorID) 
-             VALUES($paymentID,$category,'$title','$description',$mobile_number,'$target_file','$currentDateTime',1,$amount,'$paymentType','$paydescription',$vendorID);";
+  $sqlstmt="INSERT INTO Advertisement(catID,title,addDescription,mobile,addImageLoc,publishDateTime,status,vendorID) 
+             VALUES($category,'$title','$description',$mobile_number,'$target_file','$currentDateTime',1,$vendorID)";
+			 
           
   		 
 			 //can excute multiple sql statements using this php function
-			 if(!mysqli_query($conn,$sqlstmt)){
-					echo "Error for advertisement and payment : ".$conn->error;			
+			 if(mysqli_query($conn,$sqlstmt)){
+				  $adID;
+				  $sqlstmt2="SELECT adID
+                             FROM  Advertisement 
+			                 WHERE vendorID=3 AND publishDateTime='$currentDateTime'";			             			
+//vendorID, adID
+
+                         if($result=mysqli_query($conn,$sqlstmt2)){
+                                 if($result->num_rows>0){
+
+                                  while($row=$result->fetch_assoc()){
+								   $adID=$row["adID"];
+							       }
+								 }else{
+									 echo "No adID for this vendor";
+								 }
+						 }else{
+							 echo "Error adID retrievel:".$conn->error;
+						 }
+				 $sqlstmt3="INSERT INTO Payment(amount,adID,vendorID,payTimeDate, pay_type, pymntDescription)
+            				 VALUES ($amount,$adID,$vendorID,'$currentDateTime','$paymentType','$paydescription')";
+				  if(!mysqli_query($conn,$sqlstmt3)){
+					   echo "Error payment not entered: ".$conn->error;
+					 
+				  }				 
+						
+			  }else{
+				 
+				  echo "Error for advertisement and payment : ".$conn->error;		
 			  }
     
    $conn->close();
-   header("Location:adsInventory.php?sucess");
+  header("Location:adsInventory.php?sucess");
 
  }else{
 	 header("Location:adsInventory.php");
