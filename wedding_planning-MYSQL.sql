@@ -170,9 +170,9 @@ VALUES
 
 
 CREATE TABLE Choice(
+	choiceID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     adID INT NOT NULL,
 	CID INT NOT NULL,
-	CONSTRAINT choice_pk PRIMARY KEY (adID,CID),
 	CONSTRAINT choicecid_fk FOREIGN KEY (adID) REFERENCES Advertisement_payment(adID) ON DELETE CASCADE,
 	CONSTRAINT choiceadid_fk FOREIGN KEY (CID) REFERENCES Customer(customerID) ON DELETE CASCADE
 );
@@ -245,27 +245,3 @@ VALUES
 	('Chamath Jayasekara', 3),
 	('Nikethani Gangoda', 4),
 	('Pamodya Daundasekara', 5);
-
-
-
-CREATE TABLE WishList(
-	wishID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-	adID INT,
-	customerID INT,
-	CONSTRAINT wishAdID_fk FOREIGN KEY (adID) REFERENCES Advertisement_payment(adID) ON DELETE SET NULL,
-	CONSTRAINT wishCusID_fk FOREIGN KEY (customerID) REFERENCES Customer(customerID) ON DELETE SET NULL
-);
-
-INSERT INTO WishList
-	(adID, customerID)
-VALUES
-	(1, 1),
-	(2, 2),
-	(3, 3),
-	(4, 4),
-	(5, 5),
-	(6, 1),
-	(7, 2),
-	(8, 3),
-	(9, 4),
-	(10, 5);
