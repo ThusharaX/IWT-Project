@@ -56,6 +56,10 @@ tr td a{
 	background-color:red;
 	
 }
-img{
+.display img{
 	display:block;
+}
+.adpara{
+	text-align:center;
+	
 }
