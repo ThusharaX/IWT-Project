@@ -17,10 +17,11 @@
         <source src="./assets/video/Video1.mp4" type="video/mp4">
     </video>
    
-</center> 
+
 <br>
 
 <img src="./assets/img/gallery/11.jpg" width="1250" height="auto">
+</center> 
 
 <main class="grid">
 <img src="./assets/img/gallery/10.jpg" width="600" height="auto">
