@@ -13,7 +13,7 @@
 
     <?php
         $sql = "SELECT adID, title, addImageLoc, publishDateTime, status
-        FROM Advertisement_payment AS A
+        FROM Advertisement AS A
         WHERE A.catID ='" . $_GET['catID'] . "'
         ;";
 
@@ -33,7 +33,7 @@
 
                     if (isset($_SESSION["id"])) {
                         if($_SESSION["role"] === 'customer') {
-                            echo "<a href='./wishlist.src.php'><button>Add</button></a>";
+                            echo "<a href='./src/customer/choice.src.php?adID=". $row['adID'] ."&cID=". $_SESSION['id'] ."'><button>Add</button></a>";
                             
                         }
                     }

@@ -11,38 +11,20 @@
 	<nav id="vnavBar">
 		<ul class="vendorNavbar">
 			<li>
-				<a href="accountDetails.php">Account details</a>
+				<a class="link" href="accountDetails.php">Account details</a>
 			</li>
 			<li>
-				<a class="current" href="adsInventory.php">Ads Inventory</a>
+				<a class="link current" href="adsInventory.php">Ads Inventory</a>
 			</li>
 			<li>
-				<a href="addCommercialsPage.php">Add advertisement</a>
+				<a class="link" href="addCommercialsPage.php">Add advertisement</a>
 			</li>
 			<li>
-				<a href="paymentHistory.php">Payments</a>
+				<a class="link" href="paymentHistory.php">Payments</a>
 			</li>
 		</ul>
 	</nav>
 	<hr>		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 				<br>
 					<h2>Advertisement Inventory</h2>
 					
@@ -64,11 +46,11 @@
           echo "<table border='1px solid #ddd'>";
 		  echo "<tr><td>"."<img src='{$row['addImageLoc']}' height='200' width='100%'/>"."</td></tr>";
 		 
-          echo "<tr><td>".$row['title']."</td></tr>";			
-          echo "<tr><td>".$row['addDescription']."</td></tr>";
-         // $row['adID'];
-          echo "<tr><td>".$row['publishDateTime']."</td></tr>";
-          echo "<tr><td>".$row['mobile']."</td></tr>";
+          echo "<tr><td><p class='adpara'>".$row['title']."</p></td></tr>";			
+          echo "<tr><td><p class='adpara'>".$row['addDescription']."</p></td></tr>";
+        
+          echo "<tr><td><p class='adpara'>".$row['publishDateTime']."</p></td></tr>";
+          echo "<tr><td><p class='adpara'>".$row['mobile']."</p></td></tr>";
                   
          echo "<tr><td><a class='update'id='edit' href='adsEdit.php?id=$row[adID]&title=$row[title]&addes=$row[addDescription]&mobile=$row[mobile]&imglocation=$row[addImageLoc]'>Edit</a></td></tr>";
 		  //no need of quotations in the url adID and  others

@@ -5,8 +5,8 @@
     include("./src/customer/customerConfig.php");
 ?>
 
-<link rel="stylesheet" href="./assets/css/customerDashboard.css">
 <link rel="stylesheet" href="./assets/css/admin.css">
+<link rel="stylesheet" href="./assets/css/customerDashboard.css">
 
 <!-- Thushara -->
 <!-- Type your code here -->
@@ -27,8 +27,9 @@
             while ($row = $result->fetch_assoc()) {
             echo "
                 <div class='announcements'>
-                    <h3>Title = ". $row["title"] ."</h3>
-                    <h5>Description = ". $row["annDescription"] ."</h5>
+                    <h4>Announcement : </h4>
+                    <h3>". $row["title"] ."</h3>
+                    <h5>". $row["annDescription"] ."</h5>
                 </div>
                 ";
             }
@@ -53,64 +54,155 @@
         <button class="tablinks" onclick="openTab(event, 'guestList')">guestList</button>
     </div>
 
-    <div id="profile" class="tabcontent">
-        <!-- <h3>profile</h3> -->
-        <section class="custDash">
-            <!-- <h1 class="main-title">customerDashboard Page</h1>
 
-            <div class="cust__tabs">
-                <button>Dashboard</button>
-                <button>Manage Vendors</button>
-                <button>Guest List</button>
-                <button>Budget</button>
-            </div> -->
+    <?php
+        $sql = mysqli_query($conn, "SELECT *
+                FROM Wedding AS W, Customer AS C
+                WHERE W.customerID ='" . $_SESSION["id"] . "'
+                AND C.customerID ='" . $_SESSION["id"] . "'
+        ");
 
-            <fieldset style="margin: 5px;">
-                <legend>Profile Info</legend>
-                <div class="cust__profileinfo">
-                        <img class="cust__profilePic" src="./assets/img/profilePic.png" alt="">
-                        <div class="cust__info">
-                            <h1>Wedding info</h1>
-                            <h3>Louie & Luna</h3>
-                            <h3>August 4 2021</h3>
-                            <button>Edit</button>
+        $row = mysqli_fetch_array($sql);
+
+        echo "<div id='profile' class='tabcontent'>
+                <section class='custDash'>
+                    <fieldset style='margin: 5px;'>
+                        <legend>Profile Info</legend>
+                        <div class='cust__profileinfo'>
+                                <img class='cust__profilePic' src='./Uploads/customers/". $row['c_imgLoc'] ."' alt=''>
+                                <div class='cust__info'>
+                                    <h1>". $row["weddingDate"] ."</h1>
+                                    <h4>". $row["weddingDescription"] ."</h4>
+                                    <h3>". $row["c_fname"] ." & ". $row["c_partner"] ."</h3>
+                                    <a href='./editCustomerDetails.php?customerID=$row[customerID]'>
+                                    <input name='edit' type='submit' value='Edit'></a>
+                                </div>
                         </div>
-                </div>
-            </fieldset>
+                    </fieldset>
 
-        </section>
-    </div>
+                </section>
+            </div>";
+    ?>
+    
+
+
 
     <div id="manageVendors" class="tabcontent">
         <!-- <h3>manageVendors</h3> -->
-        <fieldset style="margin: 5px;">
-                <legend>Vendor Team</legend>
-                <?php
-                    // $sql = "SELECT * from Customer";
-                    // $result = $conn->query($sql);
 
-                    // if ($result->num_rows > 0) {
-                    //     while ($row = $result->fetch_assoc()) {
-                    //     echo "";
-                    //     }
-                    // }
-                    // else {
-                    //     echo "0 results";
-                    // }
-                    // $conn->close();
-                ?>
-                <div class="cust__vendorteam">
-                    <img class="cust__profilePic" src="./assets/img/profilePic.png" alt="">
-                    <img class="cust__profilePic" src="./assets/img/profilePic.png" alt="">
-                    <img class="cust__profilePic" src="./assets/img/profilePic.png" alt="">
-                    <img class="cust__profilePic" src="./assets/img/profilePic.png" alt="">
+        <section class="advertisement">
+            <div class="ad__table">
+                <div class="">
+                    <a class="nav__login" href="./categorydisplaypage.php">Add new Vendor</a>
                 </div>
-            </fieldset>
+                <br>
+            <!-- <h3>Advertisements</h3> -->
+                <table id="customers">
+                    <tr>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Vendor Name</th>
+                        <th>Delete</th>
+                    </tr>
+                    
+                    
+                    <?php
+                        // $sql = "SELECT * from Advertisement_payment";
+                        $sql = "SELECT *
+                            FROM Advertisement AS A, Choice AS C, Vendor AS V, Category AS CAT
+                            WHERE A.adID = C.adID
+                            AND C.cID ='" . $_SESSION["id"] . "'
+                            AND V.vendorID = A.vendorID 
+                            AND CAT.catID = A.catID";
+                        
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+
+                            echo "
+                            <tr>
+                                <td><img height='50px' width='50px' src='./Uploads/advertisements/".$row['addImageLoc']."'></td>
+                                
+                                <td>".$row['title']."</td>
+                                <td>".$row['catName']."</td>
+                                <td>".$row['v_fname']."</td>
+                                
+                                <td>
+                                    <a href='./src/customer/deleteChoice.src.php?choiceID=$row[choiceID]'>
+                                    <input name='delete' type='submit' value='Delete'></a>
+                                </td>
+                                
+                            </tr>
+                            ";
+                            }
+                        }
+                        else {
+                            echo "0 results";
+                        }
+                        // $conn->close();
+                    ?>
+                    
+                    </table>
+            </div>
+        </section>
+
+        
     </div>
 
     <div id="guestList" class="tabcontent">
-        <h3>guestList</h3>
-        <p>guestList is the capital of Japan.</p>
+        <h2 class="tabTitle" style="color: black;">Guest List</h2>
+        <section class="advertisement">
+            <div class="ad__table">
+                <div class="">
+                    <a class="nav__login" href="./addGuest.php">Add new Guest</a>
+                </div>
+                <br>
+            <!-- <h3>Advertisements</h3> -->
+                <table id="customers">
+                    <tr>
+                        <th>Guest ID</th>
+                        <th>Name</th>
+                        <th>Delete</th>
+                    </tr>
+                    
+                    
+                    <?php
+                        // $sql = "SELECT * from Advertisement_payment";
+                        $sql = "SELECT *
+                            FROM GuestList AS G
+                            WHERE G.customerID ='" . $_SESSION["id"] . "'
+                            ";
+                        
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+
+                            echo "
+                            <tr>
+                                <td>".$row['guestID']."</td>
+                                <td>".$row['g_name']."</td>
+                                
+                                <td>
+                                    <a href='./src/customer/deleteGuest.src.php?guestID=$row[guestID]'>
+                                    <input name='delete' type='submit' value='Delete'></a>
+                                </td>
+                                
+                            </tr>
+                            ";
+                            }
+                        }
+                        else {
+                            echo "0 results";
+                        }
+                        // $conn->close();
+                    ?>
+                    
+                    </table>
+            </div>
+        </section>
     </div>
 </section>
 

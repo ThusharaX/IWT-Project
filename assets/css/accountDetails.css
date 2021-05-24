@@ -14,6 +14,11 @@ textarea{
 	display:block;
 	margin-top:5px;
     background-color:#FBFBFF;
+	
+}
+.profilepic{
+	margin:10px;
+	
 }
 .data{
 	margin-left:10px;
@@ -21,13 +26,16 @@ textarea{
 }.data img{
 	display:block;
 	margin:10px;
+	
 }.acdetails{
-	margin:50px;
-	width:50%;
+	margin-right:20px;
+	margin-left:20px;
+	margin-top:20px;
+	width:70%;
 }.data{
 	display:flex;
 }.data input{
-	width:60%;
+	width:250px;
 	height:40px;
 	background-color:#FBFBFF;
 }.profilebtn{
@@ -36,7 +44,7 @@ textarea{
 	margin:10px;
 	
 	justify-content:space-evenly;
-}#update{
+}#edit{
 	margin-right:10px;
 	
 }#delete{
@@ -47,4 +55,15 @@ textarea{
 	background-color:#FBFBFF;
 }#propic{
 	background-color:#F6F4F3;
+	display:none;
+}.acdetails label,input{
+	display:block;
+	
 }
+.acdetails input{
+	margin-top:10px;
+}
+.profilepic label{
+	margin:10px;
+}
+

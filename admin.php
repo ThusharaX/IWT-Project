@@ -24,13 +24,13 @@
         $result = mysqli_query($conn, "SELECT COUNT(*) FROM Vendor");
         $vendorCount = mysqli_fetch_array($result);
 
-        $result = mysqli_query($conn, "SELECT COUNT(*) FROM Advertisement_payment");
+        $result = mysqli_query($conn, "SELECT COUNT(*) FROM Advertisement");
         $advertisementCount = mysqli_fetch_array($result);
 
         $result = mysqli_query($conn, "SELECT COUNT(*) FROM Customer");
         $customerCount = mysqli_fetch_array($result);
 
-        $result = mysqli_query($conn, "SELECT SUM(amount) FROM Advertisement_payment");
+        $result = mysqli_query($conn, "SELECT SUM(amount) FROM Payment");
         $totalIncome = mysqli_fetch_array($result);
         
         $result = mysqli_query($conn, "SELECT COUNT(*) FROM Category");
@@ -278,7 +278,7 @@
                     <?php
                         // $sql = "SELECT * from Advertisement_payment";
                         $sql = "SELECT catName, adID, title, addDescription, mobile, addImageLoc, publishDateTime, status
-                        FROM Advertisement_payment AS A, Category AS C
+                        FROM Advertisement AS A, Category AS C
                         WHERE A.catID = C.catID
                         ;";
 
