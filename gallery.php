@@ -38,6 +38,8 @@
 <img src="./assets/img/gallery/17.jpg" width="600" height="auto">
 <img src="./assets/img/gallery/20.jpg" width="1300" height="auto">
 <img src="./assets/img/gallery/9.jpg" width="1200" height="auto">
+<img src="./assets/img/gallery/22.jpg" width="1200" height="auto">
+<img src="./assets/img/gallery/21.jpg" width="1200" height="auto">
   </center> 
    </div> 
 </section>
