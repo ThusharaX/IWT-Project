@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../assets/css/searchResults.css">
+<link rel="stylesheet" href="./assets/css/searchResults.css">
 <form method="GET">
   <label>Search</label>
   <input type="text" name ="search">
@@ -10,53 +10,52 @@
  <?php
 
 $con=mysqli_connect("localhost","root","","wedding_planning");
+   
    if (isset($_GET['submit'])){
 
-  
-  
- ?><table border=0 cellpadding="50" cellspacing="50" align="center"><?php
+
+ 
+ ?><table border=0 cellpadding="50" cellspacing="100" align="center"><?php
   $r=0;
 
   $search=mysqli_real_escape_string($con,$_GET['search']);
-   $sql=("SELECT * FROM advertisement WHERE title LIKE '%$search%'" );
+   $sql=("SELECT * FROM advertisment WHERE title LIKE '%$search%'" );
   
-  
-	$res=mysqli_query($con,$sql) ;
-
-	if(mysqli_num_rows($res)>0)
-    
-
-	{
-	
+   $res=mysqli_query($con,$sql) ;
+   if(mysqli_num_rows($res)>0)
+   {
 	while($row=mysqli_fetch_array($res))
-	{
+   {
       
-	if($r%4==0)
-
-	{
+	 if($r%4==0)
+	 {
 		
 		echo"<tr>";
-	}
-	echo"<td>" ?> <div class ="card">
-		<!--<form method="POST" action="" >
-		<input type="text" name=title class="title" value="-->
-		<?php echo $row['title'];?>
+	 }
+	    echo"<td>"  ?><div class ="card">
 		
+	  <br><?php
+	    echo  "<p>".$row['title'] ." </p> ";?>
+	   
+
+		<img src="<?php echo $row['addimageLoc'];?>" height="150" width="300"> 
+		
+	<?php echo "<h3 class='des'>".$row['addDescription']. "</h3>"; ?>
 	
-		<img src="<?php echo $row['addimageLoc'];?>" height="150" width="280"> 
+	<br>
+	
+	<?php echo "<a href='./feedback.php?Ad_ID=$row[Ad_ID]' id='btn'>view More</a> "?>
 		
-	<?php echo $row['addDescription']; 
-	?><br>
-	<!-- <input type="submit" name="add to wishlist" value="Add to wishlist">
-	</form>-->
-  <br><br>
-   <div>
+	</form>
+	
+ 
+    
+    
+ <div>
+  
+    <?php
    
 
-    <button  id ="btn"  type="button" ><a href="../moredetails.php" >view more details</a> </button><br><br>
-    
-    <?php
-	 
 	if($r%4==3)
 	{
 		echo "</tr>";
@@ -70,9 +69,9 @@ $con=mysqli_connect("localhost","root","","wedding_planning");
 
 }
 else{
-	echo "No advertisment to show";
+	echo "<h4>No advertisment to show</h4>";
 	}
 
-}
 
+}
 

@@ -24,10 +24,7 @@
 		$result = mysqli_query($conn, "INSERT INTO contactUs(name,email,mobile,comment) VALUES('$name','$email','$mobile','$comment')");
 		
 		// Show message when user added
-		if($result==TRUE){
-                   echo "Thank you for your comments ";
-		exit();
-		}
+		
 	}
 	?>
 
@@ -42,7 +39,7 @@
 <body>
     <!-- <?php include("header.html"); ?> -->
 
-<a href="home.html">Home ></a>Contact us
+
 <div class="main">
  <div class="slider">
      
@@ -91,25 +88,49 @@
   <form class ="form"  method="post" action="" onsubmit ="return validate()" >
     
     <label for="name">*Name</label><br>
-    <input type="text" id="name" name="name" placeholder="Your name"><br><br>
+    <input type="text" id="name" name="name" placeholder="Your name" ><br><br>
 
     <label for="Email">*Email</label><br>
-    <input type="text" id="email" name="email" placeholder="Your Email" pattern="[a-zA-z0-9._%+-]+@[a-z0-9._]+\.2,3}"><br><br>
+    <input type="text" id="email" name="email" placeholder="Your Email" ><br><br>
 
 	<label for="phone">*Mobile Number</label> <br>
-	<input type="text"  id="mobile" name="mobile" placeholder="Your phone number"  pattern="[0-9]{10}"><br><br>
+	<input type="text"  id="mobile" name="mobile" placeholder="Your phone number"  pattern="[0-9]{10}" ><br><br>
     
     <label for="subject">*Messege</label><br>
-    <textarea id="comment" name="comment" placeholder="Type your Messege here..." style="height:300px"></textarea><br>
+    <textarea id="comment" name="comment" placeholder="Type your Messege here..." style="height:300px" ></textarea><br>
 
-    <input type="submit" id="submit" name="Submit" value="SUBMIT">
+    <input type="submit" class="btn" name="Submit" value="SUBMIT">
 	
 	
 
   </form>
 
 
-<script src="./assets/js/contactUs.js"> </script>
+<script >
+	
+
+
+function validate()
+{
+
+ if (name.value == "" || email.value == "" || mobile.value=="" || subject.value=="")
+{
+	alert("no blanks values are allowed");
+	return false;
+}
+
+else
+{
+alert("form is submitted");
+}
+}
+
+
+
+
+
+
+</script>
 
     <!-- <?php include("footer.html"); ?> -->
 
