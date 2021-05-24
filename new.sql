@@ -91,40 +91,75 @@ VALUES
 	('Photography', 'photography.gif', 'This is a category for uncategorized ads', 0.00);
 
 
-CREATE TABLE Advertisement_payment(
-    adID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,   
-    paymentID INT  NOT NULL,   
-	catID INT DEFAULT NULL,
-	title varchar(20)  NOT NULL,
-	addDescription varchar(300)  NOT NULL,
-    mobile INT NOT NULL,
-	addImageLoc varchar(300),
-	publishDateTime DateTime,	
-	status bit,
-	amount real,
-	pay_type varchar(20),
-	pymntDescription varchar(300),
-	vendorID INT,
-	CONSTRAINT adIDcat_fk FOREIGN KEY (catID) REFERENCES Category(catID) ON DELETE SET NULL,	
-	CONSTRAINT VPAvendor_fk FOREIGN KEY (vendorID) REFERENCES Vendor(vendorID) ON DELETE SET NULL
-	
+
+CREATE TABLE Payment (
+  paymentID int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  amount double DEFAULT NULL,
+  payTimeDate datetime DEFAULT NULL,
+  pay_type varchar(20) DEFAULT NULL,
+  pymntDescription varchar(300) DEFAULT NULL
 );
 
+INSERT INTO Payment (amount, payTimeDate, pay_type, pymntDescription) VALUES
+ (1000.00,CURRENT_TIMESTAMP ,'visa card', 'This payment for Bride'),
+ (500.00,CURRENT_TIMESTAMP ,'master card', 'This payment for Catering'),
+ (1500.00,CURRENT_TIMESTAMP ,'american express', 'This payment for Music'),
+ (800.00,CURRENT_TIMESTAMP ,'visa card', 'This payment for Dress'),
+ (1100.00,CURRENT_TIMESTAMP , 'master card', 'This payment for Car Rent'),
+ (1100.00,CURRENT_TIMESTAMP , 'master card', 'This payment for Car Rent'),
+ (1000.00,CURRENT_TIMESTAMP , 'visa card', 'This payment for Bride'),
+ (500.00, CURRENT_TIMESTAMP ,'master card', 'This payment for Catering'),
+ (1500.00,CURRENT_TIMESTAMP ,'american express', 'This payment for Music'),
+ (800.00,CURRENT_TIMESTAMP ,'visa card', 'This payment for Dress'),
+ (1100.00,CURRENT_TIMESTAMP , 'master card', 'This payment for Car Rent');
 
-INSERT INTO Advertisement_payment
-	( paymentID,catID,title, addDescription, mobile, addImageLoc, publishDateTime, status,amount,pay_type,pymntDescription,vendorID)
-VALUES
-	(1, 1,  'Uncategorized', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1,1000.00, 'visa card', 'This payment for Bride',1),
-	(2, 2,  'Laka Catering', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1,500.00, 'master card', 'This payment for Catering',2),
-	(3, 3,  'Lahiru DJ Music', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1,1500.00,'american express', 'This payment for Music',2),
-	(4, 4,  'Anjalee Wedding Dress', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1,800.00,'visa card', 'This payment for Dress',4),
-	(5, 5,  'Kasun Wedding Vehivle', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,1100.00, 'master card', 'This payment for Car Rent',1),
-	(6, 6,  'Kasun Cosmetics', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,1100.00, 'master card', 'This payment for Car Rent',1),
-	(7, 7,  'Niki Flowers', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1,1000.00, 'visa card', 'This payment for Bride',1),
-	(8, 8,  'Gaween Videography', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1,500.00, 'master card', 'This payment for Catering',2),
-	(9, 9,  'Dilki Wedding Cards', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1,1500.00,'american express', 'This payment for Music',2),
-	(10, 10,  'Anjalee Wedding Halls', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1,800.00,'visa card', 'This payment for Dress',4),
-	(11, 11, 'Kasun Photography', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,1100.00, 'master card', 'This payment for Car Rent',1);
+CREATE TABLE Advertisement (
+  adID int(11) AUTO_INCREMENT NOT NULL,
+  catID int(11) DEFAULT 1,
+  title varchar(20) NOT NULL,
+  addDescription varchar(300) NOT NULL,
+  mobile int(11) NOT NULL,
+  addImageLoc varchar(100) DEFAULT NULL,
+  publishDateTime datetime DEFAULT NULL,
+  status bit(1) DEFAULT NULL
+  CONSTRAINT advertisement_pk PRIMARY KEY (adID),
+  CONSTRAINT catID_fk FOREIGN KEY (catID) REFERENCES Category(catID) ON DELETE SET DEFAULT
+);
+
+INSERT INTO Advertisement (catID, title,addDescription, mobile, addImageLoc, publishDateTime, status) VALUES
+(1,  'Uncategorized', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1),
+(2,  'Laka Catering', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1),
+(3,  'Lahiru DJ Music', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1),
+(4,  'Anjalee Wedding Dress', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1),
+(5,  'Kasun Wedding Vehivle', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0),
+(6,  'Kasun Cosmetics', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0),
+(7,  'Niki Flowers', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1),
+(8,  'Gaween Videography', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1),
+(9,  'Dilki Wedding Cards', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1),
+(10,  'Anjalee Wedding Halls', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1),
+(11, 'Kasun Photography', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0),
+CREATE TABLE VendorPaymentAdvertisement (
+   vendorID int(11),
+   adID int(11) DEFAULT 0,
+   paymentID int(11),
+   CONSTRAINT vpk_pk PRIMARY KEY (vendorID,adID,paymentID),
+   CONSTRAINT adID_fk FOREIGN KEY (adID) REFERENCES Advertisement(adID) ON DELETE SET DEFAULT,
+   CONSTRAINT paymentID_fk FOREIGN KEY (payemntID)  REFERENCES Payment(paymentID) ON DELETE CASCADE,
+   CONSTRAINT vendorID_fk FOREIGN KEY (vendorID)  REFERENCES Vendor(vendorID) ON DELETE CASCADE,
+);
+
+INSERT INTO VendorPaymentAdvertisement (vendorID, adID, paymentID) VALUES
+(1,1,1),
+(2,2,2),
+(2,3,3);
+(4,4,4),
+(1,5,5),
+(1,6,6),
+(1,7,7),
+(2,8,8),
+(2,9,9),
+(4,10,10),
+(1,11,11),
 
 CREATE TABLE Feedback(
     customerID INT NOT NULL,
