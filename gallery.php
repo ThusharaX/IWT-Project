@@ -14,7 +14,7 @@
 <h5>WE PROUDLY PRESENT BEST MOMENT IN THEIR LIFE WITH US</h5>
 
     <video width="1200" height="500" autoplay loop="loop" >
-        <source src="./assets/video/Video1.mp4" type="video/mp4">
+        <source src="./assets/video/Video.mp4" type="video/mp4">
     </video>
    
 </center> 
