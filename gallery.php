@@ -9,13 +9,17 @@
 <!-- Type your code here -->
 <section>
 
-
+<center>
 <h1 class="main-title"><strong>Gallery Page</strong></h1>
-  <center>
+<h5>WE PROUDLY PRESENT BEST MOMENT IN THEIR LIFE WITH US</h5>
+  <div class="div-1">
     <video width="1200" height="500" autoplay loop="loop" >
         <source src="./assets/video/heroVideo.mp4" type="video/mp4">
     </video>
+    </div>
 </center> 
+<br>
+
 <img src="./assets/img/gallery/11.jpg" width="1250" height="auto">
 
 <main class="grid">
@@ -43,8 +47,13 @@
 
 
 <img src="./assets/img/gallery/22.jpg" width="1200" height="auto">
+<hr>
+<hr>
+<hr>
 <img src="./assets/img/gallery/21.jpg" width="1200" height="auto">
-
+<hr>
+<hr>
+<hr>
 </center>  
 </section>
 

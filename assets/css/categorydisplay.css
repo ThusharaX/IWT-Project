@@ -1,6 +1,6 @@
 .categories {
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 50px;
 }
 
 body{
@@ -9,4 +9,17 @@ body{
 
 h1{
 	color: white;
+}
+
+.grid { 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 25;
+  align-items: start;
+  justify-items: start;
+  }
+.grid img {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  max-width: 100%;
 }
