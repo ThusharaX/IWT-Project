@@ -1,21 +1,13 @@
-<?php
-include './src/dbh.php';
-include 'ImageCheckAdvertisements.php';
-if(isset($_POST['save'])){
-	//getadID using  hiddenfeild
-	$adID=$_POST["adID"];
-	
-	// $target_file
-	//$target_file=imageChecking("images");
-			 
-			  //assigning the name of the file to a variable
- $fileName=$_FILES["images"]["name"];
+<?php 
+function imageChecking($Filefieldname){
+ //assigning the name of the file to a variable
+  $fileName=$_FILES[$Filefieldname]["name"];
  //assigning the size of the file to a variable
- $fileSize=$_FILES["images"]["size"];
+ $fileSize=$_FILES[$Filefieldname]["size"];
  
  
  //Assigning temporary name to a variable
- $fileTempName=$_FILES["images"]["tmp_name"];  
+ $fileTempName=$_FILES[$Filefieldname]["tmp_name"];  
  
  //create directory
  //changed
@@ -64,26 +56,15 @@ if ($uploadOk ==false) {
 else 
   if (move_uploaded_file($fileTempName, $target_file)) {
 	  echo "<br>";
+	    return $target_file;
     echo "The file ". htmlspecialchars( basename( $fileName)). " has been uploaded.";
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
- 			  
-			   $title=$_POST["title"];
-			   $adsDescription=$_POST["adsDescription"];
-			   $mobile=$_POST["mobile"];
-			  
-	//$sqlstmt="INSERT INTO Advertisement_payment(paymentID,catID,title,addDescription,mobile,addImageLoc,publishDateTime,status,amount,pay_type,pymntDescription,vendorID) 
-            		 
-			 $sqlstmt="UPDATE Advertisement
- 			           SET title='$title',addDescription='$adsDescription',mobile=$mobile,addImageLoc='$target_file'
-					   WHERE adID=$adID;";
-			 if(mysqli_query($conn,$sqlstmt)){
-				 echo "<script>alert('$target_file')</script>";
-				header("Location:adsInventory.php?adID=$adID&UPDATED");
-			 }else{
-				 echo "Error : ".$conn->error;
-			 }			 
-		 }
-		
+
+
+} 
+
+
+
 ?>

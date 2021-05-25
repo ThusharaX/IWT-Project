@@ -27,23 +27,6 @@
 	<hr>	
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
 	
 	<h2>Payments</h2>
 	<div class="pays">
@@ -61,20 +44,20 @@
 	  global $conn;
 	  //sql statement to retrieve payment values
 	  $sqlstmt="SELECT *
-	            FROM  Advertisement_payment
+	            FROM  Payment
 				WHERE VendorID=3;";
 	  
       if($paymentHistory=mysqli_query($conn,$sqlstmt)){
 		     if($paymentHistory->num_rows>0){
 				 while($row=$paymentHistory->fetch_assoc()){
 					 echo "<tr>";			
-		             echo "<td>".$row['paymentID']."</td>";
+		             echo "<td>PV".$row['paymentID']."</td>";
 		 
-                     echo "<<td>".$row['publishDateTime']."</td>";			
+                     echo "<td>".$row['payTimeDate']."</td>";			
                      echo "<td>".$row['amount']."</td>";
          
                     echo "<td>".$row['pay_type']."</td>";
-                    echo "<td>0".$row['pymntDescription']."</td>";
+                    echo "<td>".$row['pymntDescription']."</td>";
                     echo "</tr>";			 
 				 }
 				 

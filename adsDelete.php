@@ -4,12 +4,12 @@
   
      $adID=$_GET['id'];
 	 $sqlstmt="DELETE 
-	           FROM Advertisement_payment
+	           FROM Advertisement
 			   WHERE adID=$adID;";
 	if(mysqli_query($conn,$sqlstmt)){
 		header("Location:adsInventory.php");
 	}else{
-		echo "Erro cannot delete ad because".$conn->error;
+		echo "Error cannot delete ad because".$conn->error;
 		
 	}		   
 

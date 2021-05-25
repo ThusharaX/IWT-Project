@@ -10,7 +10,14 @@
 
 
 <div class="categories">
+
+
+<center>
   <h1>Categories</h1>
+</center>
+
+<main class="grid">
+
   <body>
 
   <?php
@@ -33,6 +40,8 @@
       echo "0 results";
     }
   ?>
+</main>
+
 
 </div>
 
