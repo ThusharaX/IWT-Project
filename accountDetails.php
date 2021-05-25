@@ -49,8 +49,9 @@
 	
 	<!--img src='{$row['addImageLoc']}'-->
 	<img src="<?php echo $ImageLoc;?>" height='200' width='200' alt="profilepicture" title="vendorpropic">
-	<label for="propic"><?php 	echo htmlspecialchars($username);?></label>
 	</div>
+	<label for="propic"><?php 	echo htmlspecialchars($username);?></label>
+	
     <!--file type has to be converted into characters that html supports unless image will not appear-->
 	<input class="visible" type="file" id="propic" name="propic" value="<?php echo htmlspecialchars($ImageLoc);?>" disabled><br><br>
 	</div>

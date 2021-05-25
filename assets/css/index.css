@@ -1,11 +1,15 @@
-    /* Commented coz of conflict - Dont't put style only the HTML tag */
     * {
-        /* box-sizing: border-box;
+     
         padding: 0;
-        margin: 0; */
+        margin: 0;
     }
+	.position-abs{
+		margin-top:-15px;
+		margin-bottom:-28px;
+		 background-color:#FBFBFF;
+	}
 	.outter{
-		margin-top: 150px;
+		
 		width:100%;
 		 height: 550px;
 		  background: blue
@@ -20,56 +24,14 @@
 		overflow:hidden;
     }
     
-    .image-slide1,.image-slide2,.image-slide3.image-slide4,.image-slide5{
-			
-        height:100%;
-		width:100%;
-		position:absolute;
-        left:0;
-		top:0;
-       
-    }
 
-    /* Commented coz of conflict - Dont't put style only the HTML tag */
-	   img {
-        /* width: 120%;
-		position:absolute;
-		left:50%;
-		 top:50%;
-		 transform:translate(-50%,-50%); */
-		 /*transforms the translate property to -50% x axis and -50% yaxis*/
-		
-    }
-	.text-box{
-		width:600px; 
-		position:absolute;
-		top:50%;
-		left:50%;
-		color:#fff;
-		
-	}
-	.text-box h1{
-		margin-bottom:40px;
-		
-	}
-	.text-box p{
-		font-size:14px;
-		line-height:18px;
-		margin-top:80px;		
-	}
-	.text-box span{
-		background:red;
-		height:1px;
-		width:100px;
-		position:absolute;
-		
-	}    
+  
     
   
     
-    .middle {
+    .middle-one {
         position: relative;
-        background: greenyellow;
+        background: pink;
         height: 412.27px;
         display: flex;
         justify-content: space-evenly;
@@ -80,21 +42,21 @@
     .bone {
         width: 200px;
         height: 265px;
+	
     }
     
-    .bone {
-        width: 200px;
-        height: 265px;
-    }
+   
     
     .btwo {
         width: 200px;
         height: 265px;
+	
     }
     
     .bthree {
         width: 200px;
         height: 265px;
+		
     }
     
     .one {
@@ -102,6 +64,7 @@
         height: 200px;
         background: red;
         margin-bottom: 10px;
+		box-shadow: 0 10px 12px -6px black;
     }
     
     .two {
@@ -109,6 +72,7 @@
         height: 200px;
         background: blue;
         margin-bottom: 10px;
+		box-shadow: 0 10px 12px -6px black;
     }
     
     .three {
@@ -116,49 +80,81 @@
         height: 200px;
         background: yellow;
         margin-bottom: 10px;
+		box-shadow: 0 10px 12px -6px black;
     }
     
     .end {
         position: relative;
-        margin-bottom: 200px;
+     
         height: 509px;
         background: aqua;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+      	display: flex;
+		justify-content:space-evenly;
+		align-items: center;
     }
-    
+	.gal{
+	    width: 250px;
+        height: 250px;
+		display:grid;
+		grid-template-columns:1fr 1fr;
+		grid-template-rows:1fr 1fr 1fr;
+		grid-template-areas:"galone galtwo"
+		"galone galthree"
+		"galone galfour";
+	}
+   
     .gal1 {
-        width: 250px;
-        height: 250px;
+
         background: pink;
+		
+	
     }
-    
-    .gal2 {
-        width: 250px;
-        height: 250px;
+	  .gal2 {
+       
         background: black;
     }
     
     .gal3 {
-        width: 250px;
-        height: 250px;
+     
         background: purple;
     }
     
-    /* Commented coz of conflict - Dont't put style only the HTML tag */
-    h2 {
-        /* text-align: center;
+    .galone{
+		grid-area:galone;
+		background:yellow;
+	}
+	.galtwo{
+		grid-area:galtwo;
+		
+		background:red;
+	}
+	.galthree{
+		grid-area:galthree;
+		
+		background:pink;
+	}
+	.galfour{
+		grid-area:galfour;
+		background:gray;
+	}
+  
+    .wrapper h2 {
+        text-align: center;
         position: absolute;
         font-family: 'Roboto', sans-serif;
-        top: 10px; */
+        top: 10px;
     }
     
-    /* Commented coz of conflict - Dont't put style only the HTML tag */
-    a {
-        /* color: black;
+   .middle-one a {
+        color: black;
         text-decoration: none;
         font-family: 'Roboto', sans-serif;
-        font-weight: bold; */
+        font-weight: bold;
     }
- 
+	.gal-title{
+	
+		position: absolute;
+		font-family: 'Roboto', sans-serif;
+		top: 10px;
+	}
+	
