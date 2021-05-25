@@ -31,7 +31,7 @@ if (isset($_POST["submit"])) {
 
 
     $sql = "INSERT INTO Vendor (vendorID, v_company, v_username, v_imgLoc, v_fname, v_lname, role, v_password, v_mobile, v_address, v_email) 
-            VALUES ('', '', '$username', '', '$fname', '$lname', 'vendor', '$hashedPwd', '', '', '$email');";
+            VALUES ('', '', '$username', 'defaultProfilePic.jpg', '$fname', '$lname', 'vendor', '$hashedPwd', '', '', '$email');";
     
     if (mysqli_query($conn, $sql)) {
         // echo "<script>alert ('Successfully Sign Up')</script>";

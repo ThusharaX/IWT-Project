@@ -150,13 +150,13 @@ function addUser($conn, $fname, $lname, $email, $username, $pwd, $role) {
 
     if ($role === 'customer') {
         $sql = "INSERT INTO Customer (customerID, c_fname, c_lname, c_dob, c_username, c_imgLoc, role, c_password, c_email, c_partner) 
-            VALUES ('', '$fname', '$lname', '', '$username', '', '$role', '$hashedPwd', '$email', '');";
+            VALUES ('', '$fname', '$lname', '', '$username', 'defaultProfilePic.jpg', '$role', '$hashedPwd', '$email', '(Your Partner)');";
     } else if ($role === 'vendor') {
         $sql = "INSERT INTO Vendor (vendorID, v_company, v_username, v_imgLoc, v_fname, v_lname, role, v_password, v_mobile, v_address, v_email) 
-            VALUES ('', '', '$username', '', '$fname', '$lname', '$role', '$hashedPwd', '', '', '$email');";
+            VALUES ('', '', '$username', 'defaultProfilePic.jpg', '$fname', '$lname', '$role', '$hashedPwd', '', '', '$email');";
     } else if ($role === 'admin') {
         $sql = "INSERT INTO Admin (adminID, a_fname, a_lname, a_username, a_imgLoc, role, a_password, a_email) 
-            VALUES ('', '$fname', '$lname', '$username', '', 'admin', '$hashedPwd', '$email');";
+            VALUES ('', '$fname', '$lname', '$username', 'defaultProfilePic.jpg', 'admin', '$hashedPwd', '$email');";
     }
 
     // $sql = "INSERT INTO users (usersID, usersName, usersEmail, usersUid, usersPwd, usersType) VALUES ('', '$name', '$email', '$username', '$hashedPwd', '$user_type');";

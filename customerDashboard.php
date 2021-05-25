@@ -54,12 +54,13 @@
         <button class="tablinks" onclick="openTab(event, 'guestList')">guestList</button>
     </div>
 
+    <!-- WHERE W.customerID ='" . $_SESSION["id"] . "'
+    Wedding AS W,  -->
 
     <?php
         $sql = mysqli_query($conn, "SELECT *
-                FROM Wedding AS W, Customer AS C
-                WHERE W.customerID ='" . $_SESSION["id"] . "'
-                AND C.customerID ='" . $_SESSION["id"] . "'
+                FROM Customer AS C
+                WHERE C.customerID ='" . $_SESSION["id"] . "'
         ");
 
         $row = mysqli_fetch_array($sql);
@@ -72,7 +73,6 @@
                                 <img class='cust__profilePic' src='./Uploads/customers/". $row['c_imgLoc'] ."' alt=''>
                                 <div class='cust__info'>
                                     <h1>". $row["weddingDate"] ."</h1>
-                                    <h4>". $row["weddingDescription"] ."</h4>
                                     <h3>". $row["c_fname"] ." & ". $row["c_partner"] ."</h3>
                                     <a href='./editCustomerDetails.php?customerID=$row[customerID]'>
                                     <input name='edit' type='submit' value='Edit'></a>

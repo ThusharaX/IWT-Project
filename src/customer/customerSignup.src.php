@@ -30,7 +30,8 @@ if (isset($_POST["submit"])) {
     $hashedPwd = hash('sha256', $pwd);
 
     $sql = "INSERT INTO Customer (customerID, c_fname, c_lname, c_dob, c_username, c_imgLoc, role, c_password, c_email, c_partner) 
-            VALUES ('', '$fname', '$lname', '', '$username', '', 'customer', '$hashedPwd', '$email', '');";
+            VALUES ('', '$fname', '$lname', '', '$username', 'defaultProfilePic.jpg', 'customer', '$hashedPwd', '$email', '(Your Partner)')
+            ;";
     
     if (mysqli_query($conn, $sql)) {
         // echo "<script>alert ('Successfully Sign Up')</script>";
