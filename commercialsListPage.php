@@ -7,6 +7,9 @@
 
 <!-- Gaween -->
 <!-- Type your code here -->
+<body>
+<center>
+
 <section>
     <h1 class="main-title">commercialsList Page</h1>
 
@@ -48,8 +51,8 @@
         }
     ?>
 </section>
-
-
+    </center>
+</body>
 <script src="./assets/js/commercialsList.js"></script>
 
 <?php include("footer.php"); ?>
