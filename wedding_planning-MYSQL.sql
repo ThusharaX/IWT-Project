@@ -53,17 +53,18 @@ CREATE TABLE Customer(
 	role varchar(10) NOT NULL,
     c_password varchar(256) NOT NULL,
 	c_email varchar(30) NOT NULL,
-	c_partner varchar(30)
+	c_partner varchar(30),
+	weddingDate date
 );
 
 INSERT INTO Customer
-	(c_fname, c_lname, c_dob, c_username, c_imgLoc, role, c_password, c_email, c_partner)
+	(c_fname, c_lname, c_dob, c_username, c_imgLoc, role, c_password, c_email, c_partner, weddingDate)
 VALUES
-	('Thushara', 'Thiwanka', '1998-09-01', 'thusharax', 'customerImage1.jpg', 'customer', SHA2('pass', 256), 'thushara@sliit.lk', 'Dilki'),
-	('Gaween', 'Kanishka', '1998-04-01', 'gaween', 'customerImage2.jpg', 'customer', SHA2('pass', 256), 'gaween@sliit.lk', 'Gayani'),
-	('Chamath', 'Jayasekara', '1999-01-01', 'chamath', 'customerImage3.jpg', 'customer', SHA2('pass', 256), 'chamath@sliit.lk', 'Chamali'),
-	('Nikethani', 'Gangoda', '1997-08-01', 'nikethani', 'customerImage4.jpg', 'customer', SHA2('pass', 256), 'nikethani@sliit.lk', 'Nikethana'),
-	('Pamodya', 'Daundasekara', '1999-12-01', 'pamodya', 'customerImage5.jpg', 'customer', SHA2('pass', 256), 'pamodya@sliit.lk', 'Pamoda');
+	('Thushara', 'Thiwanka', '1998-09-01', 'thusharax', 'customerImage1.jpg', 'customer', SHA2('pass', 256), 'thushara@sliit.lk', 'Dilki', '2022-08-04'),
+	('Gaween', 'Kanishka', '1998-04-01', 'gaween', 'customerImage2.jpg', 'customer', SHA2('pass', 256), 'gaween@sliit.lk', 'Gayani', '2021-10-05'),
+	('Chamath', 'Jayasekara', '1999-01-01', 'chamath', 'customerImage3.jpg', 'customer', SHA2('pass', 256), 'chamath@sliit.lk', 'Chamali', '2023-07-02'),
+	('Nikethani', 'Gangoda', '1997-08-01', 'nikethani', 'customerImage4.jpg', 'customer', SHA2('pass', 256), 'nikethani@sliit.lk', 'Nikethana', '2021-08-05'),
+	('Pamodya', 'Daundasekara', '1999-12-01', 'pamodya', 'customerImage5.jpg', 'customer', SHA2('pass', 256), 'pamodya@sliit.lk', 'Pamoda', '2021-09-01');
 
 
 CREATE TABLE Category(
@@ -175,26 +176,6 @@ VALUES
 	(3, 3, '2014-07-09', '10:30:00', 4, 'Amazing Experience'),
 	(4, 4, '2017-09-02', '10:30:00', 5, 'Awesome'),
 	(5, 5, '2019-01-25', '10:30:00', 1, 'Bad service');
-
-
-
-
-CREATE TABLE Wedding(
-    weddingID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-	customerID INT,
-	weddingDate date,
-	weddingDescription varchar(300),
-	CONSTRAINT weddingCus_fk FOREIGN KEY (customerID) REFERENCES Customer(customerID) ON DELETE SET NULL
-);
-
-INSERT INTO Wedding
-	(customerID, weddingDate, weddingDescription)
-VALUES
-	(1, '2022-08-04', 'My wedding'),
-	(2, '2021-10-05', 'I got married'),
-	(3, '2023-07-02', 'Just say YES'),
-	(4, '2021-08-05', 'Love of my life'),
-	(5, '2021-09-01', 'Excited');
 
 
 CREATE TABLE Choice(
