@@ -45,7 +45,8 @@
 	  //sql statement to retrieve payment values
 	  $sqlstmt="SELECT *
 	            FROM  Payment
-				WHERE VendorID=3;";
+				WHERE VendorID=3
+				ORDER BY paymentID DESC;";
 	  
       if($paymentHistory=mysqli_query($conn,$sqlstmt)){
 		     if($paymentHistory->num_rows>0){
