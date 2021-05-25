@@ -1,6 +1,6 @@
 <?php
     // Dynamic Header
-    $title = 'Vendor Signup'; include("header.php");
+    $title = 'Search Result'; include("header.php");
 ?>
 
 <link rel="stylesheet" href="./assets/css/searchResults.css">
