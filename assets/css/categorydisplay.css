@@ -23,7 +23,7 @@ h1{
 
 body 
 {
-  background-image: url('10.jpg');
+  background-image: url(../img/CATEGORIES/categoryBackground.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
