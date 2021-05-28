@@ -84,12 +84,12 @@ VALUES
 	('DJ Music', 'djMusic.gif', 'After the ceremony, there is often a celebratory dance', 1500.00),
 	('Wedding Dress', 'weddingDress.gif', 'Our tailors can create amazing modern-day gowns from vintage wedding gowns', 800.00),
 	('Cosmetics', 'cosmetics.gif', 'Which provides some of the most competitive rates in the industry.', 1100.00),
-	('Wedding Vehivle', 'weddingVehivle.gif', 'This is a category for uncategorized ads', 0.00),
-	('Flower', 'flower.gif', 'This is a category for uncategorized ads', 0.00),
-	('Videography', 'videography.gif', 'This is a category for uncategorized ads', 0.00),
-	('Wedding Cards', 'weddingCards.gif', 'This is a category for uncategorized ads', 0.00),
-	('Wedding Halls', 'weddingHalls.gif', 'This is a category for uncategorized ads', 0.00),
-	('Photography', 'photography.gif', 'This is a category for uncategorized ads', 0.00);
+	('Wedding Vehivle', 'weddingVehivle.gif', 'This is a category for Wedding Vehivle ads', 1300.00),
+	('Flowers', 'flower.gif', 'This is a category for Flowers ads', 1400.00),
+	('Videography', 'videography.gif', 'This is a category for Videography ads', 1200.00),
+	('Wedding Cards', 'weddingCards.gif', 'This is a category for Wedding Cards ads', 1100.00),
+	('Wedding Halls', 'weddingHalls.gif', 'This is a category for Wedding Halls ads', 920.00),
+	('Photography', 'photography.gif', 'This is a category for Photography ads', 2100.00);
 
 
 
@@ -114,15 +114,15 @@ CREATE TABLE Advertisement (
 );
 
 INSERT INTO Advertisement (catID, title,addDescription, mobile, addImageLoc, publishDateTime, status,vendorID) VALUES
-(1,  'Uncategorized', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1,1),
+(1,  'Uncategorized', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 0,1),
 (2,  'Laka Catering', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1,2),
-(3,  'Lahiru DJ Music', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1,3),
+(3,  'Lahiru DJ Music', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 0,3),
 (4,  'Anjalee Wedding Dress', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1,2),
-(5,  'Kasun Wedding Vehivle', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,4),
+(5,  'Kasun Wedding Vehivle', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 1,4),
 (6,  'Kasun Cosmetics', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,5),
 (7,  'Niki Flowers', 'These services can include providing any combination of food', 752468741, 'adImage1.jpg', CURRENT_TIMESTAMP, 1,1),
-(8,  'Gaween Videography', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 1,2),
-(9,  'Dilki Wedding Cards', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 1,4),
+(8,  'Gaween Videography', 'Live wedding band, or DJ to play songs for the couple and guests.', 736985214, 'adImage2.jpg', CURRENT_TIMESTAMP, 0,2),
+(9,  'Dilki Wedding Cards', 'While you are busy with the details of planning the wedding, let us care for the dress', 773915642, 'adImage3.jpg', CURRENT_TIMESTAMP, 0,4),
 (10,  'Anjalee Wedding Halls', 'The service typically consists of: Coverage of as much of the day as you wish', 775632589, 'adImage4.jpg', CURRENT_TIMESTAMP, 1,3),
 (11, 'Kasun Photography', 'We guarantee your vehicle on time for the auspicious occasion thus giving you peace of mind.', 732145698, 'adImage5.jpg', CURRENT_TIMESTAMP, 0,1);
 

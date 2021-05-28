@@ -2,17 +2,17 @@
 
 // LocalHost
 
-// $dbServername = "localhost";
-// $dbUsername = 'root';
-// $dbPassword = "";
-// $dbName = "wedding_planning";
+$dbServername = "localhost";
+$dbUsername = 'root';
+$dbPassword = "";
+$dbName = "wedding_planning";
 
 // Online DB
 
-$dbServername = "eu-cdbr-west-03.cleardb.net";
-$dbUsername = 'bd0f458241cbc8';
-$dbPassword = "7533def2";
-$dbName = "heroku_f0ea7a7c5a22a47";
+// $dbServername = "eu-cdbr-west-03.cleardb.net";
+// $dbUsername = 'bd0f458241cbc8';
+// $dbPassword = "7533def2";
+// $dbName = "heroku_f0ea7a7c5a22a47";
 
 $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 
