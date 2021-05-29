@@ -64,7 +64,7 @@ if (file_exists( $target_image)&&uploadOk&&move_uploaded_file($fileTempName, $ta
 }
 
 //Uploading a file for the first time
-  if (uploadOk&&move_uploaded_file($fileTempName, $target_image)) {
+  if ($uploadOk&&move_uploaded_file($fileTempName, $target_image)) {
 
 	
 	 return $target_image;
