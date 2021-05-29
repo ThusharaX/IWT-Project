@@ -151,6 +151,7 @@
          var save=document.getElementById('save');	 
 		 var manipProPic=document.getElementById('propicfilebtn');
 		 var formAction=document.getElementById('accFrom');
+		 var password=document.getElementById('password');
 	
 	    
 		 update.addEventListener('click',()=>{
@@ -184,7 +185,8 @@
 			 edit.type='hidden';
 			 //change form action
 			  formAction.action='accountDetailsSave.php';
-			 
+			  password.value='';
+			 password.required='true';
 			//change save button type
 			 save.type='submit';
 			
