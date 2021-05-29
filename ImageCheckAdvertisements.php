@@ -12,7 +12,7 @@ function imageChecking($Filefieldname){
  
  //create directory
  //changed
-  $target_dir="./Uploads/adsImage/";
+  $target_dir="./Uploads/advertisements/";
 
   //contains the path
   $target_file=$target_dir.basename($fileName);

@@ -17,7 +17,7 @@ function imageChecking($Filefieldname){
  }
  //create directory
  
-   $targetPropicdir="Uploads/VendorProPic/";
+   $targetPropicdir="Uploads/vendors/";
 
   //contains the path
  $target_image=$targetPropicdir.basename($fileName);
