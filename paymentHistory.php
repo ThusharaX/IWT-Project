@@ -2,6 +2,8 @@
 //BY IT206548962
     // Dynamic Header
     $title = 'Vendor Dashboard'; include("header.php");
+	include("./src/vendor/vendorConfig.php");
+	$vendorID=$_SESSION["id"];
 ?>
 
 
@@ -11,7 +13,7 @@
 	<nav id="vnavBar">
 		<ul class="vendorNavbar">
 			<li>
-				<a class="link" href="accountDetails.php">Account details</a>
+				<a class="link" href="vendorDashboard.php">Account details</a>
 			</li>
 			<li>
 				<a class="link" href="adsInventory.php">Ads Inventory</a>
@@ -25,10 +27,10 @@
 		</ul>
 	</nav>
 	<hr>	
-
-
+<br>
+<h2>Payments</h2>
+	<div class="for-font">
 	
-	<h2>Payments</h2>
 	<div class="pays">
 	
 	<table border='1px solid #ddd'>
@@ -45,7 +47,7 @@
 	  //sql statement to retrieve payment values
 	  $sqlstmt="SELECT *
 	            FROM  Payment
-				WHERE VendorID=3
+				WHERE VendorID=$vendorID
 				ORDER BY paymentID DESC;";
 	  
       if($paymentHistory=mysqli_query($conn,$sqlstmt)){
@@ -77,5 +79,6 @@
 	
 	?>
 	    </table>
+	</div>
 	</div>
 <?php include "vendorAnnouncementFooter.php"; ?>
