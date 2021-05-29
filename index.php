@@ -1,7 +1,7 @@
 <?php
     // Dynamic Header
     $title = 'Home'; include("header.php");
-	//session  that check whether  the user is   registered or not 
+	
 	
 ?>
 
@@ -28,22 +28,26 @@
         <h2>Ideas & Tips</h2>
        
             <div class="one para">
-			<p>Make  Time  for  romance daily,impress your partner.</p>
+			<p>You may not be a fan of where you currently live,
+			or want to wed where you grew up, but make sure you don’t stray too far from the majority of your guest list.
+			</p>
 			
 			</div>
         
         
             <div class="two para">
-				<p>chamth jaayasejarar  chamath jayasekara 
-    			chamath  jaaysekars lorem  lorem lorem</p>
+				<p>Your bridesmaids should be your biggest support throughout the planning process,
+				so choose wisely. Friends you’ve recently made or cousins you rarely see are not the best choice.
+				</p>
 			
 			</div>
            
         
        
             <div class="three para">
-				<p>chamth jaayasejarar  chamath jayasekara 
-    			chamath  jaaysekars lorem  lorem lorem</p>
+				<p>One of the biggest talking points at any wedding is the food. 
+				From hog roasts and buffets to bake offs and mini fish ‘n’ chips. 
+			</p>
 			
 			</div>
             
@@ -69,7 +73,7 @@
 		   </div>     <div class="galfour">
 		   <img src="./assets/img/gallery/optimized/20.jpg" onmouseover="bigImg(this)" onmouseout="normalImg(this)" />
 		   </div>
-		   <p>Chamath  & Jayasekara</p>
+		   <p>Sandamali & Saman</p>
 		   </div></a>
            <a href="#">  <div class="gal gal2">
 		       <div class="galone">
