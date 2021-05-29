@@ -10,8 +10,13 @@ function imageChecking($Filefieldname){
  //Assigning temporary name to a variable
  $fileTempName=$_FILES[$Filefieldname]["tmp_name"];  
  
+ //default profile picture if user forget to upload a image when editing the profile
+ if($_FILES[$Filefieldname]["size"]==0){
+	 $target_imag="assets/img/profilePic.png";
+	 return $target_imag;
+ }
  //create directory
- //changed
+ 
    $targetPropicdir="Uploads/VendorProPic/";
 
   //contains the path
@@ -32,13 +37,10 @@ function imageChecking($Filefieldname){
   }
 
 // Check if file already exists
-if (file_exists( $target_image)) {
-  echo "Sorry, file already exists.";
-  $uploadOk =false;
-}
+
 
 // Check file size
-if ($fileSize > 2000000) {
+if ($fileSize > 5000000) {
   echo "<script>alert('Too large')</script>";
   $uploadOk =false;
 }
@@ -54,13 +56,21 @@ if ($uploadOk ==false) {
   echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } 
-else 
-  if (move_uploaded_file($fileTempName, $target_image)) {
-	  echo "<br>";
-	    return $target_image;
-    echo "The file ". htmlspecialchars( basename( $fileName)). " has been uploaded.";
+//Since this is a profile picture same picture can be  upload and replaced
+if (file_exists( $target_image)&&uploadOk&&move_uploaded_file($fileTempName, $target_image)) {
+	
+	return $target_image;
+  
+}
+
+//Uploading a file for the first time
+  if (uploadOk&&move_uploaded_file($fileTempName, $target_image)) {
+
+	
+	 return $target_image;
+      echo "<script>alert('The file '+ htmlspecialchars( basename( $fileName))+ ' has been uploaded.')</script>";
   } else {
-    echo "Sorry, there was an error uploading your file.";
+    echo "<script>alert(Sorry, there was an error uploading your file.)</script>";
   }
 
 

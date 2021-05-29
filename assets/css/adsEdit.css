@@ -1,26 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+/*styling for ads alignment-both horizontal and vertical alignment*/
 .ads{
 	display:flex;
 	justify-content:center;
 	align-items:center;
-}#adsDescription{
+	
+	
+	
+}
+/*styling textarea*/
+#adsDescription{
 	min-width:100%;
 	min-height:100%;
 	display:block;
-	 background-color:#FBFBFF;
+    background-color:#BFD7FF;
+	
 	
 }	
 
-}tbody{
-	border-box:box-sizing;
+
+/*Styling table body*/
+.display tbody{
+    box-sizing:border-box;
 	margin:0px;
 	padding:0px;
 	
-}.display input{
+}
+/*styling input feilds*/
+.display input{
 	min-width:100%;
 	min-height:20px;
 	display:block;
-	 background-color:#FBFBFF;
+	background-color:#BFD7FF;
+font-family: 'Poppins', sans-serif;
+overflow:hidden;
 	
-}#alignment{
+}
+/*align image in table index alignment*/
+#alignment{
    align-content:center;
 }

@@ -2,16 +2,18 @@
 //BY IT206548962
     // Dynamic Header
     $title = 'Vendor Dashboard'; include("header.php");
+	include("./src/vendor/vendorConfig.php");
+	$vendorID=$_SESSION["id"];
 	
 ?>
 
-<div class="alternative">
-	<link rel="stylesheet" href="./assets/css/adsInventory.css">		
+
+<link rel="stylesheet" href="./assets/css/adsInventory.css">		
 <link rel="stylesheet" href="./assets/css/vendorNavBar.css">
 	<nav id="vnavBar">
 		<ul class="vendorNavbar">
 			<li>
-				<a class="link" href="accountDetails.php">Account details</a>
+				<a class="link" href="vendorDashboard.php">Account details</a>
 			</li>
 			<li>
 				<a class="link current" href="adsInventory.php">Ads Inventory</a>
@@ -35,9 +37,10 @@
    //statement to retrieve ad ids which belongs to vendorID=3;
    $sqlstmt="SELECT *
              FROM  Advertisement 
-			 WHERE status=1 AND  vendorID=3";			             			
-//vendorID, adID
+			 WHERE status=1 AND  vendorID=$vendorID
+			 ORDER BY publishDateTime DESC";			             			
 
+//excuting  ad details sql staement
   if($result=mysqli_query($conn,$sqlstmt)){
       if($result->num_rows>0){
 
@@ -65,10 +68,9 @@
 	 echo "Error: ".$conn->error;
  }
  
-// }
-  //$conn->close();
+
 
 ?>
     </div>
-</div>
+
 	<?php include "vendorAnnouncementFooter.php"; ?>

@@ -1,3 +1,5 @@
+/*IT20654962*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 *{
 	padding:0px;
 	margin:0px;
@@ -6,64 +8,125 @@
 body{
    background-color:#FBFBFF;
 }
-fieldset{
-	background-color:#F6F4F3;
-  
-}
+/*positioning and  styling textarea*/
 textarea{
 	display:block;
 	margin-top:5px;
-    background-color:#FBFBFF;
-	
+    border-style:hidden;
+	font-family: 'Poppins', sans-serif;	
 }
-.profilepic{
-	margin:10px;
+/*poistioning and  styling  profilepic image*/
+.data .profilepic img{
+	border: 5px solid #BFD7FF;
+	border-radius:50%;
+	width:180px;
+	height:180px;
+    display:block;
 	
-}
-.data{
-	margin-left:10px;
-	margin-top:10px;
-}.data img{
-	display:block;
-	margin:10px;
-	
-}.acdetails{
-	margin-right:20px;
-	margin-left:20px;
+	align-content:center;
 	margin-top:20px;
-	width:70%;
-}.data{
-	display:flex;
-}.data input{
-	width:250px;
-	height:40px;
-	background-color:#FBFBFF;
-}.profilebtn{
-	display:flex;
-	float:right;
-	margin:10px;
 	
-	justify-content:space-evenly;
-}#edit{
-	margin-right:10px;
+	margin-left:20px;
+	margin-right:-32px;
+	margin-bottom:-28px;
 	
-}#delete{
-	margin-left:10px;
 	
-}.profilebtn input{
-	width:100px;
-	background-color:#FBFBFF;
-}#propic{
-	background-color:#F6F4F3;
-	display:none;
-}.acdetails label,input{
+	
+
+}
+/*make content inside profilepic div  block elements and set width and heights*/
+.profilepic{
 	display:block;
-	
+   
+	width:100%;
+	height:100%;
 }
-.acdetails input{
-	margin-top:10px;
-}
-.profilepic label{
-	margin:10px;
+/*styling and position   file  type  input feild display it none */
+.profilepic #propicfilebtn{
+	/*relative to body*/
+    position:absolute;
+	top:50%;
+	left:10%;
+	display:none;
+	width:90px;
+	height:20px;
+
 }
 
+/*positioning data div*/
+.data{
+	margin-top:5px;
+	margin-right:15px;
+	margin-bottom:15px;
+}
+/* styling and poistioning acdetails div*/
+.acdetails{
+	
+    border-radius:10px;
+    font-family: 'Poppins', sans-serif;	
+	width:80%;
+	height:80%;
+	background: url('../img/VendorAccount/vendorBg.jpg') center/cover no-repeat;
+	border:5px solid #BFD7FF;
+margin:30px 100px 30px 125px;
+}
+/*styling and positioning inputs inside data div*/
+.data input{
+	width:250px;
+	height:40px;
+	font-family: 'Poppins', sans-serif;	
+	
+  border-style:hidden;
+  margin-top:10px;
+}
+/*poistioning all the submit and normal button*/
+.profilebtn{
+	display:flex;
+	float:right;
+	
+	
+}
+/*css for form buttons*/
+#edit{
+	width:60px;
+	border-radius:5px;
+	background-color:#BFD7FF;
+	  float:left;
+
+}#deleted{
+	width:60px;
+	border-radius:5px;
+	background-color:#BFD7FF;
+	 float:left;
+	  
+}
+#update{
+	width:60px;
+	border-radius:5px;
+	background-color:#BFD7FF;
+    float:left;
+}#save{
+	width:60px;
+	border-radius:5px;
+	background-color:#BFD7FF;
+	 float:left;
+}
+
+
+
+/*make all the inputs and  label tagsinside acdetails div block elements*/
+.acdetails label,input{
+	display:block;
+	
+}
+
+
+/*make content inside table rows vertically centerlized*/
+.data table td {
+	  vertical-align: center;
+
+}
+/*styles for fonts*/
+.data tbody{
+	color:purple;
+}

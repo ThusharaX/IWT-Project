@@ -1,5 +1,8 @@
  /*By It20654962*/  
-    * {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+   
+
+   * {
    
         padding: 0;
         margin: 0;
@@ -11,30 +14,24 @@
         background-color:#FBFBFF;	
     
     }
+	/*styling and positioning whole div*/
 	.whole{
 		display:flex;
-		background-color:#F1F2F6;
-		margin:10px;
+		font-family: 'Poppins', sans-serif;
+	 
 		border-radius:10px;
-	}
-	.payment_display{
-		width:70vw;
-		height:70vh;
-		position
-		
+		background:linear-gradient(354deg, rgba(45,159,224,0.7917542016806722) 0%, rgba(99,218,247,0.27914915966386555) 88%);		
+		height:80vh;
+		width:80%;
+		padding:10px;
+		border:5px solid #BFD7FF;
+		font-size:32px;
+		margin:30px 100px 30px 125px;
+		color:purple;
 	}
 	
-.ads{
-	display:flex;
-	flex-wrap:wrap;
-}
-    
-
-
-.display{
-	margin:10px;
-}
- 
+	
+ /*stlying textarea element*/
     textarea {
         outline: none;
         border-radius: 5px;
@@ -43,25 +40,28 @@
 		 max-width: 100%;
        
     }
-    
+    /*make content inside ads-details div display flexed (horizintaly next to each other) and  */
     .ads-details {
     display:flex;
-	background-color:#F6F4F3;
-  
+	
+
+	height:100%;
 	
     }
-    
+    /*positioning container div and set witdth and height resposive to whole div  and set border radius*/
     .container {
-        max-width: 700px;
-        width: 80vw;
+
+        width:100%;
 	
-		height:70vh;
-        background: #F6F4F3;
-        padding: 25px 30px;
+		height:85%;
+      
+        padding: 25px 5px 25px 5px;
         border-radius: 10px;
 		
+
+		
     }
-    
+    /*style and  position titles inside container*/
     .container .title {
         font-size: 25px;
         font-weight: 500;
@@ -72,10 +72,10 @@
     }
     
    
-    
+    /* style and position  advertisement details input tag*/
     .inputs input {
         height: 40px;
-        width: 95%;
+        width: 200px;
         outline: none;
         border-radius: 5px;
         border-bottom-width: 2px;
@@ -83,116 +83,100 @@
 		
     }
     
-   
-    
+    /* style and position  contact details input tag*/
     .cinputs input {
         height: 40px;
-        width: 90%;
+          width: 200px;
         outline: none;
         border-radius: 5px;
         border-bottom-width: 2px;
         border-color: white;
-    }
-    
-    .sdbutton {
-       
-        display: flex;
-		position:absolute;
-		bottom:20px;
-		right:20px;
-    }
-    
-/*buttons*/
-.button input{
-	  background-color: #DCD4D0;
-      padding: 5px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-	
-}
-    .sdbutton #saved {
-        margin-right: 10px;
-      
-    }
-   
-	   
+    }	 
+   /*positin inputs div*/	
     .inputs {
-        margin: 10px 0px;
-		
-	
-    }
-    
+        margin: 5px 0px;	
+    }  
+	/*positin cinputs div*/
     .cinputs {
-        margin: 10px 0px;
-	
-    }
-    
-  
-	
+        margin: 5px 0px;	
+    }	
+	/*sizing left div*/
 	.left{
-		width:50%;
-		
-		background:#F6F4F3;
-
-		
+		width:38%;		
 	}
+	/*sizing and posistioning right div*/
 	.right{
-		width:50%;
-		background:#F6F4F3;
-		margin-left:5px;
+		width:25%;
+		margin-left:5px;		
 	}
+	/*set display block for all the elements(input span small) which belongs to bk class*/
 	.bk{
 		display:block;
-	}
-	#insertSucess{
-		
-		content:'Data inserted successfully';
-		display:none;
-	}
-	.sdbutton{
-		float:right;
-	}
-	
-	.only{
-	background:blue;
-	height:50vh;
-	width:50%;
-    display:flex;
-	justify-content:center;
-	align-items:center;	
-    }
-
-	#severSucess{
-		color:green;
-	}
-
-	span{
+	}	
+ 	/* give font size for all the span tags inside whole div*/	
+		.whole span{
 		font-size:12px;
 	}
-	small{
+		/* give font size for all the small tags inside whole div*/	
+	.whole small{
 		font-size:10px;
 	}
-	h2{
-		text-align:center;
+		/* give font size for all the h2 tags inside whole div*/	
+	.whole h2{
+		
 		font-size:14px;
 	}
-	#paymentTitle{
+	/*#paymentTitle{
 		 font-size: 25px;
         font-weight: 500;
         text-align: center;
-		margin-top:15px;
-      
+		margin-top:15px;     
         background:#DCD4D0;
-		margin-right:10px;
-		
-	}
-	.pay{
-		margin-left:10px;
-		
-	}
-	#amountInput{
-		width:50%;
-	}
+		margin-right:10px;		
+	}*/
+    /*message hidden for form validattion*/	
 	.Message{
 		visibility:hidden;
 	}
+	/*hide file button to create a custom fileupload button*/
+	.iinputs #adsfileImage{
+		display:none;
+		width:10px;
+	}
+	/*make label inside image niputs div,a block element*/
+	.iinputs label{
+		display:block;
+	}
+	/*sizing image input div*/
+	.iinputs{
+		width:100px;
+	}
+	/*posistioning payment-details div*/
+	.payment-details{
+		display:flex;
+		margin-left:10px;
+	
+	}
+	/*posistioning form button*/
+	.sdbutton {       
+        display: flex;	  
+		float:right;
+	    margin-top:200px;
+    }   
+/*style input tags inside button div*/
+.button input{
+	  background-color: #BFD7FF;
+      padding: 5px 15px;
+      border-radius: 5px;
+      outline:none;	 
+      border:none;	  
+}
+/*posistionings save button*/
+.sdbutton #saved {
+        margin-right: 10px;
+      
+  }
+  /*posistioning choose a payment selector*/
+  #payment-margin{
+	  margin-top:10px;
+  }

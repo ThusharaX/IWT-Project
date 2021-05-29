@@ -1,4 +1,5 @@
 <?php 
+//IT20654962
 function imageChecking($Filefieldname){
  //assigning the name of the file to a variable
   $fileName=$_FILES[$Filefieldname]["name"];
@@ -30,14 +31,9 @@ function imageChecking($Filefieldname){
     $uploadOk = false;
   }
 
-// Check if file already exists
-if (file_exists($target_file)) {
-  echo "Sorry, file already exists.";
-  $uploadOk =false;
-}
 
 // Check file size
-if ($fileSize > 2000000) {
+if ($fileSize > 5000000) {
   echo "<script>alert('Too large')</script>";
   $uploadOk =false;
 }
@@ -55,7 +51,7 @@ if ($uploadOk ==false) {
 } 
 else 
   if (move_uploaded_file($fileTempName, $target_file)) {
-	  echo "<br>";
+	
 	    return $target_file;
     echo "The file ". htmlspecialchars( basename( $fileName)). " has been uploaded.";
   } else {

@@ -1,5 +1,8 @@
 <?php
+//IT20654962
   $title = 'Vendor Dashboard'; include("header.php");
+  include("./src/vendor/vendorConfig.php");
+  //getting ad details from the  url
   $adID=$_GET['id'];
   $adtitle=$_GET['title'];
   $adsDescription=$_GET['addes'];
@@ -14,7 +17,7 @@
 	<nav id="vnavBar">
 		<ul class="vendorNavbar">
 			<li>
-				<a href="accountDetails.php">Account details</a>
+				<a  href="vendorDashboard.php">Account details</a>
 			</li>
 			<li>
 				<a class="current" href="adsInventory.php">Ads Inventory</a>
@@ -40,7 +43,10 @@
 		      <tr>
 			     <input type="hidden" name="adID" value="<?php echo $adID;?>">  
 			     <td id="alignment" rowspan=6><img src="<?php echo $imglocation;?>" height='200' width='100%'/><br/>
-			     <input id="imageUpFile" type="file" name="images"/></td>
+			     
+				 <input id="imageUpFile" type="file" name="images"/>
+				 
+				 </td>
 			  
 			  
 		      </tr>

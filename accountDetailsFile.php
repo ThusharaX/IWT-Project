@@ -1,11 +1,8 @@
 <?php
-	 //session_start();
-	 //$vendorID=$_SESSION["id"];
-     //$$_SESSION["username"];
-     //$_SESSION["fname"];
-     //$_SESSION["lname"];
-     //$_SESSION["email"];
-	 //vendorID=$vendorID;
+ include_once './src/dbh.php';
+
+	
+    $vendorID=$_SESSION["id"];
 	 $company;
 	 $username;
 	 $ImageLoc;
@@ -15,7 +12,7 @@
 	 $mobile;
 	 $address;
 	 $email;
-	 $sqlstmt="SELECT * FROM Vendor WHERE vendorID=3;";
+	 $sqlstmt="SELECT * FROM Vendor WHERE vendorID=$vendorID";
 	 if($result=mysqli_query($conn,$sqlstmt)){
 		 if($result->num_rows>0){
 			 while($row=$result->fetch_assoc()){

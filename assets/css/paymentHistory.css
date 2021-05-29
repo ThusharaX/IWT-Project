@@ -1,32 +1,48 @@
 /*BY IT20654962*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 *{
 	margin:0px;
 	padding:0px;
-	/*box-sizing:border-box;*/
+	
 }
+/*setting background color*/
 body{
 	 background-color:#FBFBFF;	
     
-}.pays{
+}
+/*positinig and styling pays div*/
+.pays{
 	display:flex;
 	justify-content:center;
-	align-items:center;
+	background:url('../img/VendorAccount/paymentBG.jpg') center/cover no-repeat;
 	
+    margin:30px 100px 30px 125px;
+	border:5px solid #BFD7FF;
+	border-radius:10px;
+	font-family: 'Poppins', sans-serif;
 }
-table{	  
-	  width:90%;
-	  margin:10px;
-	  margin-right:10px;
+/*sizing styling and positioning table inside pays div*/
+.pays table{	  
+	  width:100%;
+	  margin:40px;
+	 
 	  border-collapse: collapse;
-}tr{
+}
+/*align text inside table rows and break word when it overflows from td index*/
+.pays  tr{
 	  text-align:center;
 	  overflow-wrap: break-word;
 	
-}tbody{
-	 
-		 word-break: break-word;
 }
-th{
-	background:blanchedalmond;
+/*styling table body and break word when it overflows from table body */
+.pays  tbody{
+	     background:rgba(255,255,255,0.7);
+		 word-break: break-word;
+		 color:purple;
+}
+/*styling table header*/
+.pays  th{
+	color:#fff;
+	background:#1C5D99;
 }
  

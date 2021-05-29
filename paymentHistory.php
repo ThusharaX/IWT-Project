@@ -29,7 +29,7 @@
 	<hr>	
 <br>
 <h2>Payments</h2>
-	<div class="for-font">
+	
 	
 	<div class="pays">
 	
@@ -49,7 +49,7 @@
 	            FROM  Payment
 				WHERE VendorID=$vendorID
 				ORDER BY paymentID DESC;";
-	  
+	  //excuting payment retrival query
       if($paymentHistory=mysqli_query($conn,$sqlstmt)){
 		     if($paymentHistory->num_rows>0){
 				 while($row=$paymentHistory->fetch_assoc()){
@@ -79,6 +79,6 @@
 	
 	?>
 	    </table>
-	</div>
+	
 	</div>
 <?php include "vendorAnnouncementFooter.php"; ?>
