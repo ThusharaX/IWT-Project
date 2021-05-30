@@ -21,8 +21,9 @@
 <br>
 
 <img src="./assets/img/gallery/11.jpg" width="1250" height="auto">
-
+<center>
 <main class="grid">
+	
 <img src="./assets/img/gallery/10.jpg" width="600" height="auto">
 <img src="./assets/img/gallery/1.jpg" width="610" height="auto">
 <img src="./assets/img/gallery/2.jpg" width="600" height="auto">
@@ -65,7 +66,7 @@
 	<img src="./assets/img/gallery/new/109.jpeg" width="600" height="auto">
 	<img src="./assets/img/gallery/new/110.jpeg" width="600" height="auto">
 	<img src="./assets/img/gallery/new/111.jpeg" width="600" height="auto">
-	
+	</center>
 	</main>
 
 
