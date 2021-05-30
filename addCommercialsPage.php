@@ -1,10 +1,59 @@
 <?php
-//BY IT20654962
+
     // Dynamic Header
     $title = 'Vendor Dashboard'; include("header.php");
 	include("./src/vendor/vendorConfig.php");
 	
+	//BY IT20654962
+	//arrays to store catIDs and prices
+	$catIDarray=array();
+    $catPricearray=array();
+	//sql statement to retrieve carID and price
+	$sqlCatstatement="SELECT catID,price
+	                  FROM  Category";
+	//excuting 	$sqlCatstatement statement				  
+    if($catIDandPrice=mysqli_query($conn,$sqlCatstatement)){
+		//check whether the number of rows are more than zero
+		 if($catIDandPrice->num_rows>0){
+			 //storing fetched data feild's values inside $row associative array
+		    while($row=$catIDandPrice->fetch_assoc()){
+				//push IDs inside $catIDarray array
+				array_push($catIDarray,$row['catID']);
+			   //push prices inside $catIDarray array
+				array_push($catPricearray,$row['price']);
+				
+			}
+		   		
+		 }else{
+			 //if number of rows are zero this will be excuted
+			 echo "No categories";
+		 }
+		
+		
+	}else{
+		//if excuting fails,this will print the error
+		echo "Error cat retrival:".$conn->error;
+	}
+    	
+	
 ?>
+
+<script>
+     //json_encode() function will get the array values
+    var catIDarray = <?php echo json_encode($catIDarray); ?>;
+    var catPricearray= <?php echo json_encode($catPricearray); ?>;
+
+  function amoutAutoAssign(value){
+	  var catAmount=document.getElementById('catPrice');
+   	 for(var i=1;i<catIDarray.length;i++){
+		//if value equals to categoryID if state will be true
+	   if(value==catIDarray[i]){
+		   //correspond price will be assign to the input value(catPricearray[i] value)
+		  catAmount.value=parseInt(catPricearray[i]);
+	      }
+   	  }  	   	  	  
+  }
+</script>
 <link rel="stylesheet" href="./assets/css/addCommercials.css">
 
 <link rel="stylesheet" href="./assets/css/vendorNavBar.css">
@@ -70,7 +119,9 @@
 						
 						<div class="inputs">
 								<span class="bk">Category</span>
-								<select name="category" id="categoryID">
+								<!--this.value contains the value that the selected option has. -->
+								<select name="category" id="categoryID" onchange=" amoutAutoAssign(this.value)">
+								    
 									<option value="2">Catering</option>
 									<option value="3">Dj Music</option>
 									<option value="4">Wedding Dress</option>
@@ -96,7 +147,7 @@
 							
 														<div class="inputs" id="amountInput">
 								<span class="bk">Amount</span>
-								<input type="text" name="amount" placeholder="Enter amount" maxlength = "4"required="" pattern="[0-9]+"/>
+								<input type="text" id="catPrice" name="amount" placeholder="Enter amount" maxlength = "4"required="" pattern="[0-9]+"/>
 								
 							</div>
 						
