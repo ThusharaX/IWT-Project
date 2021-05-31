@@ -53,8 +53,8 @@
 	<img src="./assets/img/gallery/new/120.jpeg" width="600" height="auto">
 	<img src="./assets/img/gallery/new/121.jpeg" width="600" height="auto">
 	<img src="./assets/img/gallery/new/122.jpeg" width="600" height="auto">
-	<img src="./assets/img/gallery/new/100.jpeg" width="1300" height="auto">
-	<img src="./assets/img/gallery/new/101.jpeg" width="1300" height="auto">
+	<img src="./assets/img/gallery/new/100.jpeg" width="600" height="auto">
+	<img src="./assets/img/gallery/new/101.jpeg" width="600" height="auto">
 	<img src="./assets/img/gallery/new/102.jpeg" width="600" height="auto">
 	<img src="./assets/img/gallery/new/103.jpeg" width="600" height="auto">
 	<img src="./assets/img/gallery/new/104.jpeg" width="600" height="auto">
