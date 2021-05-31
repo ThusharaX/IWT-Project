@@ -144,7 +144,7 @@
 	 /*css for middle div's paragraph*/
 	 .middle-one .para p{
 		 text-align:center;
-		 color:RGBA(237,192,82,0.55);
+		color:black;
 		font-family: 'Dancing Script', cursive;
 		font-size:1.5rem;
 		font-weight:lighter;
@@ -177,6 +177,7 @@
 		"galone galthree"
 		"galfour galfour";
 		border: 1px solid pink;
+	
 	
 		box-shadow: 0 10px 12px -6px pink;
 		
@@ -226,7 +227,7 @@
 	/*css for  images and image transision*/
 	.end .gal img{
 		width:100%;
-		height:100%;
+		height:auto;
 		display:block;
 		transition:all 2s ease-in;
 	    
@@ -289,7 +290,7 @@
          margin-left:60px;	
          font-family: 'Poppins', sans-serif;
          color:blue;
-	     border:1px solid RGBA(112,214,255,0.89);
+	     border:1px solid black;
          box-shadow: 0 10px 12px -6px RGBA(112,214,255,0.89);
    
 		
@@ -298,15 +299,16 @@
 	.top-vendors .top table{
 		width:100%;
 		height:100%;
-		background-color:RGBA(112,214,255,0.12);
+		background-color:white;
 	
 	
 	}
 	/*positioning and sizing table indexces*/
 	.top-vendors .top td{
-		border:1px solid RGBA(112,214,255,0.89);
+		border:0.5px solid black;
 		color:light purple;
-		font-weight:bolder;
+		font-weight:bolder;  
+		  border-collapse: collapse;
 	
 	}
 	/*positioning,stylilng and sizing image*/
