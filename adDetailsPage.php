@@ -6,13 +6,11 @@
     }
 ?>
 
-<link rel="stylesheet" href="./assets/css/commercialsList.css">
+<link rel="stylesheet" href="./assets/css/adDetailsPage.css">
 
 <!-- Gaween -->
 <!-- Type your code here -->
 <section>
-    <body>
-        <center>
     <h1 class="main-title">Commercial Details</h1>
 
 
@@ -33,17 +31,16 @@
         if (isset($_SESSION["id"])) {
             if($_SESSION["role"] === 'customer') {
                 echo "<a href='./src/customer/choice.src.php?adID=". $row['adID'] ."&cID=". $_SESSION['id'] ."'><button>Add</button></a>";
-                echo "<a href='./feedback.php?adID=". $row['adID'] ."'><button>Add Feedback</button></a>";
+                echo "<a href='./feedback.php?adID=".  $row['adID'] ."&customerID=". $_SESSION['id'] ."'><button>Add Feedback</button></a>";
             }
         }
     ?>
 </section>
-</center>
-</body>
+
 <section style="margin">
 
 </section>
 
-<script src="./assets/js/commercialsList.js"></script>
+<script src="./assets/js/adDetailsPage.js"></script>
 
 <?php include("footer.php"); ?>

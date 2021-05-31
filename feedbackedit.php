@@ -1,53 +1,52 @@
+<!--IT20664558 D.M.P.D.Daundasekara-->
 
-
-
-  
-  <?php
+<?php
 // include database connection file
+ include_once("./src/dbh.php");    
+                
+    
+  include("header.php"); 
 
-		$servername = "localhost";
-        $username = "root";
-		$password = "";
-		$dbname = "wedding_planning";
-// Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-		if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+include("./src/customer/customerConfig.php"); 
+$customerID=$_SESSION['id'];   
+
+// Get id from URL to delete 
+$feedbackID = $_GET['feedbackID'];
+$adID = $_GET['adID']; 
 
 
 
-// Check if form is submitted for user update, then redirect to homepage after update
 if(isset($_POST['update']))
 {	
+
 	$feedbackID = $_POST['feedbackID'];
-	$c_username=$_POST['c_username'];
-	$comment=$_POST['comment'];
+	$fbdescription=$_POST['fbdescription'];
 	$rating=$_POST['rating'];
 	
 		
-	// update user data
-	$result = mysqli_query($conn, "UPDATE feedback SET c_username='$c_username',comment='$comment',rating='$rating' WHERE feedbackID='$feedbackID'  ");
+	// update 
+   if(mysqli_query($conn, "UPDATE feedback SET fbdescription='$fbdescription', rating='$rating' WHERE feedbackID=$feedbackID AND adID=$adID ")){  
+		
+	    // Redirect to feedback to display updated
+		header("Location: feedback.php?feedbackID=$feedbackID & adID=$adID & customerID= $_SESSION[id]  ");
 	
-	// Redirect to homepage to display updated user in list
-	header("Location: Moredetails.php?feedbackID=$row[feedbackID]Ad_ID=$row[Ad_ID] ");
-
+ }
 }
 ?>
 <?php
-// Display selected user data based on id
+// Display selected  data based on id
 // Getting id from url
-$Ad_ID = $_GET['Ad_ID'];
-$feedbackID = $_GET['feedbackID'];
 
-// Fetech user data based on id
+$feedbackID = $_GET['feedbackID'];
+$adID=$_GET['adID'];
+
+// Fetech  data based on id
 $result = mysqli_query($conn, "SELECT * FROM feedback WHERE feedbackID='$feedbackID' ");
 
 while($row = mysqli_fetch_array($result))
 {
-	$c_username = $row['c_username'];
-	$comment = $row['comment'];
+	
+	$fbdescription = $row['fbdescription'];
 	$rating = $row['rating'];
 	
 }
@@ -57,19 +56,16 @@ while($row = mysqli_fetch_array($result))
 	<title>Edit feedback Data</title>
 </head>
 
-<body>
-	<a href="Moredetails.php">back</a>
+<body background image>
+	
 	<br/><br/>
 	
-	<form name="update_user" method="post" action="Moredetails.php">
+	<form class="form" method="post" >
 		<table border="0">
-			<tr> 
-				<td>Userame</td>
-				<td><input type="text" name="c_username" value="<?php echo $c_username;?>"></td>
-			</tr>
+			
 			<tr> 
 				<td>comment</td>
-		<td><input type id="comment" name="comment"  value="<?php echo $comment;?>"  ></textarea>
+		<td><input type id="comment" name="fbdescription"  value="<?php echo $fbdescription;?>"  ></textarea>
 		</td>
 			</tr>
 			<tr> 
@@ -85,11 +81,14 @@ while($row = mysqli_fetch_array($result))
 			</tr>
 			<tr>
 				<td><input type="hidden" name="feedbackID" value=<?php echo $_GET['feedbackID'];?>></td>
-				
-				<td><input type="submit" name="update" value="Update"></td>
+				<td><input type="hidden" name="adID" value=<?php echo $_GET['adID'];?>></td>
+				<td><input type="hidden" name="customerID" value=<?php echo $_GET['customerID'];?>></td>
+				<td><input type="submit" name="update" value="Update" onclick="done()"></td>
 			</tr>
 		</table>
 	</form>
-</body>
+
+	<script src="./assets/js/feedbackedit.js"></script>
+
 </html>
 
