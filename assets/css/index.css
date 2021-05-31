@@ -178,6 +178,7 @@
 		"galfour galfour";
 		border: 1px solid pink;
 	
+	
 		box-shadow: 0 10px 12px -6px pink;
 		
 		
@@ -226,7 +227,7 @@
 	/*css for  images and image transision*/
 	.end .gal img{
 		width:100%;
-		height:100%;
+		height:auto;
 		display:block;
 		transition:all 2s ease-in;
 	    
