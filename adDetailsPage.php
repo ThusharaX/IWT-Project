@@ -6,10 +6,13 @@
     }
 ?>
 
-<link rel="stylesheet" href="./assets/css/adDetailsPage.css">
+<link rel="stylesheet" href="./assets/css/commercialsListPage.css">
 
 <!-- Gaween -->
 <!-- Type your code here -->
+<body>
+<center>
+    
 <section>
     <h1 class="main-title">Commercial Details</h1>
 
@@ -40,7 +43,9 @@
 <section style="margin">
 
 </section>
+</center>
+</body>
 
-<script src="./assets/js/adDetailsPage.js"></script>
+<script src="./assets/js/commercialsListPage.js"></script>
 
 <?php include("footer.php"); ?>
