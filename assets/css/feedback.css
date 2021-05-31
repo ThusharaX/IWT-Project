@@ -1,6 +1,6 @@
 
 body{
-	background-image: url("../img/search/img51.jpg");
+	background-image: url("../img/search/img64.jpg");
 }
 .btn{
   background-color:#ffffff;
@@ -18,21 +18,20 @@ body{
 
 }
 
-
-.form1{
-
+.form {
+ 
   width:40%;
   height:90%;
-  position:absolute;
-  left:1000px;
-  top:200px;
   border-radius: 5px;
   padding: 20px;
+  
+
 }
 
 
+
 input[type=text], select, textarea {
-  width: 75%;
+  width: 50%;
   padding: 12px;
   border: 1px solid  #7D0552;
   border-radius: 4px;
@@ -45,10 +44,10 @@ input[type=text], select, textarea {
 
 
 
-table{
-	margin-top:700px;
-	margin-left: 280px;
-	width:1000px; 
+.table{
+	margin-left:1000px;
+  top:100px;
+	width:500px; 
 	border-color: #ffffff;
 }
 
@@ -62,8 +61,15 @@ th{
 
 td{
 	font-size: 15px;
-	color:#000000;
+	color:#ff0000;
 	text-align: center;
     font-family: "Candara";
 }
+
+.add{
+  text-align: center;
+  color: #004646;
+}
+
+
 

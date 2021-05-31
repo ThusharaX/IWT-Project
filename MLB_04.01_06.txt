@@ -76,3 +76,9 @@ Member name - Daundasekara D.M.P.D
 contact no - 0714068627
 email address - it20664558@my.sliit.lk
 Implemented Functions - 
+		contactus page
+		search/view advertisment
+		view feedback
+		update feedback
+		delete feedback
+		

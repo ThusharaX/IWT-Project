@@ -1,13 +1,13 @@
+<!--IT20664558 D.M.P.D.Daundasekara-->
 <?php
     // Dynamic Header
     $title = 'Search Result'; include("header.php");
 ?>
-
 <link rel="stylesheet" href="./assets/css/searchResults.css">
+<section class="slider">
 
-<?php
-
-	if (isset($_GET['search'])) {
+ <?php
+ if (isset($_GET['search'])) {
 		echo "<h1>Search Result for ". $_GET["search"] ."...</h1>";
 
 		$search = mysqli_real_escape_string($conn,$_GET['search']);
@@ -19,116 +19,77 @@
 		if(!(isset($_SESSION['id']))) {
 			echo "Please login to view Advertisement details...";
 		}
+		if((isset($_SESSION['id']))) {
+			echo "click the title for view more details...";
+		}
 	
-		$sql = "SELECT * FROM Advertisement WHERE title LIKE '%$search%'";
+
+
+ 
+ ?><table border=0 cellpadding="50" cellspacing="100" align="center"><?php
+  $r=0;
+
+
+   $sql=("SELECT * FROM advertisement WHERE title LIKE '%$search%'" );
+  
+   $res=mysqli_query($conn,$sql) ;
+   if(mysqli_num_rows($res)>0)
+   {
+	while($row=mysqli_fetch_array($res))
+   {
+      
+	 if($r%4==0)
+	 {
 		
-		$res = $conn->query($sql);
-	
-		if ($res->num_rows > 0) {
-			while ($row = $res->fetch_assoc()) {
-				echo "
+		echo"<tr>";
+	 }
+	    echo"<td>"  ?><div class ="card">
+		
+	  <br><?php
+	    echo "
                     ".(isset($_SESSION['id'])?"<a href='./adDetailsPage.php?adID=". $row['adID'] ."'><p>". $row['title'] ."</p></a>":"<p>". $row['title'] ."</p>")."
                     
                     <p>". $row['publishDateTime'] ."</p>
                     ";
 				echo "<br>";
-			}
-		}
-	}
-?>
-
-
-
- 
-<?php
-
-// $con=mysqli_connect("localhost","root","","wedding_planning");
-   
-//    if (isset($_GET['submit'])){
-
-
- 
- ?>
- 
- <!-- <table border=0 cellpadding="50" cellspacing="100" align="center"> -->
- 
- <?php
-//   $r=0;
-
-//   $search=mysqli_real_escape_string($con,$_GET['search']);
-//    $sql=("SELECT * FROM advertisment WHERE title LIKE '%$search%'" );
-  
-//    $res=mysqli_query($con,$sql) ;
-//    if(mysqli_num_rows($res)>0)
-//    {
-// 	while($row=mysqli_fetch_array($res))
-//    {
-      
-// 	 if($r%4==0)
-// 	 {
-		
-// 		echo"<tr>";
-// 	 }
-// 	    echo"<td>"  
-	?>
-		
-	<!-- <div class ="card">
-		
-	  <br> -->
-	  
-	<?php
-	    // echo  "<p>".$row['title'] ." </p> ";
-	?>
 	   
 
-	<!-- <img src=" -->
-		<?php
-			// echo $row['addimageLoc'];
-		?>
-	<!-- " height="150" width="300">  -->
+		?><img class= "image" src="<?php echo $row['addimageLoc'];?>" > 
+	
 		
-	<?php
-		// echo "<h3 class='des'>".$row['addDescription']. "</h3>";
-	?>
+	<?php echo "<h3 class='des'>".$row['addDescription']. "</h3>"; ?>
 	
-	<!-- <br> -->
+	<br>
 	
-	<?php
-		// echo "<a href='./feedback.php?Ad_ID=$row[Ad_ID]' id='btn'>view More</a> "
-	?>
-		
-	<!-- </form> -->
 	
+                    	
+	<?php	
+                    
+   if($r%4==3)
+	{
+		echo "</tr>";
+ 	}
+ 	$r++; 
+	
+	
+ }
+
+
+ }
  
-    
-    
- <!-- <div> -->
-  
-    <?php
-   
-
-// 	if($r%4==3)
-// 	{
-// 		echo "</tr>";
-// 	}
-// 	$r++; 
-	
-		
-	
-// }
+else{
+	echo "<h4>No advertisment to show</h4>";
+ 	}
 
 
-// }
-// else{
-// 	echo "<h4>No advertisment to show</h4>";
-// 	}
-
-
-// }
+ }
+ echo "</div>";
+ echo "</table>";
 ?>
 
-
+</section>
 
 <script src="./assets/js/searchResults.js"></script>
 
-<?php include("footer.php"); ?>
+
+<?php include("footer.php"); 
