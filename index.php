@@ -80,66 +80,68 @@
 				<h2>Our weddings</h2>
 				<div class="gal gal1">
 					<div class="galone">
-						<a href="gallery.php">
+						<a href="gallery.php#9">
 							<img src="./assets/img/gallery/optimized/16.jpg"/>
 						</a>
 					</div>
 					<div class="galtwo">
-						<a href="gallery.php">
-							<img src="./assets/img/gallery/optimized/17.jpg"/>
+						<a href="gallery.php#10">
+							<img src="./assets/img/gallery/optimized/17.jpg" />
 						</a>
 					</div>
 					<div class="galthree">
-						<a href="gallery.php">
-							<img src="./assets/img/gallery/optimized/18.jpg"/>
+						<a href="gallery.php#11">
+							<img src="./assets/img/gallery/optimized/116.jpeg" />
 						</a>
 					</div>
 					<div class="galfour">
-						<a href="gallery.php">
-							<img src="./assets/img/gallery/optimized/20.jpg"/>
+						<a href="gallery.php#12">
+							<img src="./assets/img/gallery/optimized/109.jpeg" />
 						</a>
 					</div>
 					<p>Sandamali & Saman</p>
 				</div>
 				<div class="gal gal2">
 					<div class="galone">
-						<a href="gallery.php">
-							<img src="./assets/img/gallery/optimized/15.jpg"/>
+						<a href="gallery.php#1">
+							<img src="./assets/img/gallery/optimized/15.jpg" />
 						</a>
 					</div>
 					<div class="galtwo">
-						<a href="gallery.php">
+						<a href="gallery.php#2">
 							<img src="./assets/img/gallery/optimized/6.jpg"/>
 						</a>
 					</div>
 					<div class="galthree">
-						<a href="gallery.php">
+						<a href="gallery.php#3">
 							<img src="./assets/img/gallery/optimized/7.jpg"/>
 						</a>
 					</div>
 					<div class="galfour">
-						<img src="./assets/img/gallery/optimized/9.jpg"/>
+					<a href="gallery.php#4">
+						<img src="./assets/img/gallery/optimized/111.jpeg"/>
+					</a>	
 					</div>
 					<p>Kaushi & Chanuka</p>
 				</div>
 				<div class="gal gal3">
 					<div class="galone">
-						<a href="gallery.php">
-							<img src="./assets/img/gallery/optimized/11.jpg"/>
+						<a href="gallery.php#5">
+							<img src="./assets/img/gallery/optimized/115.jpeg"/>
 						</a>
 					</div>
 					<div class="galtwo">
-						<a href="gallery.php">
+						<a href="gallery.php#6">
 							<img src="./assets/img/gallery/optimized/3.jpg"/>
 						</a>
 					</div>
 					<div class="galthree">
-						<a href="gallery.php">
-							<img src="./assets/img/gallery/optimized/8.jpg"/>
+						<a href="gallery.php#7">
+							<img src="./assets/img/gallery/optimized/114.jpeg"/>
 						</a>
 					</div>
 					<div class="galfour">
-					<a href="gallery.php">
+					<a href="gallery.php#8">
 						<img src="./assets/img/gallery/optimized/22.jpg"/>
 					</a>
 					</div>

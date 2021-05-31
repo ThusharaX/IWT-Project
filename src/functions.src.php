@@ -34,7 +34,8 @@ function uidExists($conn, $username, $email, $role) {
 }
 
 
-// Thushara
+// IT20665234
+// Silva D.T.T
 // Get User Deatails
 function getUserDetails($conn, $id, $role) {
 
@@ -64,18 +65,10 @@ function getUserDetails($conn, $id, $role) {
 }
 
 
-// Thushara
+// IT20665234
+// Silva D.T.T
 // Update User Deatails
 function updateUserDetails($conn, $fname, $lname, $email, $username, $role, $id) {
-
-    // I have to skip this step
-    
-    // $uidExists = uidExists($conn, $username, $username, $role);
-
-    // if ($uidExists === true) {
-    //     header("location: ../../updateUserDetails.php?id=$id&role=$role&error=usernameAlreadyExists");
-    //     exit();
-    // }
 
     if ($role === 'customer') {
         $sql = mysqli_query($conn, "UPDATE Customer SET
@@ -109,7 +102,9 @@ function updateUserDetails($conn, $fname, $lname, $email, $username, $role, $id)
     mysqli_close($conn);
 }
 
-// Thushara
+
+// IT20665234
+// Silva D.T.T
 // Get User Deatails
 function deleteUser($conn, $id, $role) {
 
@@ -134,7 +129,8 @@ function deleteUser($conn, $id, $role) {
 }
 
 
-// Thushara
+// IT20665234
+// Silva D.T.T
 // This function add new user in to Database
 function addUser($conn, $fname, $lname, $email, $username, $pwd, $role) {
 
@@ -145,7 +141,7 @@ function addUser($conn, $fname, $lname, $email, $username, $pwd, $role) {
         exit();
     }
     
-    // $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+    
     $hashedPwd = hash('sha256', $pwd);
 
     if ($role === 'customer') {
@@ -172,7 +168,8 @@ function addUser($conn, $fname, $lname, $email, $username, $pwd, $role) {
     mysqli_close($conn);
 }
 
-
+// IT20916626
+// Gangoda G.G.W.N
 // customerLogin
 function customerLogin($conn, $username, $pwd) {
     $uidExists = uidExists($conn, $username, $username, 'customer');
@@ -190,13 +187,8 @@ function customerLogin($conn, $username, $pwd) {
         
         $row  = mysqli_fetch_array($sql);
 
-        // if ($user_type !== $row['usersType']) {
-        //     header("location: ../login.php?error=invalidusertype");
-        //     exit();
-        // }
 
         $pwdHashed = $row['c_password'];
-        // $checkPwd = password_verify($pwd, $pwdHashed);
 
         if (hash('sha256', $pwd) === $pwdHashed) {
             $checkPwd = true;
@@ -228,7 +220,8 @@ function customerLogin($conn, $username, $pwd) {
     }
 
 
-
+// IT20916626
+// Gangoda G.G.W.N
 // vendorLogin
 function vendorLogin($conn, $username, $pwd) {
     $uidExists = uidExists($conn, $username, $username, 'vendor');
@@ -246,13 +239,7 @@ function vendorLogin($conn, $username, $pwd) {
         
         $row  = mysqli_fetch_array($sql);
 
-        // if ($user_type !== $row['usersType']) {
-        //     header("location: ../login.php?error=invalidusertype");
-        //     exit();
-        // }
-
         $pwdHashed = $row['v_password'];
-        // $checkPwd = password_verify($pwd, $pwdHashed);
 
         if (hash('sha256', $pwd) === $pwdHashed) {
             $checkPwd = true;
@@ -283,6 +270,8 @@ function vendorLogin($conn, $username, $pwd) {
     }
 
 
+// IT20652050
+// Muhandiram K.M.G.K.W
 function addAnnouncement($conn, $title, $annDescription, $publish_date, $adminID, $role) {
 
     $sql = "INSERT INTO Announcement
@@ -291,7 +280,6 @@ function addAnnouncement($conn, $title, $annDescription, $publish_date, $adminID
                 ('', '$adminID', '$title', '$role', '$publish_date', '$annDescription');";
     
     if (mysqli_query($conn, $sql)) {
-        // echo "<script>alert ('Successfully Sign Up')</script>";
         header("location: ../../admin.php");
     }
     else {
@@ -302,121 +290,6 @@ function addAnnouncement($conn, $title, $annDescription, $publish_date, $adminID
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Niki
-// This function creates new user in Database
-// function createUser($conn, $name, $email, $username, $pwd, $user_type) {
-
-//     $uidExists = uidExists($conn, $username, $username);
-
-//     if ($uidExists === true) {
-//         header("location: ../customerSignup.php?error=usernameAlreadyExists");
-//         exit();
-//     }
-    
-//     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-
-//     $sql = "INSERT INTO users (usersID, usersName, usersEmail, usersUid, usersPwd, usersType) VALUES ('', '$name', '$email', '$username', '$hashedPwd', '$user_type');";
-    
-//     if (mysqli_query($conn, $sql)) {
-//         // echo "<script>alert ('Successfully Sign Up')</script>";
-//         header("location: ../login.php");
-//     }
-//     else {
-//         echo "<script>alert ('Something went wrong :-(')</script>";
-//     }
-//     mysqli_close($conn);
-// }
-
-// Niki
-// This function log in user in to website
-// function loginUser($conn, $username, $pwd, $user_type) {
-//     $uidExists = uidExists($conn, $username, $username);
-
-//     if ($uidExists === false) {
-//         header("location: ../customerSignup.php?error=wrongusername");
-//         exit();
-//     }
-
-//     $sql = mysqli_query($conn, "SELECT *
-//                                     FROM users
-//                                     WHERE usersUid='" . $username . "' 
-//                                     OR usersEmail ='" . $username . "'
-//                                      ");
-       
-//     $row  = mysqli_fetch_array($sql);
-
-//     if ($user_type !== $row['usersType']) {
-//         header("location: ../login.php?error=invalidusertype");
-//         exit();
-//     }
-
-//     $pwdHashed = $row['usersPwd'];
-//     $checkPwd = password_verify($pwd, $pwdHashed);
-
-//     if ($checkPwd === false) {
-//         header("location: ../login.php?error=wrongpassword");
-//         exit();
-//     }
-
-//     else if ($checkPwd === true) {
-//         session_start();
-//         $_SESSION["id"] = $row['usersID'];
-//         $_SESSION["name"] = $row['usersName'];
-//         $_SESSION["email"] = $row['usersEmail'];
-//         $_SESSION["user_type"] = $row['usersType'];
-
-//         if ($user_type === "admin") {
-//             header("location: ../admin.php");
-//             exit();
-//         }
-//         else if ($user_type === "customer") {
-//             header("location: ../customerDashboard.php");
-//             exit();
-//         }
-//         else if ($user_type === "vendor") {
-//             header("location: ../vendorDashboard.php");
-//             exit();
-//         }
-
-//         header("Location: ../index.php");
-//         exit();
-//     }
-
-//     mysqli_close($conn);
-// }
 ?>
 
 

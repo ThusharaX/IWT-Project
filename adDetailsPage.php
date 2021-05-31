@@ -6,7 +6,7 @@
     }
 ?>
 
-<link rel="stylesheet" href="./assets/css/commercialsList.css">
+<link rel="stylesheet" href="./assets/css/adDetailsPage.css">
 
 <!-- Gaween -->
 <!-- Type your code here -->
@@ -41,6 +41,6 @@
 
 </section>
 
-<script src="./assets/js/commercialsList.js"></script>
+<script src="./assets/js/adDetailsPage.js"></script>
 
 <?php include("footer.php"); ?>
