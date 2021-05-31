@@ -11,7 +11,7 @@
 
 
 <section>
-    <h1 class="main-title">commercials List Page</h1>
+    <h1 class="main-title">Commercials List Page</h1>
 
 <center>
     <?php
