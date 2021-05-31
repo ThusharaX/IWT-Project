@@ -1,12 +1,12 @@
 body 
 {
-  background-image: url(../img/7.jpg);
+  background-image: url(../img/5.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 
+}
 
-
-body{
-    background-color: aqua;
+h1{
+color: white;
 }

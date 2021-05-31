@@ -8,12 +8,12 @@
 <!-- Gaween -->
 <!-- Type your code here -->
 <body>
-<center>
+
 
 <section>
     <h1 class="main-title">commercialsList Page</h1>
 
-
+<center>
     <?php
         $sql = "SELECT adID, title, addImageLoc, publishDateTime, status
         FROM Advertisement AS A
