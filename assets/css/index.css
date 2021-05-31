@@ -1,5 +1,6 @@
 /*IT20654962*/   
    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap'); 
 	* {
      
         padding: 0;
@@ -67,7 +68,7 @@
 		
 	}
  
-    /*positioning most outer div withoout any margins*/
+    /*positioning most outer div with out any margin errors*/
 	.position-abs{
 		margin-top:-15px;
 		margin-bottom:-28px;
@@ -94,7 +95,7 @@
 	}
 	/*positionning plan a wedding button*/
 	.planWeddingBtn{
-		width:53.5%;
+		width:53%;
 		margin:25px;
 		
 		
@@ -104,7 +105,7 @@
 		color:RGBA(237,192,82,1);
 	    display:block;
 		padding: 14px 16px;
-		background:#F4EBE8;
+		background:RGBA(244,235,232,0.43);
 		float:right;
 		border:1px solid RGBA(237,192,82,0.3);
 		border-radius:10px;
@@ -136,10 +137,20 @@
         height: 250px;
 		margin-bottom: 10px;
 		box-shadow: 0 10px 12px -6px pink;
-		background:#F4EBE8;
+		background:RGBA(244,235,232,0.43);
 		border-radius:10px;
 	   
 	}
+	 /*css for middle div's paragraph*/
+	 .middle-one .para p{
+		 text-align:center;
+		 color:RGBA(237,192,82,0.55);
+		font-family: 'Dancing Script', cursive;
+		font-size:1.5rem;
+		font-weight:lighter;
+		margin:10px;
+	 }
+   
 
     
     
@@ -154,7 +165,7 @@
 		align-items: center;
 		
     }
-	/*Deviding a div to display a gallery using grid and styling  each quick gallery divs*/
+	/*Deviding a div to display a gallery using grid and styling  each quick gallery divs which linked to id of each image*/
 	.gal{
 		
 	    width: 300px;
@@ -165,6 +176,9 @@
 		grid-template-areas:"galone galtwo"
 		"galone galthree"
 		"galfour galfour";
+		border: 1px solid pink;
+	
+		box-shadow: 0 10px 12px -6px pink;
 		
 		
 	}
@@ -199,7 +213,7 @@
 	.gal  p{
 	    text-align:center;
 		color:RGBA(237,192,82,0.8);
-			margin-top:10px;
+	    margin-top:10px;
 	
 		font-family:'Dancing Script', cursive;
 		width:300px;
@@ -235,22 +249,82 @@
         top: 10px;
 		color:RGBA(237,192,82,0.4);
     }
-    /*css for middle div's paragraph*/
-	 .middle-one .para p{
-		 text-align:center;
-		 color:RGBA(237,192,82,0.55);
+	/*positioning and  styling  top vendors*/
+	.top-vendors{
+		width:100%;
+		min-height:500px;
+		max-height:900px;
+		box-sizing:border-box;
+		background-color:#FDFDFF;
+	
+		padding:50px 50px 0px 50px;
+	
+	}
+	/*styling and  positioning content inside top vendor title*/
+	.top-title{
+		width:100%;
+		height:50px;
+		display:flex;
+       font-weight:lighter;
+		justify-content:center;
+		align-items:center;
+		margin-top:-50px;
 		font-family: 'Dancing Script', cursive;
-		font-size:1.5rem;
-		font-weight:bolder;
-		margin:10px;
-	 }
+		color:RGBA(237,192,82,0.4);
+	}
+	/*positioning and sizing content inside vendor-content div*/
+	.vendor-content{
+		display:flex;
+	    flex-wrap:wrap;		
+		width:100%;
+		height:100vh;
+	
+	  
+	}
+	/*positioning and sizing content inside top div*/
+	.top-vendors .top{
+	     width:300px;
+         height:300px;	
+         margin:20px;
+         margin-left:60px;	
+         font-family: 'Poppins', sans-serif;
+         color:blue;
+	     border:1px solid RGBA(112,214,255,0.89);
+         box-shadow: 0 10px 12px -6px RGBA(112,214,255,0.89);
    
-	
-	/*styling gallery links*/
-	.end a{
-		border: 1px solid pink;
-	
-		box-shadow: 0 10px 12px -6px pink;
 		
 	}
+	/*positioning,sizing and change table background color*/
+	.top-vendors .top table{
+		width:100%;
+		height:100%;
+		background-color:RGBA(112,214,255,0.12);
+	
+	
+	}
+	/*positioning and sizing table indexces*/
+	.top-vendors .top td{
+		border:1px solid RGBA(112,214,255,0.89);
+		color:light purple;
+		font-weight:bolder;
+	
+	}
+	/*positioning,stylilng and sizing image*/
+	.top-vendors .top img{
+		width:100px;
+		height:100px;
+		border-radius:50%;
+		display:block;
+		margin-left:18px;
+		border:2px solid RGBA(112,214,255,0.89);
+	}
+	/*make a small tag a block level element and  change a font-color*/
+	.top-vendors .top small{
+		display:block;
+		color:RGBA(112,214,255,0.89);
+		
+	}
+	
+   
+	
 	
