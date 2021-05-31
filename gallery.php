@@ -8,7 +8,7 @@
 <!-- Gaween -->
 <!-- it20652050-->
 <section>
-
+<body>
 <center>
 <h1 class="main-title"><strong>Gallery Page</strong></h1>
 <h5>WE PROUDLY PRESENT BEST MOMENT IN THEIR LIFE WITH US</h5>
@@ -86,6 +86,10 @@
 <hr>
 <hr>
 </center>
+
+
+
+</body>
 </section>
 
 
