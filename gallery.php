@@ -25,12 +25,33 @@
 
 
 <img src="./assets/img/gallery/21.jpg" width="1200" height="auto">
+<img src="./assets/img/gallery/new/b.jpeg" width="1200" height="auto">
+
+
+
+<img src="./assets/img/gallery/new/d.jpeg" width="600" height="auto">
+<img src="./assets/img/gallery/new/e.jpeg" width="600" height="auto">
+<img src="./assets/img/gallery/new/f.jpeg" width="600" height="auto">
+<img src="./assets/img/gallery/new/g.jpeg" width="600" height="auto">
+<img src="./assets/img/gallery/new/h.jpeg" width="600" height="auto">
+<img src="./assets/img/gallery/new/i.jpeg" width="600" height="auto">
 
 
 
 
-<main class="grid">
-	
+
+<main class="grid">	
+
+	<img src="./assets/img/gallery/new/j.jpeg" width="600" height="auto">
+		<img src="./assets/img/gallery/new/k.jpeg" width="600" height="auto">
+			<img src="./assets/img/gallery/new/l.jpeg" width="600" height="auto">
+				<img src="./assets/img/gallery/new/m.jpeg" width="600" height="auto">
+					<img src="./assets/img/gallery/new/n.jpeg" width="600" height="auto">
+						<img src="./assets/img/gallery/new/o.jpeg" width="600" height="auto">
+
+
+
+
 <img src="./assets/img/gallery/16.jpg" width="600" height="auto">
 <img src="./assets/img/gallery/1.jpg" width="610" height="auto">
 <img src="./assets/img/gallery/17.jpg" width="600" height="auto">

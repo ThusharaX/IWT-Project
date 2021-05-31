@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="./assets/css/about.css" />
 
 <!-- Niki -->
-<!-- Type your code here -->
+<!-- it20916626 -->
 <div class="image-slider">
   <div id="slider"></div>
   <div id="slider-nav">
