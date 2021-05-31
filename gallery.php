@@ -26,12 +26,14 @@
 
 <img src="./assets/img/gallery/21.jpg" width="1200" height="auto">
 
-<img src="./assets/img/gallery/11.jpg" width="1250" height="auto">
+
+
+
 <main class="grid">
 	
-<img src="./assets/img/gallery/10.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/16.jpg" width="600" height="auto">
 <img src="./assets/img/gallery/1.jpg" width="610" height="auto">
-<img src="./assets/img/gallery/2.jpg" width="600" height="auto">
+<img src="./assets/img/gallery/17.jpg" width="600" height="auto">
 <img src="./assets/img/gallery/3.jpg" width="600" height="auto">
 
 <img src="./assets/img/gallery/4.jpg" width="600" height="auto">
@@ -73,9 +75,8 @@
 	<img src="./assets/img/gallery/new/111.jpeg" width="600" height="auto">
 
 	</main>
-<img src="./assets/img/gallery/16.jpg" width="600" height="auto">
-<img src="./assets/img/gallery/17.jpg" width="600" height="auto">
 
+<img src="./assets/img/gallery/11.jpg" width="1250" height="auto">
 
 <hr>
 <hr>
