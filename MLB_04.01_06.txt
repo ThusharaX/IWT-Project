@@ -1,0 +1,69 @@
+Project Group ID - MLB_04.01_06
+
+Batch No - 4.1
+
+Topic - Wedding Planning System
+
+Project link - 
+
+---------- Group member details ----------
+
+Member Id - IT20665234
+Member name - Silva D.T.T (Leader)
+contact no - 0714676248
+email address - it20665234@my.sliit.lk
+Implemented Functions - 
+	Admin Dashboard
+	Customer Dashboard
+	Header Functionality
+	Create/Delete Category
+	Create/Delete/Update New User (Admin/Customer/Vendor)
+	Create/Delete Guest List
+	Create/Delete Vendor List
+	Update Customer Profile
+	Approve/Delete Advertisements
+	Admin Login
+	Footer Design
+
+----------------------------------------------------------
+
+Member Id - IT20652050
+Member name - Muhandiram K.M.G.K.W
+contact no - 0752601118
+email address - it20652050@my.sliit.lk
+Implemented Functions - 
+	Category Display Page
+	Create/Delete Announcement
+	Advertisements List Page
+	Advertisements Detail Page
+	Gallery Page
+
+----------------------------------------------------------
+
+Member Id - IT20916626
+Member name - Gangoda G.G.W.N
+contact no - 0763646725
+email address - it20916626@my.sliit.lk
+Implemented Functions - 
+	Customer Signup
+	Vendor Signup
+	Customer Login
+	Vendor Login
+	About Us Page
+	User Logout
+
+----------------------------------------------------------
+
+Member Id - IT20654962
+Member name - Jayasekara S.S.C
+contact no - 0755297678
+email address - it20654962@my.sliit.lk
+Implemented Functions - 
+
+----------------------------------------------------------
+
+Member Id - IT20664558
+Member name - Daundasekara D.M.P.D
+contact no - 0714068627
+email address - it20664558@my.sliit.lk
+Implemented Functions - 
