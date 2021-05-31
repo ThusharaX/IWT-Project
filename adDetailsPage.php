@@ -6,12 +6,14 @@
     }
 ?>
 
-<link rel="stylesheet" href="./assets/css/commercialsList.css">
+<link rel="stylesheet" href="./assets/css/adDetails.css">
 
 <!-- Gaween -->
 <!-- Type your code here -->
 <section>
-    <h1 class="main-title">Commercial Details</h1>
+    <body>
+
+<center>  <h1 class="main-title">Commercial Details</h1>
 
 
     <?php
@@ -37,6 +39,8 @@
     ?>
 </section>
 
+</center>
+</body>
 <section style="margin">
 
 </section>
