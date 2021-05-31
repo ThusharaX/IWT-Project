@@ -11,6 +11,8 @@
 <!-- Gaween -->
 <!-- Type your code here -->
 <section>
+    <body>
+        <center>
     <h1 class="main-title">Commercial Details</h1>
 
 
@@ -36,7 +38,8 @@
         }
     ?>
 </section>
-
+</center>
+</body>
 <section style="margin">
 
 </section>
