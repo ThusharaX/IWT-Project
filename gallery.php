@@ -6,19 +6,25 @@
 <link rel="stylesheet" href="./assets/css/gallery.css">
 
 <!-- Gaween -->
-<!-- Type your code here -->
+<!-- it20652050-->
 <section>
 
 <center>
 <h1 class="main-title"><strong>Gallery Page</strong></h1>
 <h5>WE PROUDLY PRESENT BEST MOMENT IN THEIR LIFE WITH US</h5>
 
+
+
+
+
     <video width="1250" height="auto" autoplay loop="loop" >
         <source src="./assets/video/Video1.mp4" type="video/mp4">
     </video>
-   
 
-<br>
+
+
+
+<img src="./assets/img/gallery/21.jpg" width="1200" height="auto">
 
 <img src="./assets/img/gallery/11.jpg" width="1250" height="auto">
 <main class="grid">
@@ -71,15 +77,14 @@
 <img src="./assets/img/gallery/17.jpg" width="600" height="auto">
 
 
+<hr>
+<hr>
+<hr>
 <img src="./assets/img/gallery/22.jpg" width="1200" height="auto">
 <hr>
 <hr>
 <hr>
-<img src="./assets/img/gallery/21.jpg" width="1200" height="auto">
-<hr>
-<hr>
-<hr>
-</center>  
+</center>
 </section>
 
 
