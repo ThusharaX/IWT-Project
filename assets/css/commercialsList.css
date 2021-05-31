@@ -1,12 +1,7 @@
-body 
-{
-  background-image: url(../img/5.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-
-}
+body{
+    background-image: linear-gradient(to top, #076585,#fff);
+   }
 
 h1{
-color: white;
+color: black;
 }
