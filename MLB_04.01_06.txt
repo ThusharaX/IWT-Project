@@ -59,7 +59,16 @@ Member name - Jayasekara S.S.C
 contact no - 0755297678
 email address - it20654962@my.sliit.lk
 Implemented Functions - 
-
+                 
+                   HomePage
+                   Edit/delete/View Vendor Account Details 
+                   Image File Checkings
+                   View/Create/delete/Edit Advertisements
+                   Vendor Payment History 
+                   Vendor Navigation Bar
+                  
+                  
+                  
 ----------------------------------------------------------
 
 Member Id - IT20664558
