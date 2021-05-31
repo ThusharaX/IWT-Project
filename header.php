@@ -33,7 +33,7 @@
         </div>
 
         <div>
-        <form class="nav__search" action="searchResultsPage.php" method="get">
+        <form class="nav__search" action="searchResultsPage.php" method="get" onsubmit=" return validate()">
               <input type="text" placeholder="Search.." name="search" id="">
               <button type="submit"><i class="fa fa-search"></i></button>
             </form>

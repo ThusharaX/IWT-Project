@@ -1,63 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-    <title>Ranhuya - View feedback</title>
-    <link rel="stylesheet" href="./assets/css/feedback.css">
-	
-</head>
-<body>
-    <!-- <?php include("header.html"); ?> -->
+<!--IT20664558 D.M.P.D.Daundasekara-->
+<?php 
 
-
-
-<?php
-$servername = "localhost";
-        $username = "root";
-		$password = "";
-		$dbname = "wedding_planning";
-
-// Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-		if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}	
- 
+       
+include("header.php");
 // Check if user is a customer
-  //  include("./src/customer/customerConfig.php");
-// Display selected user data based on id
-// Getting id from url
- 
-
-$Ad_ID = $_GET['Ad_ID'];
-
-
-
-// Fetech user data based on id
-
-
-
-// Fetech user data based on id
-
-
-
-
+include("./src/customer/customerConfig.php"); 
+$adID = $_GET['adID'];  
+ $customerID=$_SESSION['id'];   
+                
 ?>
 
+<h1 class="add"> We welcome feedback from our customers <br> it helps us to continually improve. </h1>
+
+ <link rel="stylesheet" href="./assets/css/feedback.css">
+
+<table class="table" border=1>
+<div class="feedback-details">
+    <tr>
+        <th>customerID</th> 
+		<th>Comment</th> 
+		<th>rating</th> 
+    </tr>
+  
+        
+       <?php
+      
+      // Getting id from url
+$adID = $_GET['adID'];
 
 
-<form class ="form1"  method="post" action="feedback.php" onsubmit ="return validate()" >
-		
+
+        // Fetch all  feedbacks from feedback table
+        $sql = "SELECT * FROM feedback  WHERE adID='$adID' ORDER BY feedbackID DESC";
+        $result = mysqli_query($conn, $sql);
+
+    
+
+   
+     if ($result->num_rows > 0) {
+           
+	
+      // output feedback of each row
+     
+            while($row=mysqli_fetch_assoc($result)){
+              echo "<tr>";
+               echo "<td>".$row['customerID']."</td>";
+               echo "<td>".$row['fbdescription']."</td>";
+               echo "<td>".$row['rating']."</td>";
+			   echo "</tr>";
+            }
+        }
+
+
+            ?>
 			
-				Username<br>
-				<input type="text" name="c_username"><br>
-		 
-				<label for="subject">Comments</label><br>
-    <textarea id="comment" name="comment" placeholder="Type your comments here..." style="height:300px width 100px"></textarea><br>
+    </table>
+	</div>
+	
+
+        <br>
+   
+    
+    <div class=form1>
+    <form class ="form"  method="post" action="" onsubmit ="return validate()" >
+
+		
+
+   			<br><br>
+<label for="subject">Comments</label><br>
+    <textarea id="fbdescription" name="fbdescription" placeholder="Type your comments here..." style="height:300px width 100px"></textarea><br><br>
 			
 				How would you rate your experience <br>
 	  
+	
     <input list="rating" name="rating">
 
   <datalist id="rating" >
@@ -66,82 +81,75 @@ $Ad_ID = $_GET['Ad_ID'];
     <option value="3-Neutral">
     <option value="4-Great">
     <option value="5-Fantastic">
-  </datalist>
-<br><br>
-	<input type="hidden" name="Ad_ID" value=<?php echo $_GET['Ad_ID'];?>>
+  </datalist> <br><br>
+
+   		<input type="submit" class="btn" name="submit" value="SUBMIT">
+ 
 	
-				<input type="submit" class="btn" name="Submit" value="SUBMIT">
-		
-	</form>
+		</form>
 	
-	
+		</div>		
+
+  <br>
+
+<?php
+if(isset($_POST['submit']))
+	 {
+
+  $fbdescription = $_POST['fbdescription'];
+  $rating = $_POST['rating'];
 
 
-
-	<?php
-
-
-
+  $result = mysqli_query($conn, "INSERT INTO feedback(customerID,adID,rating,fbdescription) VALUES($customerID,$adID,'$rating','$fbdescription')");
 		
-
-	// Check If form submitted, insert form data into users table.
-	if(isset($_POST['Submit'])) {
-		$c_username = $_POST['c_username'];
-		$comment = $_POST['comment'];
-		$rating = $_POST['rating'];
-	//	$coustomer_ID=$_POST
+		//Insert feedback data into table
+	if(mysqli_query($conn,$result)){
 		
+		// Show message 
+	echo "<div class='done'>your feedback submited successfully....Thank you for your feedback.!!!<br>";
+  }
+}
 		
-
-				
-		// Insert user data into table
-	$result = mysqli_query($conn, "INSERT INTO feedback(c_username,comment,rating,Ad_ID) VALUES('$c_username','$comment','$rating','$Ad_ID')");
-		
-		// Show message when user added
-		
-	}
-	?>
-		
-
-	
-  
-   <table border=1>
-
-    <tr>
-        <th>Userame</th> <th>Comment</th> <th>rating</th> <
-    </tr>
-    <?php
-        
-        
-
-        // Fetch all users data from users table
-        $sql = "SELECT * FROM feedback  WHERE Ad_ID='$Ad_ID' ORDER BY feedbackID DESC";
+		?>
+<div class="fb">
+<table class="table" border=1>
+  <th> your Comment</th> 
+		<th> your rating</th> 
+    <th>Edit</th>
+<?php
+ 
+    
+    $sql = "SELECT * FROM feedback  WHERE adID=$adID  AND customerID=$customerID";
         $result = mysqli_query($conn, $sql);
 
+    
 
+      //output feedback of each row
+     if ($result->num_rows > 0) {
+           
 	
-
-      // output data of each row
-      if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc())
-	
-      // output data of each row
      
-             while($row=mysqli_fetch_assoc($result)){
-              echo "<tr>";
-                echo "<td>".$row['c_username']."</td>";
-               echo "<td>".$row['comment']."</td>";
-                echo "<td>".$row['rating']."</td>";
-            }
-        }
-
-            ?>
-    </table>
-      
-              <!--< "<a href='feedbackedit.php?feedbackID=$row[feedbackID] AND Ad_ID=$row[Ad_ID]'>Edit</a> | <a href='Deletefeedback.php?feedbackID=$row[feedbackID] AND Ad_ID=$row[Ad_ID]'>Delete</a></td>";*/
-               
-            
+            while($row=mysqli_fetch_assoc($result)){
+          
+              $row['customerID'];
+             echo "<tr>";
+             echo "<td>".$row['fbdescription']."</td>";
+             echo "<td>".$row['rating']."</td>";
        
+               	
+                 echo "<td><a href='./feedbackedit.php?feedbackID=".$row['feedbackID']."&adID=". $row['adID'] ."&customerID=". $_SESSION['id'] ."'><button>Click here</button></a></td>";
+                 echo "<td><a href='./Deletefeedback.php?feedbackID=".$row['feedbackID']."&adID=".  $row['adID'] ."&customerID=". $_SESSION['id'] ."'><button>Delete</button></a></td>";
+                 echo "</tr>";
+            }
+          }
+            ?>
+            </table>
+		</div>
+		           
+               
+  
+  <?php include("footer.php"); ?>   
+   
        
    
    
