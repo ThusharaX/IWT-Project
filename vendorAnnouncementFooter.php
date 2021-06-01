@@ -30,9 +30,7 @@
 </section>
 <!-- --------------------------------------------------------------------------------- -->
 
-<section>
-    <h1 class="main-title">vendorDashboard Page</h1>
-</section>
+
 
 
 <script src="./assets/js/vendorDashboard.js"></script>
