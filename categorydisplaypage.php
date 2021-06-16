@@ -21,7 +21,7 @@
   <body>
 
   <?php
-    $sql = "SELECT catID, cat_imgLoc, catName, catDescription, price
+    $sql = "SELECT catID, cat_imgLoc, catName
     FROM Category";
 
     $result = $conn->query($sql);

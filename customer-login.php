@@ -1,9 +1,12 @@
 <?php
     // Dynamic Header
     $title = 'Customer Login'; include("header.php");
+
+    // isLogin
     include_once('./src/isloginConfig.src.php');
 ?>
 
+<!-- CSS -->
 <link rel="stylesheet" href="./assets/css/customer-login.css" />
 
 <!-- Niki -->

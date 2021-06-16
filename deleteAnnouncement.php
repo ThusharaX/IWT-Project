@@ -7,7 +7,7 @@
 
 <link rel="stylesheet" href="./assets/css/deleteUser.css">
 
-<!-- Thushara -->
+<!-- Gaween -->
 <!-- Type your code here -->
 <section>
     <h1 class="main-title">Do you really want to Delete this Announcement?</h1>

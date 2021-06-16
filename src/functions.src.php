@@ -172,52 +172,54 @@ function addUser($conn, $fname, $lname, $email, $username, $pwd, $role) {
 // Gangoda G.G.W.N
 // customerLogin
 function customerLogin($conn, $username, $pwd) {
+    // Done by Thushara
     $uidExists = uidExists($conn, $username, $username, 'customer');
 
-        if ($uidExists === false) {
-            header("location: ../login.php?error=wrongusername");
-            exit();
-        }
-
-        $sql = mysqli_query($conn, "SELECT *
-                                        FROM Customer
-                                        WHERE c_username='" . $username . "' 
-                                        OR c_email ='" . $username . "'
-                                        ");
-        
-        $row  = mysqli_fetch_array($sql);
-
-
-        $pwdHashed = $row['c_password'];
-
-        if (hash('sha256', $pwd) === $pwdHashed) {
-            $checkPwd = true;
-        } else {
-            $checkPwd = false;
-        }
-
-        if ($checkPwd === false) {
-            header("location: ../login.php?error=wrongpassword");
-            exit();
-        }
-
-        else if ($checkPwd === true) {
-            session_start();
-            $_SESSION["id"] = $row['customerID'];
-            $_SESSION["username"] = $row['c_username'];
-            $_SESSION["fname"] = $row['c_fname'];
-            $_SESSION["lname"] = $row['c_lname'];
-            $_SESSION["email"] = $row['c_email'];
-            $_SESSION["username"] = $row['c_username'];
-            $_SESSION["role"] = $row['role'];
-
-            header("location: ../customerDashboard.php");
-            exit();
-
-        mysqli_close($conn);
-        }
-        
+    if ($uidExists === false) {
+        header("location: ../customer-login.php?error=wrongusername");
+        exit();
     }
+
+    $sql = mysqli_query($conn, "SELECT *
+                                    FROM Customer
+                                    WHERE c_username='" . $username . "' 
+                                    OR c_email ='" . $username . "'
+                                    ");
+    
+    // ==================
+    $row  = mysqli_fetch_array($sql);
+
+    // Get Hashed password
+    $pwdHashed = $row['c_password'];
+
+    // Password validation
+    if (hash('sha256', $pwd) === $pwdHashed) {
+        $checkPwd = true;
+    } else {
+        $checkPwd = false;
+    }
+
+    if ($checkPwd === false) {
+        header("location: ../customer-login.php?error=wrongpassword");
+        exit();
+    }
+
+    else if ($checkPwd === true) {
+        session_start();
+        $_SESSION["id"] = $row['customerID'];
+        $_SESSION["username"] = $row['c_username'];
+        $_SESSION["fname"] = $row['c_fname'];
+        $_SESSION["lname"] = $row['c_lname'];
+        $_SESSION["email"] = $row['c_email'];
+        $_SESSION["role"] = $row['role'];
+
+        header("location: ../customerDashboard.php");
+        exit();
+
+    mysqli_close($conn);
+    }
+        
+}
 
 
 // IT20916626
