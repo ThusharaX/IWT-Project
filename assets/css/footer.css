@@ -23,11 +23,6 @@
     /* min-width: 300px; */
     border-color: rgb(170, 170, 170);
     padding: 20px;
-
-    border-top-style: none;
-    border-right-style: solid;
-    border-bottom-style: none;
-    border-left-style: none;
   }
 
   .links a{
@@ -38,12 +33,16 @@
       list-style: square;
   }
 
-  .moddle {
-
+  .middle {
+    padding: 0px 10px 0px;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: none;
+    border-left-style: solid;
   }
 
-  .social {
-
+  .social__links {
+    list-style-type: none;
   }
 
 

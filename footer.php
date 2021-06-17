@@ -22,10 +22,10 @@
 
     <div class="footer__section social">
       <ul class="social__links">
-        <li>facebook</li>
-        <li>facebook</li>
-        <li>facebook</li>
-        <li>facebook</li>
+        <li><a href="www.FaceBook.com">FaceBook</a></li>
+        <li><a href="www.Instagram.com">Instagram</a></li>
+        <li><a href="www.Twitter.com">Twitter</a></li>
+        <li><a href="www.LinkedIn.com">LinkedIn</a></li>
       </ul>
     </div>
   </div>

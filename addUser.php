@@ -14,12 +14,12 @@
     if($_GET["role"] === 'customer') {
         echo "<section>
                 <div class='login-form'>
-                    <h1 class='main-title'>Hello Admin please add Customer</h1>
+                    <h1 class='main-title'>Hello ". $_SESSION['username'] ." please add new Customer</h1>
                     <br>
-                    <form action='./src/admin/addUser.src.php' method='post'>
-                        <input required placeholder='First Name...' type='text' name='fname'><br>
-                        <input required placeholder='Last Name...' type='text' name='lname'><br>
-                        <input required placeholder='Email...' type='text' name='email'><br>
+                    <form name='addUser' action='./src/admin/addUser.src.php' method='post' onsubmit='return addUserFormValidate()'>
+                        <input placeholder='First Name...' type='text' name='fname'><br>
+                        <input placeholder='Last Name...' type='text' name='lname'><br>
+                        <input placeholder='Email...' type='text' name='email'><br>
                         <input required placeholder='Username...' type='text' name='username'><br>
                         <input required placeholder='Password...' type='password' name='pwd'><br>
                         <input required placeholder='Re-Password...' type='password' name='repwd'><br>
@@ -32,12 +32,12 @@
     else if($_GET["role"] === 'vendor') {
         echo "<section>
                 <div class='login-form'>
-                    <h1 class='main-title'>Hello Admin please add Vendor</h1>
+                    <h1 class='main-title'>Hello ". $_SESSION['username'] ." please add new Vendor</h1>
                     <br>
                     <form action='./src/admin/addUser.src.php' method='post'>
-                        <input required placeholder='First Name...' type='text' name='fname'><br>
-                        <input required placeholder='Last Name...' type='text' name='lname'><br>
-                        <input required placeholder='Email...' type='text' name='email'><br>
+                        <input placeholder='First Name...' type='text' name='fname'><br>
+                        <input placeholder='Last Name...' type='text' name='lname'><br>
+                        <input placeholder='Email...' type='text' name='email'><br>
                         <input required placeholder='Username...' type='text' name='username'><br>
                         <input required placeholder='Password...' type='password' name='pwd'><br>
                         <input required placeholder='Re-Password...' type='password' name='repwd'><br>
@@ -50,12 +50,12 @@
     else if($_GET["role"] === 'admin') {
         echo "<section>
                 <div class='login-form'>
-                    <h1 class='main-title'>Hello Admin please add Admin</h1>
+                    <h1 class='main-title'>Hello ". $_SESSION['username'] ." please add new Admin</h1>
                     <br>
                     <form action='./src/admin/addUser.src.php' method='post'>
-                        <input required placeholder='First Name...' type='text' name='fname'><br>
-                        <input required placeholder='Last Name...' type='text' name='lname'><br>
-                        <input required placeholder='Email...' type='text' name='email'><br>
+                        <input placeholder='First Name...' type='text' name='fname'><br>
+                        <input placeholder='Last Name...' type='text' name='lname'><br>
+                        <input placeholder='Email...' type='text' name='email'><br>
                         <input required placeholder='Username...' type='text' name='username'><br>
                         <input required placeholder='Password...' type='password' name='pwd'><br>
                         <input required placeholder='Re-Password...' type='password' name='repwd'><br>
