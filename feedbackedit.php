@@ -1,11 +1,11 @@
 <!--IT20664558 D.M.P.D.Daundasekara-->
-
-<?php
-// include database connection file
- include_once("./src/dbh.php");    
+<link rel="stylesheet" href="./assets/css/feedback.css">
+<<?php
+    // include Header
+    $title = 'Edit feedback '; include("header.php");
                 
     
-  include("header.php"); 
+ 
 
 include("./src/customer/customerConfig.php"); 
 $customerID=$_SESSION['id'];   
@@ -24,13 +24,21 @@ if(isset($_POST['update']))
 	$rating=$_POST['rating'];
 	
 		
-	// update 
-   if(mysqli_query($conn, "UPDATE feedback SET fbdescription='$fbdescription', rating='$rating' WHERE feedbackID=$feedbackID AND adID=$adID ")){  
+	// update relevent feedback 
+   $sql=("UPDATE feedback SET fbdescription='$fbdescription', rating='$rating' WHERE feedbackID=$feedbackID AND adID=$adID ");
+   
+  if($conn->query($sql))
+ {  
 		
 	    // Redirect to feedback to display updated
 		header("Location: feedback.php?feedbackID=$feedbackID & adID=$adID & customerID= $_SESSION[id]  ");
 	
  }
+ else
+	{
+	echo "Error: ".$con->error;
+	}
+
 }
 ?>
 <?php
@@ -41,9 +49,11 @@ $feedbackID = $_GET['feedbackID'];
 $adID=$_GET['adID'];
 
 // Fetech  data based on id
-$result = mysqli_query($conn, "SELECT * FROM feedback WHERE feedbackID='$feedbackID' ");
+$sql=("SELECT * FROM feedback WHERE feedbackID='$feedbackID' ");
 
-while($row = mysqli_fetch_array($result))
+ $result = $conn->query($sql);
+   
+while($row=$result->fetch_assoc())
 {
 	
 	$fbdescription = $row['fbdescription'];
@@ -84,11 +94,12 @@ while($row = mysqli_fetch_array($result))
 				<td><input type="hidden" name="adID" value=<?php echo $_GET['adID'];?>></td>
 				<td><input type="hidden" name="customerID" value=<?php echo $_GET['customerID'];?>></td>
 				<td><input type="submit" name="update" value="Update" onclick="done()"></td>
+				
 			</tr>
 		</table>
 	</form>
 
 	<script src="./assets/js/feedbackedit.js"></script>
-
+	<?php include("footer.php"); ?>   
 </html>
 

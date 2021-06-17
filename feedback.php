@@ -1,8 +1,9 @@
 <!--IT20664558 D.M.P.D.Daundasekara-->
-<?php 
+<?php
+    // include Header
+    $title = 'feedback Page'; include("header.php");
 
-       
-include("header.php");
+
 // Check if user is a customer
 include("./src/customer/customerConfig.php"); 
 $adID = $_GET['adID'];  
@@ -32,7 +33,7 @@ $adID = $_GET['adID'];
 
         // Fetch all  feedbacks from feedback table
         $sql = "SELECT * FROM feedback  WHERE adID='$adID' ORDER BY feedbackID DESC";
-        $result = mysqli_query($conn, $sql);
+        $result = $conn->query($sql);
 
     
 
@@ -42,7 +43,7 @@ $adID = $_GET['adID'];
 	
       // output feedback of each row
      
-            while($row=mysqli_fetch_assoc($result)){
+      while($row=$result->fetch_assoc()){
               echo "<tr>";
                echo "<td>".$row['customerID']."</td>";
                echo "<td>".$row['fbdescription']."</td>";
@@ -100,11 +101,11 @@ if(isset($_POST['submit']))
   $rating = $_POST['rating'];
 
 
-  $result = mysqli_query($conn, "INSERT INTO feedback(customerID,adID,rating,fbdescription) VALUES($customerID,$adID,'$rating','$fbdescription')");
+  $result = "INSERT INTO feedback(customerID,adID,rating,fbdescription) VALUES($customerID,$adID,'$rating','$fbdescription')";
 		
 		//Insert feedback data into table
-	if(mysqli_query($conn,$result)){
-		
+	
+    if ($conn->query($result)){
 		// Show message 
 	echo "<div class='done'>your feedback submited successfully....Thank you for your feedback.!!!<br>";
   }
@@ -118,9 +119,9 @@ if(isset($_POST['submit']))
     <th>Edit</th>
 <?php
  
-    
+    //select feedback to relevent advertisment and relevent user
     $sql = "SELECT * FROM feedback  WHERE adID=$adID  AND customerID=$customerID";
-        $result = mysqli_query($conn, $sql);
+        $result = $conn->query($sql);
 
     
 
@@ -129,7 +130,7 @@ if(isset($_POST['submit']))
            
 	
      
-            while($row=mysqli_fetch_assoc($result)){
+            while($row=$result->fetch_assoc()){
           
               $row['customerID'];
              echo "<tr>";
