@@ -6,7 +6,7 @@
     }
 ?>
 
-<link rel="stylesheet" href="./assets/css/commercialsListPage.css">
+<link rel="stylesheet" href="./assets/css/commercialsList.css">
 
 <!-- Gaween -->
 <!-- Type your code here -->
