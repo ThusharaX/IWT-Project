@@ -5,7 +5,7 @@
     include("./src/admin/adminConfig.php");
 ?>
 
-<link rel="stylesheet" href="./assets/css/deleteUser.css">
+<link rel="stylesheet" href="./assets/css/commercialsList.css">
 
 <!-- Gaween -->
 <!-- Type your code here -->
